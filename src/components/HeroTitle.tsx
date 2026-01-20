@@ -11,7 +11,7 @@ export default function HeroTitle() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        SONO UN
+        I'M
       </motion.span>
       <motion.span
         className="block text-accent"
@@ -19,7 +19,7 @@ export default function HeroTitle() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        SVILUPPATORE
+        ADENEKAN
       </motion.span>
       <motion.span
         className="block"
@@ -27,7 +27,7 @@ export default function HeroTitle() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        FULL-STACK
+        WONDERFUL
       </motion.span>
     </h1>
   );
