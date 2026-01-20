@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio
 
-## Getting Started
+Portfolio personale moderno e minimale per sviluppatori full-stack freelance, sviluppato con Next.js, TypeScript e Tailwind CSS.
 
-First, run the development server:
+## 🚀 Caratteristiche
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Design Moderno e Minimale**: Ispirato ai migliori portfolio professionali
+- **Dark/Light Mode**: Toggle tema con persistenza in localStorage
+- **Animazioni Fluide**: Micro-animazioni con Framer Motion
+- **Completamente Responsive**: Ottimizzato per tutti i dispositivi
+- **SEO Ottimizzato**: Metadata, sitemap e robots.txt configurati
+- **Accessibilità**: Supporto per screen reader e preferenze utente
+- **Performance**: Ottimizzazioni Next.js per velocità e performance
+
+## 📁 Struttura del Progetto
+
+```
+personal-portfolio/
+├── src/
+│   ├── app/              # Next.js App Router
+│   │   ├── page.tsx      # Home page
+│   │   ├── carriera/     # Pagina carriera
+│   │   ├── progetti/     # Pagina progetti
+│   │   ├── contatti/     # Pagina contatti
+│   │   ├── layout.tsx    # Layout principale
+│   │   ├── metadata.ts   # Configurazione SEO
+│   │   ├── globals.css   # Stili globali e design system
+│   │   ├── sitemap.ts    # Sitemap dinamica
+│   │   └── robots.ts     # Robots.txt
+│   ├── components/        # Componenti React
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Layout.tsx
+│   │   ├── ThemeToggle.tsx
+│   │   ├── AnimatedSection.tsx
+│   │   └── GlitchText.tsx
+│   ├── contexts/         # React Context
+│   │   └── ThemeContext.tsx
+│   └── lib/              # Utility
+│       └── utils.ts
+└── public/               # File statici
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Stack Tecnologico
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 16 (App Router)
+- **Linguaggio**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Animazioni**: Framer Motion
+- **Font**: Geist Sans & Geist Mono (Google Fonts)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Installazione
 
-## Learn More
+1. **Clona il repository** (se non l'hai già fatto):
+```bash
+git clone <your-repo-url>
+cd personal-portfolio
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Installa le dipendenze**:
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Avvia il server di sviluppo**:
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Apri** [http://localhost:3000](http://localhost:3000) nel browser
 
-## Deploy on Vercel
+## ⚙️ Configurazione
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Personalizza i Contenuti
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Metadata e SEO** (`src/app/metadata.ts`):
+   - Aggiorna `siteConfig` con i tuoi dati
+   - Modifica URL, social links, descrizioni
+   - Aggiungi codici di verifica Google/Yandex se necessario
+
+2. **Home Page** (`src/app/page.tsx`):
+   - Personalizza il testo introduttivo
+   - Modifica le sezioni "Cosa faccio e per chi"
+
+3. **Carriera** (`src/app/carriera/page.tsx`):
+   - Aggiorna l'array `timeline` con le tue esperienze
+   - Modifica le competenze tecniche
+
+4. **Progetti** (`src/app/progetti/page.tsx`):
+   - Aggiorna l'array `projects` con i tuoi progetti
+   - Aggiungi link reali e immagini
+
+5. **Contatti** (`src/app/contatti/page.tsx`):
+   - Aggiungi il tuo indirizzo email
+   - Configura il link al calendario
+   - Implementa l'invio del form (es. con Resend, Formspree, ecc.)
+
+6. **Footer** (`src/components/Footer.tsx`):
+   - Aggiorna i link social con i tuoi profili reali
+
+### Personalizza i Colori
+
+Modifica la palette colori in `src/app/globals.css`:
+- Variabili CSS `:root` per light mode
+- Classe `.dark` per dark mode
+- Colore accent principale: `--accent: #ec4899`
+
+### Aggiungi Icone Social
+
+Attualmente i link social usano placeholder. Puoi:
+- Installare `react-icons` o `lucide-react`
+- Aggiungere SVG personalizzati
+- Usare un font icon come Font Awesome
+
+## 🚢 Deploy
+
+### Vercel (Consigliato)
+
+1. Pusha il codice su GitHub
+2. Vai su [vercel.com](https://vercel.com)
+3. Importa il repository
+4. Vercel rileverà automaticamente Next.js e configurerà tutto
+
+### Altri Provider
+
+Il progetto può essere deployato su qualsiasi provider che supporta Next.js:
+- Netlify
+- AWS Amplify
+- Railway
+- DigitalOcean App Platform
+
+## 📝 TODO / Prossimi Passi
+
+- [ ] Aggiungere immagini reali per i progetti
+- [ ] Implementare invio form contatti (es. Resend API)
+- [ ] Aggiungere iconografie social (react-icons o SVG)
+- [ ] Configurare analytics (es. Google Analytics, Plausible)
+- [ ] Aggiungere blog se necessario
+- [ ] Ottimizzare immagini con next/image
+- [ ] Aggiungere test (Jest, React Testing Library)
+- [ ] Configurare CI/CD
+
+## 🎨 Design System
+
+Il design system è definito in `src/app/globals.css`:
+- **Colori**: Variabili CSS per light/dark mode
+- **Tipografia**: Geist Sans (body), Geist Mono (code)
+- **Spaziatura**: Sistema Tailwind standard
+- **Breakpoints**: Mobile-first responsive design
+
+## 📄 Licenza
+
+Questo progetto è open source e disponibile sotto licenza MIT.
+
+## 👤 Autore
+
+Sviluppato seguendo le best practices per portfolio professionali.
+
+---
+
+**Buon lavoro con il tuo portfolio! 🚀**
