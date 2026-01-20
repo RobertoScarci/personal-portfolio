@@ -26,8 +26,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme(initialTheme);
     setMounted(true);
     
-    // Apply theme to document
-    document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+    // Apply theme to document (sync with inline script)
+    // Check if class is already applied to avoid unnecessary DOM manipulation
+    const hasDark = document.documentElement.classList.contains('dark');
+    if (initialTheme === 'dark' && !hasDark) {
+      document.documentElement.classList.add('dark');
+    } else if (initialTheme === 'light' && hasDark) {
+      document.documentElement.classList.remove('dark');
+    }
   }, []);
 
   // Update theme and persist to localStorage
