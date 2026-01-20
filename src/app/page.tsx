@@ -1,18 +1,96 @@
 import Layout from '@/components/Layout';
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <Layout>
-      <div className="container mx-auto px-6 py-12">
+      {/* Hero Section */}
+      <section className="container mx-auto px-6 py-20 md:py-32">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Home Page
+          {/* Main Heading with Glitch Effect */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+            <span className="block">SONO UN</span>
+            <span className="block text-accent">SVILUPPATORE</span>
+            <span className="block">FULL-STACK</span>
           </h1>
-          <p className="text-lg text-muted-foreground">
-            Questa è la pagina home. Il contenuto verrà implementato nello step successivo.
-          </p>
+
+          {/* Introduction Text */}
+          <div className="space-y-6 text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl">
+            <p>
+              Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript. 
+              Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con 
+              <strong className="text-foreground font-semibold"> PROGETTI</strong> e righe di codice, 
+              trasformando zeri e uno in esperienze immersive e interattive.
+            </p>
+            <p>
+              Appassionato di <strong className="text-foreground font-semibold">TECNOLOGIA</strong> e 
+              design minimale, trovo bellezza nella semplicità e nell'ordine. Quando non sto creando 
+              esperienze web straordinarie, puoi trovarmi a leggere <strong className="text-foreground font-semibold">ARTICOLI</strong> 
+              o a seguire le ultime tendenze del settore. In ogni caso, puoi sempre 
+              <strong className="text-foreground font-semibold"> CONTATTARMI</strong>.
+            </p>
+          </div>
+
+          {/* Call to Action */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+            <Link
+              href="/progetti"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors"
+            >
+              Vedi i Miei Progetti
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+            <Link
+              href="/contatti"
+              className="inline-flex items-center gap-2 px-8 py-4 border border-border rounded-full font-medium hover:bg-surface transition-colors"
+            >
+              Contattami
+            </Link>
+          </div>
+
+          {/* What I Do Section */}
+          <div className="border-t border-border pt-12">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8">Cosa faccio e per chi</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Sviluppo Full-Stack</h3>
+                <p className="text-muted-foreground">
+                  Creo applicazioni web complete, dal frontend al backend, utilizzando le tecnologie 
+                  più moderne e performanti.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Architettura UX</h3>
+                <p className="text-muted-foreground">
+                  Progetto esperienze utente intuitive e coinvolgenti, mettendo sempre l'utente al centro.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Per Startup</h3>
+                <p className="text-muted-foreground">
+                  Aiuto le startup a trasformare le loro idee in prodotti digitali scalabili e performanti.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3">Per Aziende</h3>
+                <p className="text-muted-foreground">
+                  Collaboro con aziende per modernizzare i loro sistemi e migliorare l'esperienza digitale.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 }
