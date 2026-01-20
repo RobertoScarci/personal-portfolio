@@ -7,10 +7,9 @@ import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Carriera', href: '/carriera' },
-  { name: 'Progetti', href: '/progetti' },
-  { name: 'Contatti', href: '/contatti' },
+  { name: 'About', href: '/' },
+  { name: 'Projects', href: '/progetti' },
+  { name: 'Contact', href: '/contatti' },
 ];
 
 export default function Header() {
