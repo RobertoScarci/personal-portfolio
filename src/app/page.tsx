@@ -26,29 +26,24 @@ export default function Home() {
           <AnimatedSection delay={0.3}>
             <div className="space-y-6 text-base md:text-lg text-foreground/80 mb-12 max-w-3xl">
               <p>
-                Your friendly neighborhood frontend developer, UX architect, and JavaScript engineer. 
-                I spend my days (and often nights) painting the Internet canvas with{' '}
+                Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
+                Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
                 <Link href="/progetti" className="font-bold text-foreground hover:text-accent transition-colors">
-                  PROJECTS
+                  PROGETTI
                 </Link>{' '}
-                and lines of code, turning zeroes and ones into immersive, interactive experiences.
+                e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.
               </p>
               <p>
-                Bona fide photochromic{' '}
+                Appassionato di fotografia e design minimale, trovo bellezza nella semplicità e nell'ordine.
+                Quando non sto creando esperienze web curate, puoi trovarmi a leggere{' '}
                 <Link href="#" className="font-bold text-foreground hover:text-accent transition-colors">
-                  LENS
+                  ARTICOLI
                 </Link>{' '}
-                enthusiast - sunlight or indoors, I've got it covered. I tread the path of minimalism, 
-                finding beauty in simplicity and order. When I'm not crafting beautiful web experiences, 
-                you can find me reading{' '}
-                <Link href="#" className="font-bold text-foreground hover:text-accent transition-colors">
-                  ARTICLES
-                </Link>{' '}
-                or swaying to the rhythm of Pop Music & Jazz, losing myself in the captivating flow of melodies. 
-                anyways you can{' '}
+                o ad ascoltare musica, perdendomi nel flusso delle melodie. In ogni caso puoi sempre{' '}
                 <Link href="/contatti" className="font-bold text-foreground hover:text-accent transition-colors">
-                  CONTACT ME
+                  CONTATTARMI
                 </Link>
+                .
               </p>
             </div>
           </AnimatedSection>
@@ -59,7 +54,7 @@ export default function Home() {
               href="/carriera"
               className="inline-flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors group"
             >
-              See More About Me
+              Scopri di più su di me
               <svg
                 className="w-5 h-5 transition-transform group-hover:translate-x-1"
                 fill="none"
