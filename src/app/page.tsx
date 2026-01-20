@@ -17,14 +17,14 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           {/* Main Heading */}
           <AnimatedSection>
-            <div className="text-center mb-12">
+            <div className="mb-12">
               <HeroTitle />
             </div>
           </AnimatedSection>
 
           {/* Introduction Text */}
           <AnimatedSection delay={0.3}>
-            <div className="space-y-6 text-lg md:text-xl text-foreground/80 mb-12 max-w-3xl mx-auto text-center md:text-left">
+            <div className="space-y-6 text-base md:text-lg text-foreground/80 mb-12 max-w-3xl">
               <p>
                 Your friendly neighborhood frontend developer, UX architect, and JavaScript engineer. 
                 I spend my days (and often nights) painting the Internet canvas with{' '}
