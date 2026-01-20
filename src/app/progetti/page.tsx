@@ -1,5 +1,7 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import AnimatedSection from '@/components/AnimatedSection';
+import { motion } from 'framer-motion';
 
 interface Project {
   id: string;
@@ -67,10 +69,10 @@ export default function Progetti() {
           {/* Projects Grid */}
           <div className="space-y-24">
             {projects.map((project, index) => (
-              <article
-                key={project.id}
-                className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}
-              >
+              <AnimatedSection key={project.id} delay={index * 0.2}>
+                <article
+                  className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}
+                >
                 {/* Project Image Placeholder */}
                 <div className="flex-1 w-full">
                   <div className="aspect-video bg-surface-elevated rounded-lg border border-border flex items-center justify-center">
@@ -137,7 +139,8 @@ export default function Progetti() {
                     )}
                   </div>
                 </div>
-              </article>
+                </article>
+              </AnimatedSection>
             ))}
           </div>
         </div>

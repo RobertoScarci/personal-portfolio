@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout';
+import AnimatedSection from '@/components/AnimatedSection';
 
 interface TimelineItem {
   year: string;
@@ -61,7 +62,8 @@ export default function Carriera() {
             {/* Timeline Items */}
             <div className="space-y-12">
               {timeline.map((item, index) => (
-                <div key={index} className="relative flex gap-8">
+                <AnimatedSection key={index} delay={index * 0.15}>
+                  <div className="relative flex gap-8">
                   {/* Year Badge */}
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 rounded-full bg-accent/10 border-2 border-accent flex items-center justify-center font-bold text-sm">
@@ -84,7 +86,8 @@ export default function Carriera() {
                     <p className="text-accent font-medium mb-3">{item.organization}</p>
                     <p className="text-muted-foreground">{item.description}</p>
                   </div>
-                </div>
+                  </div>
+                </AnimatedSection>
               ))}
             </div>
           </div>

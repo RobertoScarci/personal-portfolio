@@ -1,5 +1,7 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import AnimatedSection from '@/components/AnimatedSection';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
@@ -8,14 +10,38 @@ export default function Home() {
       <section className="container mx-auto px-6 py-20 md:py-32">
         <div className="max-w-4xl mx-auto">
           {/* Main Heading with Glitch Effect */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-            <span className="block">SONO UN</span>
-            <span className="block text-accent">SVILUPPATORE</span>
-            <span className="block">FULL-STACK</span>
-          </h1>
+          <AnimatedSection>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+              <motion.span
+                className="block"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                SONO UN
+              </motion.span>
+              <motion.span
+                className="block text-accent"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                SVILUPPATORE
+              </motion.span>
+              <motion.span
+                className="block"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                FULL-STACK
+              </motion.span>
+            </h1>
+          </AnimatedSection>
 
           {/* Introduction Text */}
-          <div className="space-y-6 text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl">
+          <AnimatedSection delay={0.3}>
+            <div className="space-y-6 text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl">
             <p>
               Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript. 
               Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con 
@@ -29,10 +55,12 @@ export default function Home() {
               o a seguire le ultime tendenze del settore. In ogni caso, puoi sempre 
               <strong className="text-foreground font-semibold"> CONTATTARMI</strong>.
             </p>
-          </div>
+            </div>
+          </AnimatedSection>
 
           {/* Call to Action */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+          <AnimatedSection delay={0.4}>
+            <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Link
               href="/progetti"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors"
@@ -56,10 +84,12 @@ export default function Home() {
             >
               Contattami
             </Link>
-          </div>
+            </div>
+          </AnimatedSection>
 
           {/* What I Do Section */}
-          <div className="border-t border-border pt-12">
+          <AnimatedSection delay={0.5}>
+            <div className="border-t border-border pt-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-8">Cosa faccio e per chi</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
@@ -88,7 +118,8 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
     </Layout>
