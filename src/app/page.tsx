@@ -1,7 +1,7 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
-import { motion } from 'framer-motion';
+import HeroTitle from '@/components/HeroTitle';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -17,32 +17,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           {/* Main Heading with Glitch Effect */}
           <AnimatedSection>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-              <motion.span
-                className="block"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                SONO UN
-              </motion.span>
-              <motion.span
-                className="block text-accent"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                SVILUPPATORE
-              </motion.span>
-              <motion.span
-                className="block"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                FULL-STACK
-              </motion.span>
-            </h1>
+            <HeroTitle />
           </AnimatedSection>
 
           {/* Introduction Text */}
