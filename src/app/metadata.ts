@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
 export const siteConfig = {
-  name: 'Personal Portfolio',
-  description: 'Portfolio personale di uno sviluppatore full-stack freelance',
+  name: 'Roberto Scarci · Portfolio',
+  description: 'Portfolio personale di Roberto Scarci, sviluppatore full-stack freelance.',
   url: 'https://tuosito.com',
   ogImage: '/og-image.jpg',
   links: {
-    github: 'https://github.com/tuoprofilo',
+    github: 'https://github.com/RobertoScarci',
     linkedin: 'https://linkedin.com/in/tuoprofilo',
     instagram: 'https://instagram.com/tuoprofilo',
   },
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: 'Il Tuo Nome',
+      name: 'Roberto Scarci',
     },
   ],
-  creator: 'Il Tuo Nome',
+  creator: 'Roberto Scarci',
   openGraph: {
     type: 'website',
     locale: 'it_IT',
