@@ -1,5 +1,11 @@
 import Layout from '@/components/Layout';
 import AnimatedSection from '@/components/AnimatedSection';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Carriera',
+  description: 'Il mio percorso di studi ed esperienze professionali, un viaggio continuo di crescita tecnica e personale.',
+};
 
 interface TimelineItem {
   year: string;

@@ -2,6 +2,12 @@ import Layout from '@/components/Layout';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
 import { motion } from 'framer-motion';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Home',
+  description: 'Sviluppatore full-stack freelance, architetto UX e ingegnere JavaScript. Trasformo idee in esperienze digitali immersive.',
+};
 
 export default function Home() {
   return (

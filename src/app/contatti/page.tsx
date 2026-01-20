@@ -2,6 +2,8 @@
 
 import Layout from '@/components/Layout';
 import { useState } from 'react';
+// Note: Metadata cannot be exported from client components
+// Consider creating a separate metadata file or using generateMetadata
 
 export default function Contatti() {
   const [formData, setFormData] = useState({

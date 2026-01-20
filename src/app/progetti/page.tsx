@@ -2,6 +2,12 @@ import Layout from '@/components/Layout';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
 import { motion } from 'framer-motion';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Progetti',
+  description: 'Una selezione dei progetti che ho sviluppato, mostrando problemi risolti, soluzioni implementate e risultati ottenuti.',
+};
 
 interface Project {
   id: string;
