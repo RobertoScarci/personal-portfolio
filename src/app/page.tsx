@@ -55,25 +55,23 @@ export default function Home() {
 
           {/* See More About Me Link */}
           <AnimatedSection delay={0.4}>
-            <div className="text-center md:text-left">
-              <Link
-                href="/carriera"
-                className="inline-flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors group"
+            <Link
+              href="/carriera"
+              className="inline-flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors group"
+            >
+              See More About Me
+              <svg
+                className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                See More About Me
-                <svg
-                  className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
-            </div>
+                <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
           </AnimatedSection>
         </div>
       </section>
