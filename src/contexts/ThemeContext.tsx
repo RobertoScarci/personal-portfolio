@@ -38,13 +38,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.classList.toggle('dark', newTheme === 'dark');
   };
 
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return <>{children}</>;
-  }
+  // Always provide the context, but use a safe default value when not mounted
+  // This prevents the "useTheme must be used within a ThemeProvider" error
+  const contextValue = mounted
+    ? { theme, toggleTheme }
+    : { theme: 'dark' as Theme, toggleTheme: () => {} };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={contextValue}>
       {children}
     </ThemeContext.Provider>
   );
