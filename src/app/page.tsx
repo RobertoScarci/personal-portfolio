@@ -22,16 +22,14 @@ export default function Home() {
 
           {/* Introduction Text */}
           <AnimatedSection delay={0.3}>
-            <div className="space-y-4 text-base md:text-lg text-foreground/90 mb-8 leading-relaxed">
+            <div className="text-base md:text-lg text-foreground/90 mb-8 leading-relaxed">
               <p>
                 Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                 Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
                 <Link href="/progetti" className="font-bold text-foreground hover:text-accent transition-colors">
                   PROGETTI
                 </Link>{' '}
-                e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.
-              </p>
-              <p>
+                e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.{' '}
                 Appassionato di fotografia e design minimale, trovo bellezza nella semplicità e nell'ordine.
                 Quando non sto creando esperienze web curate, puoi trovarmi a leggere{' '}
                 <Link href="#" className="font-bold text-foreground hover:text-accent transition-colors">
