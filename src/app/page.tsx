@@ -50,7 +50,7 @@ export default function Home() {
           <AnimatedSection delay={0.4}>
             <Link
               href="/carriera"
-              className="inline-flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors group"
+              className="inline-flex items-center gap-2 text-foreground/60 hover:text-foreground transition-colors group"
             >
               Scopri di più su di me
               <svg
