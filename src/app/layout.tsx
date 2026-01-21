@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" suppressHydrationWarning>
+    <html lang="it" className="dark" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -39,8 +39,20 @@ export default function RootLayout({
                   } else {
                     document.documentElement.classList.remove('dark');
                   }
-                } catch (e) {}
+                } catch (e) {
+                  // Fallback: ensure dark is applied
+                  document.documentElement.classList.add('dark');
+                }
               })();
+            `,
+          }}
+        />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              html { background-color: #0a0a0f; }
+              html.dark { background-color: #0a0a0f; }
+              html:not(.dark) { background-color: #ffffff; }
             `,
           }}
         />
