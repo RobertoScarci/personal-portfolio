@@ -22,7 +22,7 @@ export default function Home() {
 
           {/* Introduction Text */}
           <AnimatedSection delay={0.3}>
-            <div className="text-base md:text-lg text-foreground/90 mb-8 leading-relaxed">
+            <div className="text-base md:text-lg text-foreground/90 mb-10 leading-relaxed">
               <p>
                 Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                 Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
@@ -48,20 +48,9 @@ export default function Home() {
           <AnimatedSection delay={0.4}>
             <Link
               href="/carriera"
-              className="inline-flex items-center gap-2 text-foreground/60 hover:text-foreground transition-colors group"
+              className="text-foreground/60 hover:text-foreground transition-colors"
             >
-              Scopri di più su di me
-              <svg
-                className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
+              Scopri di più su di me →
             </Link>
           </AnimatedSection>
         </div>
