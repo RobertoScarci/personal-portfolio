@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroTitle() {
   return (
-    <h1 className="text-7xl md:text-8xl lg:text-9xl font-extrabold mb-14 leading-[0.95] tracking-[-0.04em] glitch-text">
+    <h1 className="text-7xl md:text-8xl lg:text-9xl font-extrabold mb-8 leading-[0.95] tracking-[-0.04em] glitch-text">
       <motion.span
         className="block"
         initial={{ opacity: 0, x: -20 }}

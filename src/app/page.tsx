@@ -22,8 +22,8 @@ export default function Home() {
 
           {/* Introduction Text */}
           <AnimatedSection delay={0.3}>
-            <div className="text-base md:text-lg text-foreground/90 mb-8 leading-relaxed">
-              <p className="mb-4">
+            <div className="text-base md:text-lg text-foreground/90 mb-6 leading-relaxed">
+              <p className="mb-5">
                 Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                 Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
                 <Link href="/progetti" className="font-bold text-foreground hover:text-accent transition-colors">
