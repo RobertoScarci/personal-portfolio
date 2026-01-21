@@ -15,14 +15,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark');
   const [mounted, setMounted] = useState(false);
 
-  // Initialize theme from localStorage or system preference
+  // Initialize theme from localStorage (default: dark)
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme') as Theme | null;
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light';
-    
-    const initialTheme = storedTheme || systemTheme;
+    const initialTheme = storedTheme || 'dark';
     setTheme(initialTheme);
     setMounted(true);
     
