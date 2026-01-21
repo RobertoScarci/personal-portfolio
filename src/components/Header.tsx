@@ -17,13 +17,12 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-sm">
-      <nav className="container mx-auto px-6 py-8 flex items-center justify-center relative">
+    <header className="relative z-50">
+      <nav className="container mx-auto px-6 py-6 flex items-center justify-between max-w-4xl">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.1, rotate: 90 }}
           transition={{ duration: 0.2 }}
-          className="absolute left-6"
         >
           <Link 
             href="/" 
@@ -68,15 +67,19 @@ export default function Header() {
           })}
         </div>
 
-        {/* Theme Toggle */}
-        <div className="absolute right-6 flex items-center gap-4">
+        {/* Theme Toggle - After navigation links */}
+        <div className="hidden md:flex items-center">
           <ThemeToggle />
           
-          {/* Mobile Menu Button */}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
           <button
-            className="md:hidden p-2 text-foreground hover:text-accent transition-colors"
+            className="p-2 text-foreground hover:text-accent transition-colors"
             aria-label="Menu"
-            aria-expanded={mobileMenuOpen}
+            aria-expanded={mobileMenuOpen ? 'true' : 'false'}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -115,7 +118,7 @@ export default function Header() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className="md:hidden border-t border-border bg-background/95 backdrop-blur-md"
+              className="md:hidden border-t border-border"
             >
               <nav className="container mx-auto px-6 py-4 flex flex-col gap-4">
                 {navigation.map((item) => {
