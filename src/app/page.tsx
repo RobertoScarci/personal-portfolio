@@ -17,7 +17,7 @@ export default function Home() {
       <section className="container mx-auto px-6 py-8 min-h-[calc(100vh-120px)] flex flex-col items-center justify-center">
         <div className="max-w-4xl w-full mx-auto">
           {/* Header - Above Hero Title */}
-          <div className="mb-12">
+          <div className="mb-20">
             <Header />
           </div>
           
