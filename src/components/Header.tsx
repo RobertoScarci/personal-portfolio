@@ -33,8 +33,8 @@ export default function Header() {
           </Link>
         </motion.div>
 
-        {/* Navigation Links - Centered */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Navigation Links + Theme Toggle - Grouped together */}
+        <div className="hidden md:flex items-center gap-6">
           {navigation.map((item, index) => {
             const isActive = pathname === item.href;
             return (
@@ -65,12 +65,8 @@ export default function Header() {
               </motion.div>
             );
           })}
-        </div>
-
-        {/* Theme Toggle - After navigation links */}
-        <div className="hidden md:flex items-center">
+          {/* Theme Toggle - After navigation links */}
           <ThemeToggle />
-          
         </div>
 
         {/* Mobile Menu Button */}
