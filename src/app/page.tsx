@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-8">
+      <section className="container mx-auto px-6 py-8 min-h-[60vh] flex items-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Heading - Left aligned */}
           <AnimatedSection>
