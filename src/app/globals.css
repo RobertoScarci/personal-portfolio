@@ -234,3 +234,46 @@ a:hover, button:hover {
     --border: #ffffff;
   }
 }
+
+/* ============================================
+   GLITCH TEXT EFFECT
+   ============================================ */
+
+.glitch-text {
+  position: relative;
+  color: #ffffff;
+  text-shadow: 
+    0.05em 0 0 rgba(236, 72, 153, 0.75),
+    -0.05em -0.025em 0 rgba(99, 102, 241, 0.75),
+    0.025em 0.05em 0 rgba(236, 72, 153, 0.5);
+  animation: glitch 3s infinite;
+}
+
+.glitch-text-accent {
+  color: #ec4899;
+  text-shadow: 
+    0.05em 0 0 rgba(255, 255, 255, 0.75),
+    -0.05em -0.025em 0 rgba(99, 102, 241, 0.75),
+    0.025em 0.05em 0 rgba(255, 255, 255, 0.5);
+}
+
+@keyframes glitch {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% {
+    text-shadow: 
+      0.05em 0 0 rgba(236, 72, 153, 0.75),
+      -0.05em -0.025em 0 rgba(99, 102, 241, 0.75),
+      0.025em 0.05em 0 rgba(236, 72, 153, 0.5);
+  }
+  15%, 49% {
+    text-shadow: 
+      0.05em 0 0 rgba(99, 102, 241, 0.75),
+      -0.05em -0.025em 0 rgba(236, 72, 153, 0.75),
+      0.025em 0.05em 0 rgba(99, 102, 241, 0.5);
+  }
+  50%, 99% {
+    text-shadow: 
+      -0.05em -0.025em 0 rgba(236, 72, 153, 0.75),
+      0.025em 0.05em 0 rgba(99, 102, 241, 0.75),
+      0.05em 0 0 rgba(236, 72, 153, 0.5);
+  }
+}
