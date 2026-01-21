@@ -14,7 +14,7 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl">
           {/* Main Heading */}
           <AnimatedSection>
             <HeroTitle />
@@ -22,14 +22,16 @@ export default function Home() {
 
           {/* Introduction Text */}
           <AnimatedSection delay={0.3}>
-            <div className="text-base md:text-lg text-foreground/90 mb-10 leading-relaxed">
-              <p>
+            <div className="text-base md:text-lg text-foreground/90 mb-8 leading-relaxed">
+              <p className="mb-4">
                 Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                 Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
                 <Link href="/progetti" className="font-bold text-foreground hover:text-accent transition-colors">
                   PROGETTI
                 </Link>{' '}
-                e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.{' '}
+                e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.
+              </p>
+              <p>
                 Appassionato di fotografia e design minimale, trovo bellezza nella semplicità e nell'ordine.
                 Quando non sto creando esperienze web curate, puoi trovarmi a leggere{' '}
                 <Link href="#" className="font-bold text-foreground hover:text-accent transition-colors">
