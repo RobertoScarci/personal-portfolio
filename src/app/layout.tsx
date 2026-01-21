@@ -50,15 +50,40 @@ export default function RootLayout({
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              html { background-color: #0a0a0f; }
-              html.dark { background-color: #0a0a0f; }
-              html:not(.dark) { background-color: #ffffff; }
+              html { 
+                background-color: #0a0a0f !important;
+                --background: #0a0a0f;
+                --foreground: #ffffff;
+              }
+              html.dark { 
+                background-color: #0a0a0f !important;
+                --background: #0a0a0f;
+                --foreground: #ffffff;
+              }
+              html:not(.dark) { 
+                background-color: #ffffff !important;
+                --background: #ffffff;
+                --foreground: #0a0a0a;
+              }
+              body {
+                background-color: #0a0a0f !important;
+                color: #ffffff !important;
+              }
+              html.dark body {
+                background-color: #0a0a0f !important;
+                color: #ffffff !important;
+              }
+              html:not(.dark) body {
+                background-color: #ffffff !important;
+                color: #0a0a0a !important;
+              }
             `,
           }}
         />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ backgroundColor: '#0a0a0f', color: '#ffffff' }}
         suppressHydrationWarning
       >
         <ThemeProvider>
