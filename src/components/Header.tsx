@@ -18,11 +18,12 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-sm">
-      <nav className="container mx-auto px-6 py-8 flex items-center justify-between">
+      <nav className="container mx-auto px-6 py-8 flex items-center justify-center relative">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.1, rotate: 90 }}
           transition={{ duration: 0.2 }}
+          className="absolute left-6"
         >
           <Link 
             href="/" 
@@ -33,7 +34,7 @@ export default function Header() {
           </Link>
         </motion.div>
 
-        {/* Navigation Links */}
+        {/* Navigation Links - Centered */}
         <div className="hidden md:flex items-center gap-8">
           {navigation.map((item, index) => {
             const isActive = pathname === item.href;
@@ -68,7 +69,7 @@ export default function Header() {
         </div>
 
         {/* Theme Toggle */}
-        <div className="flex items-center gap-4">
+        <div className="absolute right-6 flex items-center gap-4">
           <ThemeToggle />
           
           {/* Mobile Menu Button */}
