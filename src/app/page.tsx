@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="container mx-auto px-6">
+      <section className="container mx-auto px-6 py-8">
         <div className="max-w-3xl mx-auto">
           {/* Main Heading */}
           <AnimatedSection>
