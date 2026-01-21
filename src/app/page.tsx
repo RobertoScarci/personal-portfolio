@@ -2,6 +2,7 @@ import Layout from '@/components/Layout';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
 import HeroTitle from '@/components/HeroTitle';
+import Header from '@/components/Header';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,8 +14,13 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-8 min-h-[calc(100vh-120px)] flex items-center justify-center">
+      <section className="container mx-auto px-6 py-8 min-h-[calc(100vh-120px)] flex flex-col items-center justify-center">
         <div className="max-w-4xl w-full mx-auto">
+          {/* Header - Above Hero Title */}
+          <div className="mb-12">
+            <Header />
+          </div>
+          
           {/* Main Heading - Left aligned */}
           <AnimatedSection>
             <HeroTitle />
