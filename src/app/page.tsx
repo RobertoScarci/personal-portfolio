@@ -22,7 +22,7 @@ export default function Home() {
 
           {/* Introduction Text */}
           <AnimatedSection delay={0.3}>
-            <div className="space-y-6 text-base md:text-lg text-foreground/80 mb-12 max-w-3xl">
+            <div className="space-y-4 text-base md:text-lg text-foreground/80 mb-8">
               <p>
                 Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                 Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
