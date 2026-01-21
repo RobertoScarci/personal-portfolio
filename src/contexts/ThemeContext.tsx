@@ -15,28 +15,20 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark');
   const [mounted, setMounted] = useState(false);
 
-  // Initialize theme from localStorage (default: dark)
+  // Initialize theme (always dark by default)
   useEffect(() => {
-    const storedTheme = localStorage.getItem('theme') as Theme | null;
-    const initialTheme = storedTheme || 'dark';
+    const initialTheme: Theme = 'dark';
     setTheme(initialTheme);
     setMounted(true);
-    
+
     // Apply theme to document (sync with inline script)
-    // Check if class is already applied to avoid unnecessary DOM manipulation
-    const hasDark = document.documentElement.classList.contains('dark');
-    if (initialTheme === 'dark' && !hasDark) {
-      document.documentElement.classList.add('dark');
-    } else if (initialTheme === 'light' && hasDark) {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.add('dark');
   }, []);
 
-  // Update theme and persist to localStorage
+  // Update theme (no persistence per ora)
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
     document.documentElement.classList.toggle('dark', newTheme === 'dark');
   };
 

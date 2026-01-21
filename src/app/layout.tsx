@@ -32,17 +32,9 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var theme = localStorage.getItem('theme');
-                  var initialTheme = theme || 'dark';
-                  if (initialTheme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
-                } catch (e) {
-                  // Fallback: ensure dark is applied
+                  // Force dark mode on initial load, ignore stored preference
                   document.documentElement.classList.add('dark');
-                }
+                } catch (e) {}
               })();
             `,
           }}
