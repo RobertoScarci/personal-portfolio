@@ -7,6 +7,7 @@ type Theme = 'light' | 'dark';
 interface ThemeContextType {
   theme: Theme;
   toggleTheme: () => void;
+  animationKey: number;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -14,6 +15,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark');
   const [mounted, setMounted] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0);
 
   // Initialize theme (always dark by default)
   useEffect(() => {
@@ -30,13 +32,16 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    
+    // Trigger animation by incrementing key
+    setAnimationKey(prev => prev + 1);
   };
 
   // Always provide the context, but use a safe default value when not mounted
   // This prevents the "useTheme must be used within a ThemeProvider" error
   const contextValue = mounted
-    ? { theme, toggleTheme }
-    : { theme: 'dark' as Theme, toggleTheme: () => {} };
+    ? { theme, toggleTheme, animationKey }
+    : { theme: 'dark' as Theme, toggleTheme: () => {}, animationKey: 0 };
 
   return (
     <ThemeContext.Provider value={contextValue}>
