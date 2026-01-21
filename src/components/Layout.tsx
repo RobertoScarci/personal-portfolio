@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         Salta al contenuto principale
       </Link>
       <Header />
-      <main id="main-content" className="flex-1 pt-40 pb-40 relative z-10 bg-background" tabIndex={-1}>
+      <main id="main-content" className="flex-1 pt-40 pb-40 relative z-10" tabIndex={-1}>
         {children}
       </main>
       <Footer />
