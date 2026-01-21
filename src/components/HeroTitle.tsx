@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroTitle() {
   return (
-    <h1 className="text-7xl md:text-8xl lg:text-9xl font-extrabold mb-8 leading-[0.95] tracking-[-0.04em] glitch-text whitespace-nowrap">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight tracking-[-0.03em] glitch-text whitespace-nowrap">
       <motion.span
         className="inline"
         initial={{ opacity: 0, x: -20 }}
