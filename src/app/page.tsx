@@ -15,11 +15,9 @@ export default function Home() {
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-8">
         <div className="max-w-4xl mx-auto">
-          {/* Main Heading - Centered */}
+          {/* Main Heading - Left aligned */}
           <AnimatedSection>
-            <div className="text-center">
-              <HeroTitle />
-            </div>
+            <HeroTitle />
           </AnimatedSection>
 
           {/* Introduction Text - Left aligned but centered container */}
