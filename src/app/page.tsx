@@ -14,7 +14,7 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-8">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Main Heading */}
           <AnimatedSection>
             <HeroTitle />
