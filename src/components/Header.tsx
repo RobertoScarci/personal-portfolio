@@ -17,8 +17,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
-      <nav className="container mx-auto px-6 py-6 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-sm">
+      <nav className="container mx-auto px-6 py-8 flex items-center justify-between">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.1, rotate: 90 }}
