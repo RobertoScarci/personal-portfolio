@@ -17,9 +17,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto">
           {/* Main Heading */}
           <AnimatedSection>
-            <div className="mb-12">
-              <HeroTitle />
-            </div>
+            <HeroTitle />
           </AnimatedSection>
 
           {/* Introduction Text */}
