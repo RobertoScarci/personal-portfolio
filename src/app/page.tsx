@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-20 md:py-32">
-        <div className="max-w-4xl mx-auto">
+      <section className="container mx-auto px-6">
+        <div className="max-w-3xl mx-auto">
           {/* Main Heading */}
           <AnimatedSection>
             <div className="mb-12">
