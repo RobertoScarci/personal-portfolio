@@ -14,15 +14,17 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <section className="container mx-auto px-6 py-8">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Main Heading */}
+        <div className="max-w-4xl mx-auto">
+          {/* Main Heading - Centered */}
           <AnimatedSection>
-            <HeroTitle />
+            <div className="text-center">
+              <HeroTitle />
+            </div>
           </AnimatedSection>
 
-          {/* Introduction Text */}
+          {/* Introduction Text - Left aligned but centered container */}
           <AnimatedSection delay={0.3}>
-            <div className="text-base md:text-lg text-foreground/90 mb-6 leading-relaxed">
+            <div className="text-base md:text-lg text-foreground/90 mb-6 leading-relaxed text-left">
               <p className="mb-5">
                 Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                 Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
@@ -46,14 +48,16 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          {/* See More About Me Link */}
+          {/* See More About Me Link - Left aligned */}
           <AnimatedSection delay={0.4}>
-            <Link
-              href="/carriera"
-              className="text-foreground/60 hover:text-foreground transition-colors"
-            >
-              Scopri di più su di me →
-            </Link>
+            <div className="text-left">
+              <Link
+                href="/carriera"
+                className="text-foreground/60 hover:text-foreground transition-colors"
+              >
+                Scopri di più su di me →
+              </Link>
+            </div>
           </AnimatedSection>
         </div>
       </section>
