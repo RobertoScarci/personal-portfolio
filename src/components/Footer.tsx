@@ -20,7 +20,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="fixed bottom-0 left-0 right-0 z-40">
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-6 py-6">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center gap-6">
             {socialLinks.map((social) => {
@@ -34,7 +34,7 @@ export default function Footer() {
                   className="text-foreground/60 hover:text-foreground transition-colors"
                   aria-label={social.name}
                 >
-                  <Icon className="w-5 h-5" />
+                  <Icon className="w-4 h-4" />
                 </Link>
               );
             })}
