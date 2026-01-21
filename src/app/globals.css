@@ -45,7 +45,7 @@
   --accent-foreground: #ffffff;
   
   /* Grid Pattern (dark mode - visible) */
-  --grid-color: rgba(59, 130, 246, 0.15);
+  --grid-color: rgba(99, 102, 241, 0.2);
 }
 
 /* ============================================
@@ -110,7 +110,7 @@ body::before {
   background-size: 50px 50px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.4;
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
