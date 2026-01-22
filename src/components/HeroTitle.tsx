@@ -23,41 +23,32 @@ export default function HeroTitle() {
     <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-4 leading-[1.1] tracking-[0.01em] glitch-text">
       {words.map((word, wordIndex) => {
         const isAccent = word === 'ROBERTO';
-        const letters = word.split('');
         
         return (
-          <span key={`word-${wordIndex}-${key}`} className="inline-block mr-3">
-            {letters.map((letter, letterIndex) => {
-              const totalIndex = wordIndex * 100 + letterIndex;
-              const delay = totalIndex * 0.05;
-              
-              return (
-                <motion.span
-                  key={`letter-${totalIndex}-${key}`}
-                  className={`inline-block ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
-                  initial={{ 
-                    opacity: 0, 
-                    y: 20, 
-                    filter: 'blur(6px)',
-                    scale: 0.8
-                  }}
-                  animate={{ 
-                    opacity: 1, 
-                    y: 0, 
-                    filter: 'blur(0px)',
-                    scale: 1
-                  }}
-                  transition={{ 
-                    duration: 0.8,
-                    delay: delay,
-                    ease: premiumEase
-                  }}
-                >
-                  {letter === ' ' ? '\u00A0' : letter}
-                </motion.span>
-              );
-            })}
-          </span>
+          <motion.span
+            key={`word-${wordIndex}-${key}`}
+            className={`inline-block mr-3 ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
+            initial={{ 
+              opacity: 0, 
+              y: 20, 
+              filter: 'blur(6px)',
+              scale: 0.8
+            }}
+            animate={{ 
+              opacity: 1, 
+              y: 0, 
+              filter: 'blur(0px)',
+              scale: 1
+            }}
+            transition={{ 
+              duration: 0.8,
+              delay: 0,
+              ease: premiumEase
+            }}
+          >
+            {word}
+            {wordIndex < words.length - 1 && ' '}
+          </motion.span>
         );
       })}
     </h1>
