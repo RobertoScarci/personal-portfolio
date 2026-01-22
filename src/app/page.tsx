@@ -14,8 +14,12 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-8 min-h-[calc(100vh-120px)] flex flex-col items-center justify-center">
-        <div className="max-w-4xl w-full mx-auto">
+      <section className="container mx-auto px-6 py-8 min-h-[calc(100vh-120px)] flex flex-col items-center justify-center relative">
+        {/* Subtle glow effect behind content */}
+        <div className="absolute inset-0 -z-10 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-4xl w-full mx-auto relative z-10">
           {/* Header - Above Hero Title */}
           <AnimatedSection delay={0}>
             <div className="mb-32 md:mb-40">
