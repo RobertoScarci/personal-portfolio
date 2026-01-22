@@ -46,26 +46,27 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className={`text-sm font-medium transition-all duration-300 relative group ${
+                  className={`text-sm font-medium transition-all duration-500 relative group ${
                     isActive
                       ? 'text-accent'
-                      : 'text-foreground/70 hover:text-foreground'
+                      : 'text-foreground/60 hover:text-foreground'
                   }`}
                 >
                   {item.name}
                   {/* Animated underline for active and hover */}
                   <motion.span
                     layoutId="activeTab"
-                    className={`absolute -bottom-1 left-0 h-[2px] bg-accent ${
+                    className={`absolute -bottom-1.5 left-0 h-[2px] bg-accent ${
                       isActive ? 'w-full' : 'w-0 group-hover:w-full'
                     }`}
                     initial={false}
-                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    transition={{ 
+                      type: 'spring', 
+                      stiffness: 300, 
+                      damping: 30,
+                      duration: 0.4
+                    }}
                   />
-                  {/* Hover underline effect */}
-                  {!isActive && (
-                    <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-foreground/40 group-hover:w-full transition-all duration-300"></span>
-                  )}
                 </Link>
               </motion.div>
             );

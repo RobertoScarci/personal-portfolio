@@ -5,7 +5,6 @@ import HeroTitle from '@/components/HeroTitle';
 import Header from '@/components/Header';
 import HeroCTA from '@/components/HeroCTA';
 import SocialIcons from '@/components/SocialIcons';
-import { motion } from 'framer-motion';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
