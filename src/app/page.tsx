@@ -3,6 +3,7 @@ import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
 import HeroTitle from '@/components/HeroTitle';
 import Header from '@/components/Header';
+import { motion } from 'framer-motion';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -58,14 +59,25 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          {/* See More About Me Link - Left aligned */}
+          {/* CTA - Left aligned */}
           <AnimatedSection delay={0.4}>
             <div className="text-left mt-12 md:mt-16">
               <Link
                 href="/carriera"
-                className="text-foreground/60 hover:text-foreground transition-colors"
+                className="group inline-flex items-center gap-2 text-foreground/70 hover:text-foreground transition-all duration-300 font-medium"
               >
-                Scopri di più su di me →
+                <span className="relative">
+                  Scopri la mia storia
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent group-hover:w-full transition-all duration-300"></span>
+                </span>
+                <motion.span
+                  className="inline-block"
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 4 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                >
+                  →
+                </motion.span>
               </Link>
             </div>
           </AnimatedSection>
