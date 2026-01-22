@@ -24,7 +24,6 @@ export default function HeroTitle() {
       {words.map((word, wordIndex) => {
         const isAccent = word === 'ROBERTO';
         const letters = word.split('');
-        const shouldAnimate = word === 'SONO';
         
         return (
           <span key={`word-${wordIndex}-${key}`} className="inline-block mr-3">
@@ -32,42 +31,31 @@ export default function HeroTitle() {
               const totalIndex = wordIndex * 100 + letterIndex;
               const delay = totalIndex * 0.05;
               
-              if (shouldAnimate) {
-                return (
-                  <motion.span
-                    key={`letter-${totalIndex}-${key}`}
-                    className="inline-block"
-                    initial={{ 
-                      opacity: 0, 
-                      y: 20, 
-                      filter: 'blur(6px)',
-                      scale: 0.8
-                    }}
-                    animate={{ 
-                      opacity: 1, 
-                      y: 0, 
-                      filter: 'blur(0px)',
-                      scale: 1
-                    }}
-                    transition={{ 
-                      duration: 0.8,
-                      delay: delay,
-                      ease: premiumEase
-                    }}
-                  >
-                    {letter === ' ' ? '\u00A0' : letter}
-                  </motion.span>
-                );
-              } else {
-                return (
-                  <span
-                    key={`letter-${totalIndex}-${key}`}
-                    className={`inline-block ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
-                  >
-                    {letter === ' ' ? '\u00A0' : letter}
-                  </span>
-                );
-              }
+              return (
+                <motion.span
+                  key={`letter-${totalIndex}-${key}`}
+                  className={`inline-block ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
+                  initial={{ 
+                    opacity: 0, 
+                    y: 20, 
+                    filter: 'blur(6px)',
+                    scale: 0.8
+                  }}
+                  animate={{ 
+                    opacity: 1, 
+                    y: 0, 
+                    filter: 'blur(0px)',
+                    scale: 1
+                  }}
+                  transition={{ 
+                    duration: 0.8,
+                    delay: delay,
+                    ease: premiumEase
+                  }}
+                >
+                  {letter === ' ' ? '\u00A0' : letter}
+                </motion.span>
+              );
             })}
           </span>
         );
