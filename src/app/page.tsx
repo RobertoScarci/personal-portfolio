@@ -30,11 +30,11 @@ export default function Home() {
 
           {/* Introduction Text - Left aligned but centered container */}
           <AnimatedSection delay={0.3}>
-            <div className="text-sm md:text-base text-foreground/80 mt-16 md:mt-20 mb-12 leading-relaxed text-left font-light">
+            <div className="text-sm md:text-base text-foreground/75 mt-16 md:mt-20 mb-12 leading-[1.85] text-left font-light">
               <p className="mb-10 md:mb-12">
                 Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                 Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
-                <Link href="/progetti" className="font-bold text-foreground hover:text-accent transition-colors">
+                <Link href="/progetti" className="font-semibold text-foreground hover:text-accent transition-colors">
                   PROGETTI
                 </Link>{' '}
                 e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.
@@ -42,11 +42,11 @@ export default function Home() {
               <p>
                 Appassionato di fotografia e design minimale, trovo bellezza nella semplicità e nell'ordine.
                 Quando non sto creando esperienze web curate, puoi trovarmi a leggere{' '}
-                <Link href="#" className="font-bold text-foreground hover:text-accent transition-colors">
+                <Link href="#" className="font-semibold text-foreground hover:text-accent transition-colors">
                   ARTICOLI
                 </Link>{' '}
                 o ad ascoltare musica, perdendomi nel flusso delle melodie. In ogni caso puoi sempre{' '}
-                <Link href="/contatti" className="font-bold text-foreground hover:text-accent transition-colors">
+                <Link href="/contatti" className="font-semibold text-foreground hover:text-accent transition-colors">
                   CONTATTARMI
                 </Link>
                 .

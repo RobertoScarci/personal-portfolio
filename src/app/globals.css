@@ -147,9 +147,15 @@ body::before {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   text-rendering: optimizeLegibility;
+}
+
+/* Hero title specific styling */
+h1 {
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 /* ============================================
