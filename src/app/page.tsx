@@ -30,8 +30,8 @@ export default function Home() {
 
           {/* Introduction Text - Left aligned but centered container */}
           <AnimatedSection delay={0.3}>
-            <div className="text-sm md:text-base text-foreground/80 mb-6 leading-relaxed text-left font-light">
-              <p className="mb-5">
+            <div className="text-sm md:text-base text-foreground/80 mt-8 mb-10 leading-relaxed text-left font-light">
+              <p className="mb-6">
                 Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                 Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
                 <Link href="/progetti" className="font-bold text-foreground hover:text-accent transition-colors">
@@ -56,7 +56,7 @@ export default function Home() {
 
           {/* See More About Me Link - Left aligned */}
           <AnimatedSection delay={0.4}>
-            <div className="text-left">
+            <div className="text-left mt-6">
               <Link
                 href="/carriera"
                 className="text-foreground/60 hover:text-foreground transition-colors"
