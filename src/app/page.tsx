@@ -39,20 +39,23 @@ export default function Home() {
               <p className="mb-10 md:mb-12">
                 Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                 Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
-                <Link href="/progetti" className="font-semibold text-foreground hover:text-accent transition-colors">
-                  PROGETTI
+                <Link href="/progetti" className="font-semibold text-foreground hover:text-accent transition-all duration-300 relative group">
+                  <span className="relative z-10">PROGETTI</span>
+                  <span className="absolute inset-0 bg-accent/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </Link>{' '}
                 e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.
               </p>
               <p>
                 Appassionato di fotografia e design minimale, trovo bellezza nella semplicità e nell'ordine.
                 Quando non sto creando esperienze web curate, puoi trovarmi a leggere{' '}
-                <Link href="#" className="font-semibold text-foreground hover:text-accent transition-colors">
-                  ARTICOLI
+                <Link href="#" className="font-semibold text-foreground hover:text-accent transition-all duration-300 relative group">
+                  <span className="relative z-10">ARTICOLI</span>
+                  <span className="absolute inset-0 bg-accent/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </Link>{' '}
                 o ad ascoltare musica, perdendomi nel flusso delle melodie. In ogni caso puoi sempre{' '}
-                <Link href="/contatti" className="font-semibold text-foreground hover:text-accent transition-colors">
-                  CONTATTARMI
+                <Link href="/contatti" className="font-semibold text-foreground hover:text-accent transition-all duration-300 relative group">
+                  <span className="relative z-10">CONTATTARMI</span>
+                  <span className="absolute inset-0 bg-accent/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </Link>
                 .
               </p>
