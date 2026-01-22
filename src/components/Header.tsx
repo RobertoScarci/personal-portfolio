@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <header className="relative z-50">
-      <nav className="container mx-auto px-6 py-6 flex items-center justify-between max-w-4xl">
+      <nav className="container mx-auto px-6 py-8 md:py-10 flex items-center justify-between max-w-4xl">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.1, rotate: 90 }}
