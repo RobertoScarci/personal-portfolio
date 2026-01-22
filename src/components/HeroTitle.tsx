@@ -4,6 +4,12 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 
+const title = "SONO ROBERTO SCARCI";
+const words = title.split(' ');
+
+// Custom easing for premium feel
+const premiumEase = [0.16, 1, 0.3, 1];
+
 export default function HeroTitle() {
   const { animationKey } = useTheme();
   const [key, setKey] = useState(0);
@@ -14,34 +20,46 @@ export default function HeroTitle() {
   }, [animationKey]);
 
   return (
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight tracking-[-0.03em] glitch-text whitespace-nowrap">
-      <motion.span
-        key={`sono-${key}`}
-        className="inline"
-        initial={{ opacity: 0, x: -20, filter: 'blur(4px)' }}
-        animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-      >
-        SONO{' '}
-      </motion.span>
-      <motion.span
-        key={`roberto-${key}`}
-        className="inline text-accent glitch-text-accent"
-        initial={{ opacity: 0, x: -20, filter: 'blur(4px)' }}
-        animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-      >
-        ROBERTO{' '}
-      </motion.span>
-      <motion.span
-        key={`scarci-${key}`}
-        className="inline"
-        initial={{ opacity: 0, x: -20, filter: 'blur(4px)' }}
-        animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-      >
-        SCARCI
-      </motion.span>
+    <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-4 leading-[1.1] tracking-[0.01em] glitch-text">
+      {words.map((word, wordIndex) => {
+        const isAccent = word === 'ROBERTO';
+        const letters = word.split('');
+        
+        return (
+          <span key={`word-${wordIndex}-${key}`} className="inline-block mr-3">
+            {letters.map((letter, letterIndex) => {
+              const totalIndex = wordIndex * 100 + letterIndex;
+              const delay = totalIndex * 0.05;
+              
+              return (
+                <motion.span
+                  key={`letter-${totalIndex}-${key}`}
+                  className={`inline-block ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
+                  initial={{ 
+                    opacity: 0, 
+                    y: 20, 
+                    filter: 'blur(6px)',
+                    scale: 0.8
+                  }}
+                  animate={{ 
+                    opacity: 1, 
+                    y: 0, 
+                    filter: 'blur(0px)',
+                    scale: 1
+                  }}
+                  transition={{ 
+                    duration: 0.8,
+                    delay: delay,
+                    ease: premiumEase
+                  }}
+                >
+                  {letter === ' ' ? '\u00A0' : letter}
+                </motion.span>
+              );
+            })}
+          </span>
+        );
+      })}
     </h1>
   );
 }

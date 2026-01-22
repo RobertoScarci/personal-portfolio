@@ -93,8 +93,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  line-height: 1.8;
-  font-size: 14px;
+  line-height: 2;
+  font-size: 15px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -165,10 +165,11 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 
-/* Hero title specific styling */
+/* Hero title specific styling - Bold, characterful, with slight tracking */
 h1 {
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  font-weight: 900;
 }
 
 /* ============================================
