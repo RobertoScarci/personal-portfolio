@@ -5,24 +5,42 @@ import { motion } from 'framer-motion';
 
 export default function HeroCTA() {
   return (
-    <div className="text-left mt-12 md:mt-16">
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ 
+        delay: 0.5,
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1]
+      }}
+    >
       <Link
         href="/carriera"
-        className="group inline-flex items-center gap-2 text-foreground/70 hover:text-foreground transition-all duration-300 font-medium"
+        className="group inline-flex items-center gap-3 text-foreground/80 hover:text-foreground transition-all duration-500 font-medium text-base"
       >
-        <span className="relative">
+        <span className="relative pb-1">
           Scopri la mia storia
-          <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent group-hover:w-full transition-all duration-300"></span>
+          <motion.span
+            className="absolute -bottom-1 left-0 h-[2px] bg-accent"
+            initial={{ width: 0 }}
+            whileHover={{ width: '100%' }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          />
         </span>
         <motion.span
-          className="inline-block"
-          initial={{ x: 0 }}
-          whileHover={{ x: 4 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+          className="inline-block text-accent"
+          initial={{ x: 0, opacity: 0.7 }}
+          whileHover={{ x: 6, opacity: 1 }}
+          transition={{ 
+            type: 'spring', 
+            stiffness: 400, 
+            damping: 25,
+            duration: 0.3
+          }}
         >
           →
         </motion.span>
       </Link>
-    </div>
+    </motion.div>
   );
 }
