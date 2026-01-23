@@ -50,13 +50,11 @@ export default function Home() {
         </div>
 
         {/* Main Content - Centered container with left-aligned content */}
-        <div className="container mx-auto px-6 max-w-4xl relative z-10">
+        <div className="container mx-auto px-6 max-w-4xl relative z-10 flex items-center justify-center">
           <div 
-            className="flex flex-col justify-center"
+            className="flex flex-col justify-center w-full"
             style={{
               minHeight: 'calc(100vh - 140px)',
-              paddingTop: '6rem',
-              paddingBottom: '4rem',
             }}
           >
             {/* Main Heading - Left-aligned with proper spacing */}
