@@ -54,20 +54,20 @@ export default function Home() {
           <div 
             className="flex flex-col justify-center"
             style={{
-              minHeight: 'calc(100vh - 120px)',
-              paddingTop: '4rem',
+              minHeight: 'calc(100vh - 140px)',
+              paddingTop: '6rem',
               paddingBottom: '4rem',
             }}
           >
             {/* Main Heading - Left-aligned with proper spacing */}
-            <div className="text-left mb-12 md:mb-16">
+            <div className="text-left mb-16 md:mb-20">
               <HeroTitle />
             </div>
 
             {/* Introduction Text - Left-aligned with proper spacing */}
             <AnimatedSection delay={0.4}>
-              <div className="text-sm md:text-base text-foreground/75 mb-10 md:mb-12 leading-relaxed text-left font-light max-w-2xl">
-                <p className="mb-6 md:mb-8">
+              <div className="text-sm md:text-base text-foreground/75 mb-12 md:mb-14 leading-[1.8] text-left font-light max-w-2xl">
+                <p className="mb-8 md:mb-10">
                   Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                   Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
                   <Link 
@@ -101,7 +101,7 @@ export default function Home() {
 
             {/* CTA - Left-aligned with proper spacing */}
             <AnimatedSection delay={0.5}>
-              <div className="flex justify-start mb-10 md:mb-12">
+              <div className="flex justify-start mb-12 md:mb-14">
                 <HeroCTA />
               </div>
             </AnimatedSection>

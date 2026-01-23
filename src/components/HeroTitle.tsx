@@ -20,7 +20,7 @@ export default function HeroTitle() {
   }, [animationKey]);
 
   return (
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-[1.1] tracking-[0.01em] glitch-text">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-[0.01em] glitch-text">
       {words.map((word, wordIndex) => {
         const isAccent = word === 'ROBERTO';
         
