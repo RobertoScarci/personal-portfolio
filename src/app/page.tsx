@@ -58,7 +58,7 @@ export default function Home() {
 
               {/* Introduction Text - Improved line-height and spacing with increased width */}
               <AnimatedSection delay={0.3}>
-                <div className="text-sm md:text-base lg:text-lg text-foreground/80 mb-16 md:mb-20 leading-[1.85] text-left font-light max-w-4xl">
+                <div className="text-sm md:text-base lg:text-lg text-foreground/80 mb-16 md:mb-20 leading-[2.1] text-left font-extralight max-w-4xl">
                   <p className="mb-10 md:mb-12">
                     Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                     Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
@@ -93,14 +93,14 @@ export default function Home() {
 
               {/* CTA - Enhanced spacing and visual hierarchy */}
               <AnimatedSection delay={0.4}>
-                <div className="flex justify-start mb-16 md:mb-20">
+                <div className="flex justify-start mb-20 md:mb-24 pb-8 md:pb-12">
                   <HeroCTA />
                 </div>
               </AnimatedSection>
 
               {/* Social Icons - Better spacing */}
               <AnimatedSection delay={0.5}>
-                <div className="flex justify-start items-center gap-6 md:gap-8">
+                <div className="flex justify-start items-center gap-6 md:gap-8 pb-8 md:pb-12">
                   <SocialIcons />
                 </div>
               </AnimatedSection>

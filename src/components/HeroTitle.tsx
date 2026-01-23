@@ -20,14 +20,14 @@ export default function HeroTitle() {
   }, [animationKey]);
 
   return (
-    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.08] tracking-[-0.02em] md:tracking-[-0.01em] glitch-text">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.08] tracking-[-0.02em] md:tracking-[-0.01em] glitch-text">
       {words.map((word, wordIndex) => {
         const isAccent = word === 'ROBERTO';
         
         return (
           <motion.span
             key={`word-${wordIndex}-${key}`}
-            className={`inline-block mr-6 md:mr-8 lg:mr-10 ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
+            className={`inline-block mr-8 md:mr-12 lg:mr-16 ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
             initial={{ 
               opacity: 0, 
               y: 24, 
