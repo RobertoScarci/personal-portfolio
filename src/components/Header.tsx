@@ -17,24 +17,29 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-50 w-full pt-6 md:pt-8">
-      <nav className="container mx-auto px-6 py-8 md:py-10 flex items-center justify-between w-full max-w-7xl">
-        {/* Logo - Left aligned */}
+    <header className="relative z-50 w-full pt-8 md:pt-10">
+      <nav className="container mx-auto px-6 md:px-8 py-6 md:py-8 flex items-center justify-between w-full max-w-5xl">
+        {/* Logo - Left aligned with refined hover */}
         <motion.div
-          whileHover={{ scale: 1.1, rotate: 90 }}
-          transition={{ duration: 0.2 }}
+          whileHover={{ scale: 1.08, rotate: 90 }}
+          transition={{ 
+            type: 'spring',
+            stiffness: 400,
+            damping: 25,
+            duration: 0.3
+          }}
         >
           <Link 
             href="/" 
-            className="text-2xl font-bold text-foreground hover:text-accent transition-colors"
+            className="text-2xl md:text-3xl font-bold text-foreground hover:text-accent transition-colors duration-300"
             aria-label="Home"
           >
             <span className="text-accent">*</span>
           </Link>
         </motion.div>
 
-        {/* Navigation Links + Theme Toggle - Right aligned */}
-        <div className="hidden md:flex items-center gap-6">
+        {/* Navigation Links + Theme Toggle - Right aligned with better spacing */}
+        <div className="hidden md:flex items-center gap-8">
           {navigation.map((item, index) => {
             const isActive = pathname === item.href;
             return (
@@ -46,25 +51,25 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className={`text-sm font-medium transition-all duration-500 relative group ${
+                  className={`text-sm font-medium transition-all duration-300 relative group ${
                     isActive
-                      ? 'text-accent'
-                      : 'text-foreground/60 hover:text-foreground'
+                      ? 'text-foreground'
+                      : 'text-foreground/70 hover:text-foreground'
                   }`}
                 >
                   {item.name}
-                  {/* Animated underline for active and hover */}
+                  {/* Animated underline for active and hover - More refined */}
                   <motion.span
                     layoutId="activeTab"
-                    className={`absolute -bottom-1.5 left-0 h-[2px] bg-accent ${
+                    className={`absolute -bottom-2 left-0 h-[1.5px] bg-accent ${
                       isActive ? 'w-full' : 'w-0 group-hover:w-full'
                     }`}
                     initial={false}
                     transition={{ 
                       type: 'spring', 
-                      stiffness: 300, 
+                      stiffness: 400, 
                       damping: 30,
-                      duration: 0.4
+                      duration: 0.5
                     }}
                   />
                 </Link>

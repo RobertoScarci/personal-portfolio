@@ -20,19 +20,19 @@ export default function HeroTitle() {
   }, [animationKey]);
 
   return (
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-[0.01em] glitch-text">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.08] tracking-[-0.02em] md:tracking-[-0.01em] glitch-text">
       {words.map((word, wordIndex) => {
         const isAccent = word === 'ROBERTO';
         
         return (
           <motion.span
             key={`word-${wordIndex}-${key}`}
-            className={`inline-block mr-6 md:mr-8 ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
+            className={`inline-block mr-6 md:mr-8 lg:mr-10 ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
             initial={{ 
               opacity: 0, 
-              y: 20, 
-              filter: 'blur(6px)',
-              scale: 0.8
+              y: 24, 
+              filter: 'blur(8px)',
+              scale: 0.85
             }}
             animate={{ 
               opacity: 1, 
@@ -41,9 +41,9 @@ export default function HeroTitle() {
               scale: 1
             }}
             transition={{ 
-              duration: 0.8,
-              delay: 0,
-              ease: premiumEase
+              duration: 0.9,
+              delay: wordIndex * 0.1,
+              ease: [0.16, 1, 0.3, 1]
             }}
           >
             {word}

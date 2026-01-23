@@ -36,15 +36,20 @@ export default function SocialIcons() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground/50 hover:text-foreground transition-all duration-300 group"
+              className="text-foreground/60 hover:text-foreground transition-all duration-300 group"
               aria-label={social.name}
             >
               <motion.div
-                whileHover={{ scale: 1.15, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                whileHover={{ scale: 1.2, y: -3 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ 
+                  type: 'spring', 
+                  stiffness: 500, 
+                  damping: 30,
+                  duration: 0.3
+                }}
               >
-                <Icon className="w-5 h-5" />
+                <Icon className="w-5 h-5 md:w-6 md:h-6" />
               </motion.div>
             </Link>
           </motion.div>
