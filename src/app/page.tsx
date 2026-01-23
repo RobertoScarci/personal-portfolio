@@ -55,7 +55,7 @@ export default function Home() {
           </AnimatedSection>
           
           {/* Main Heading - Centered */}
-          <div className="text-center mb-16 md:mb-20">
+          <div className="text-center mb-20 md:mb-24">
             <HeroTitle />
           </div>
 
