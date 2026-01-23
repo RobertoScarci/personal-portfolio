@@ -17,11 +17,9 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <section 
-        className="container mx-auto px-6 flex flex-col items-center justify-center relative"
+        className="relative w-full"
         style={{
           minHeight: '100vh',
-          paddingTop: 'clamp(8rem, 12vh, 14rem)',
-          paddingBottom: 'clamp(4rem, 8vh, 8rem)',
         }}
       >
         {/* Subtle glow effect behind content */}
@@ -46,70 +44,75 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Header - Separate wider container */}
-        <div className="w-full relative z-10">
-          <AnimatedSection delay={0}>
-            <div className="mb-32 md:mb-40">
-              <Header />
-            </div>
-          </AnimatedSection>
+        {/* Header - Fixed at top */}
+        <div className="w-full relative z-50">
+          <Header />
         </div>
 
         {/* Main Content - Centered container with left-aligned content */}
-        <div className="max-w-[900px] w-full mx-auto relative z-10">
-          {/* Main Heading - Left-aligned with padding */}
-          <div className="text-left py-8 md:py-12 mb-20 md:mb-24">
-            <HeroTitle />
+        <div className="container mx-auto px-6 max-w-4xl relative z-10">
+          <div 
+            className="flex flex-col justify-center"
+            style={{
+              minHeight: 'calc(100vh - 120px)',
+              paddingTop: '4rem',
+              paddingBottom: '4rem',
+            }}
+          >
+            {/* Main Heading - Left-aligned with proper spacing */}
+            <div className="text-left mb-12 md:mb-16">
+              <HeroTitle />
+            </div>
+
+            {/* Introduction Text - Left-aligned with proper spacing */}
+            <AnimatedSection delay={0.4}>
+              <div className="text-sm md:text-base text-foreground/75 mb-10 md:mb-12 leading-relaxed text-left font-light max-w-2xl">
+                <p className="mb-6 md:mb-8">
+                  Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
+                  Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
+                  <Link 
+                    href="/progetti" 
+                    className="font-semibold text-foreground hover:text-accent transition-colors duration-300"
+                  >
+                    PROGETTI
+                  </Link>{' '}
+                  e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.
+                </p>
+                <p>
+                  Appassionato di fotografia e design minimale, trovo bellezza nella semplicità e nell'ordine.
+                  Quando non sto creando esperienze web curate, puoi trovarmi a leggere{' '}
+                  <Link 
+                    href="#" 
+                    className="font-semibold text-foreground hover:text-accent transition-colors duration-300"
+                  >
+                    ARTICOLI
+                  </Link>{' '}
+                  o ad ascoltare musica, perdendomi nel flusso delle melodie. In ogni caso puoi sempre{' '}
+                  <Link 
+                    href="/contatti" 
+                    className="font-semibold text-foreground hover:text-accent transition-colors duration-300"
+                  >
+                    CONTATTARMI
+                  </Link>
+                  .
+                </p>
+              </div>
+            </AnimatedSection>
+
+            {/* CTA - Left-aligned with proper spacing */}
+            <AnimatedSection delay={0.5}>
+              <div className="flex justify-start mb-10 md:mb-12">
+                <HeroCTA />
+              </div>
+            </AnimatedSection>
+
+            {/* Social Icons - Left-aligned with proper spacing */}
+            <AnimatedSection delay={0.6}>
+              <div className="flex justify-start items-center gap-6">
+                <SocialIcons />
+              </div>
+            </AnimatedSection>
           </div>
-
-          {/* Introduction Text - Left-aligned within centered container */}
-          <AnimatedSection delay={0.4}>
-            <div className="text-sm md:text-base text-foreground/75 mb-16 md:mb-20 leading-[2.1] text-left font-light">
-              <p className="mb-8 md:mb-10">
-                Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
-                Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
-                <Link 
-                  href="/progetti" 
-                  className="font-semibold text-foreground hover:text-accent transition-colors duration-300"
-                >
-                  PROGETTI
-                </Link>{' '}
-                e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.
-              </p>
-              <p>
-                Appassionato di fotografia e design minimale, trovo bellezza nella semplicità e nell'ordine.
-                Quando non sto creando esperienze web curate, puoi trovarmi a leggere{' '}
-                <Link 
-                  href="#" 
-                  className="font-semibold text-foreground hover:text-accent transition-colors duration-300"
-                >
-                  ARTICOLI
-                </Link>{' '}
-                o ad ascoltare musica, perdendomi nel flusso delle melodie. In ogni caso puoi sempre{' '}
-                <Link 
-                  href="/contatti" 
-                  className="font-semibold text-foreground hover:text-accent transition-colors duration-300"
-                >
-                  CONTATTARMI
-                </Link>
-                .
-              </p>
-            </div>
-          </AnimatedSection>
-
-          {/* CTA - Left-aligned within centered container */}
-          <AnimatedSection delay={0.5}>
-            <div className="flex justify-start mb-12 md:mb-16">
-              <HeroCTA />
-            </div>
-          </AnimatedSection>
-
-          {/* Social Icons - Left-aligned within centered container */}
-          <AnimatedSection delay={0.6}>
-            <div className="flex justify-start items-center gap-6">
-              <SocialIcons />
-            </div>
-          </AnimatedSection>
         </div>
       </section>
     </Layout>
