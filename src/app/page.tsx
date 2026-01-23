@@ -46,22 +46,25 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="max-w-[900px] w-full mx-auto relative z-10">
-          {/* Header - Above Hero Title */}
+        {/* Header - Separate wider container */}
+        <div className="w-full relative z-10">
           <AnimatedSection delay={0}>
-            <div className="mb-24 md:mb-32">
+            <div className="mb-32 md:mb-40">
               <Header />
             </div>
           </AnimatedSection>
-          
+        </div>
+
+        {/* Main Content - Centered container with left-aligned content */}
+        <div className="max-w-[900px] w-full mx-auto relative z-10">
           {/* Main Heading - Centered */}
           <div className="text-center mb-20 md:mb-24">
             <HeroTitle />
           </div>
 
-          {/* Introduction Text - Centered container */}
+          {/* Introduction Text - Left-aligned within centered container */}
           <AnimatedSection delay={0.4}>
-            <div className="text-sm md:text-base text-foreground/75 mb-16 md:mb-20 leading-[2.1] text-center font-light max-w-[700px] mx-auto">
+            <div className="text-sm md:text-base text-foreground/75 mb-16 md:mb-20 leading-[2.1] text-left font-light">
               <p className="mb-8 md:mb-10">
                 Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                 Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
@@ -94,16 +97,16 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          {/* CTA - Centered */}
+          {/* CTA - Left-aligned within centered container */}
           <AnimatedSection delay={0.5}>
-            <div className="flex justify-center mb-12 md:mb-16">
+            <div className="flex justify-start mb-12 md:mb-16">
               <HeroCTA />
             </div>
           </AnimatedSection>
 
-          {/* Social Icons - Centered below CTA */}
+          {/* Social Icons - Left-aligned within centered container */}
           <AnimatedSection delay={0.6}>
-            <div className="flex justify-center items-center gap-6">
+            <div className="flex justify-start items-center gap-6">
               <SocialIcons />
             </div>
           </AnimatedSection>
