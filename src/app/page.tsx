@@ -50,13 +50,9 @@ export default function Home() {
         </div>
 
         {/* Main Content - Centered container with left-aligned content */}
-        <div className="container mx-auto px-6 max-w-4xl relative z-10 flex items-center justify-center">
-          <div 
-            className="flex flex-col justify-center w-full"
-            style={{
-              minHeight: 'calc(100vh - 140px)',
-            }}
-          >
+        <div className="absolute inset-0 flex items-center justify-center relative z-10">
+          <div className="w-full max-w-4xl mx-auto px-6">
+            <div className="flex flex-col w-full">
             {/* Main Heading - Left-aligned with proper spacing */}
             <div className="text-left mb-16 md:mb-20">
               <HeroTitle />
@@ -110,6 +106,7 @@ export default function Home() {
                 <SocialIcons />
               </div>
             </AnimatedSection>
+            </div>
           </div>
         </div>
       </section>

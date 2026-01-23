@@ -17,7 +17,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-50 w-full">
+    <header className="relative z-50 w-full pt-6 md:pt-8">
       <nav className="container mx-auto px-6 py-8 md:py-10 flex items-center justify-between w-full max-w-7xl">
         {/* Logo - Left aligned */}
         <motion.div
