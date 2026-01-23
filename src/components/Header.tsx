@@ -18,7 +18,8 @@ export default function Header() {
 
   return (
     <header className="relative z-50 w-full pt-8 md:pt-10">
-      <nav className="container mx-auto px-6 md:px-8 py-6 md:py-8 flex items-center justify-between w-full max-w-5xl">
+      <div className="w-full flex justify-center">
+        <nav className="w-full max-w-7xl mx-auto px-6 md:px-8 py-6 md:py-8 flex items-center justify-between">
         {/* Logo - Left aligned with refined hover */}
         <motion.div
           whileHover={{ scale: 1.08, rotate: 90 }}
@@ -149,7 +150,8 @@ export default function Header() {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+        </nav>
+      </div>
     </header>
   );
 }

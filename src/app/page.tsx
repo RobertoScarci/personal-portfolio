@@ -47,18 +47,18 @@ export default function Home() {
           <Header />
         </div>
 
-        {/* Main Content - Centered vertically and horizontally with consistent max-width */}
+        {/* Main Content - Centered vertically and horizontally with increased max-width */}
         <div className="flex-1 flex items-center justify-center relative z-10">
-          <div className="w-full max-w-5xl mx-auto px-6 md:px-8">
+          <div className="w-full max-w-7xl mx-auto px-6 md:px-8">
             <div className="flex flex-col w-full">
               {/* Main Heading - Enhanced spacing and typography */}
               <div className="text-left mb-20 md:mb-24">
                 <HeroTitle />
               </div>
 
-              {/* Introduction Text - Improved line-height and spacing */}
+              {/* Introduction Text - Improved line-height and spacing with increased width */}
               <AnimatedSection delay={0.3}>
-                <div className="text-sm md:text-base lg:text-lg text-foreground/80 mb-16 md:mb-20 leading-[1.85] text-left font-light max-w-2xl">
+                <div className="text-sm md:text-base lg:text-lg text-foreground/80 mb-16 md:mb-20 leading-[1.85] text-left font-light max-w-4xl">
                   <p className="mb-10 md:mb-12">
                     Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                     Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
