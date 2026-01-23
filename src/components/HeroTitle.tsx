@@ -27,7 +27,7 @@ export default function HeroTitle() {
         return (
           <motion.span
             key={`word-${wordIndex}-${key}`}
-            className={`inline-block mr-3 ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
+            className={`inline-block mr-6 md:mr-8 ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
             initial={{ 
               opacity: 0, 
               y: 20, 

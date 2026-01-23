@@ -57,8 +57,8 @@ export default function Home() {
 
         {/* Main Content - Centered container with left-aligned content */}
         <div className="max-w-[900px] w-full mx-auto relative z-10">
-          {/* Main Heading - Centered */}
-          <div className="text-center mb-20 md:mb-24">
+          {/* Main Heading - Left-aligned with padding */}
+          <div className="text-left py-8 md:py-12 mb-20 md:mb-24">
             <HeroTitle />
           </div>
 
