@@ -1,5 +1,4 @@
 import Header from './Header';
-import Footer from './Footer';
 import Link from 'next/link';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -11,7 +10,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main id="main-content" className="flex-1 relative z-10" tabIndex={-1}>
         {children}
       </main>
-      <Footer />
     </div>
   );
 }
