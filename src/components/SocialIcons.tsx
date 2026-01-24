@@ -6,6 +6,8 @@ import {
   FaLinkedin,
   FaGithub,
   FaInstagram,
+  FaFacebook,
+  FaTiktok,
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -14,6 +16,8 @@ const socialLinks = [
   { name: 'LinkedIn', href: '#', icon: FaLinkedin },
   { name: 'GitHub', href: '#', icon: FaGithub },
   { name: 'Instagram', href: '#', icon: FaInstagram },
+  { name: 'Facebook', href: '#', icon: FaFacebook },
+  { name: 'TikTok', href: '#', icon: FaTiktok },
 ];
 
 export default function SocialIcons() {
