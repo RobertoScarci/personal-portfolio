@@ -25,9 +25,9 @@ export default function HeroCTA() {
         </span>
         <motion.span
           className="inline-block text-accent opacity-85 group-hover:opacity-100"
-          initial={{ x: 0 }}
-          whileHover={{ x: 6 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 28, duration: 0.35 }}
+          animate={{ x: [0, 5, 0] }}
+          transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
+          whileHover={{ x: 8, transition: { type: 'spring', stiffness: 400, damping: 28 } }}
         >
           →
         </motion.span>
