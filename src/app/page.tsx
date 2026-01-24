@@ -42,8 +42,8 @@ export default function Home() {
             </div>
 
             <AnimatedSection delay={0.15}>
-              <div className="text-sm md:text-base text-foreground/80 text-left font-extralight max-w-3xl mb-14 md:mb-20 leading-[2.25]">
-                <p className="mb-10 md:mb-14">
+              <div className="text-sm md:text-base text-foreground/80 text-left font-extralight max-w-5xl mb-14 md:mb-20 leading-[2.25]">
+                <p className="mb-12 md:mb-16">
                   Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                   Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
                   <Link
@@ -54,7 +54,7 @@ export default function Home() {
                   </Link>{' '}
                   e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.
                 </p>
-                <p>
+                <p className="pt-2 md:pt-3">
                   Appassionato di fotografia e design minimale, trovo bellezza nella semplicità e nell'ordine.
                   Quando non sto creando esperienze web curate, puoi trovarmi a leggere{' '}
                   <Link
