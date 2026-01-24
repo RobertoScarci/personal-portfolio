@@ -5,6 +5,7 @@ import HeroTitle from '@/components/HeroTitle';
 import Header from '@/components/Header';
 import HeroCTA from '@/components/HeroCTA';
 import SocialIcons from '@/components/SocialIcons';
+import PageWatermark from '@/components/PageWatermark';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,20 +16,19 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <Layout>
+      <PageWatermark label="RS" className="text-[700px]" />
       <section className="relative w-full min-h-screen flex flex-col">
         {/* Background */}
         <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-accent/[0.07] rounded-full blur-3xl" />
           <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-accent/[0.04] rounded-full blur-2xl" />
         </div>
-        <div className="absolute inset-0 -z-10 pointer-events-none select-none overflow-hidden">
-          <div className="hero-watermark absolute text-[700px] font-black text-foreground leading-none">
-            RS
-          </div>
-        </div>
+
+        {/* Spacer sopra header — altezza fissa, come per hero */}
+        <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
 
         {/* Header — stesso flex dell'hero, max-width leggermente più alta */}
-        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10 pt-8 md:pt-10">
+        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
           <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
             <Header />
           </div>
