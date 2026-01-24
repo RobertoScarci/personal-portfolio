@@ -16,15 +16,15 @@ export default function HeroTitle() {
   }, [animationKey]);
 
   return (
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-[0.04em] glitch-text pr-4">
+    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-[0.04em] glitch-text pr-4">
       {words.map((word, wordIndex) => {
         const isAccent = word === 'ROBERTO';
         const isLastName = word === 'SCARCI';
         const marginRight = isLastName
           ? 'mr-0'
           : isAccent
-            ? 'mr-12 md:mr-16 lg:mr-20'
-            : 'mr-8 md:mr-12 lg:mr-14';
+            ? 'mr-10 md:mr-14 lg:mr-18'
+            : 'mr-10 md:mr-14 lg:mr-18';
         return (
           <motion.span
             key={`word-${wordIndex}-${key}`}
