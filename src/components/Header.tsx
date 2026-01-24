@@ -17,8 +17,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-50 w-full flex-shrink-0 pt-8 md:pt-10 pb-4 md:pb-6">
-      <nav className="w-full flex items-center justify-between py-8 md:py-10">
+    <header className="relative z-50 w-full flex-shrink-0 h-16 flex items-center">
+      <nav className="w-full flex items-center justify-between py-0">
         <motion.div
           whileHover={{ scale: 1.06, rotate: 90 }}
           transition={{ type: 'spring', stiffness: 400, damping: 25, duration: 0.25 }}
