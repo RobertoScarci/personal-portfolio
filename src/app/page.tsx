@@ -37,7 +37,7 @@ export default function Home() {
         {/* Hero content — centrato orizzontalmente e verticalmente */}
         <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto">
           <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-12 md:pt-16 pb-20 md:pb-28">
-            <div className="text-left mb-12 md:mb-16">
+            <div className="text-left mb-20 md:mb-24 pb-8 md:pb-10">
               <HeroTitle />
             </div>
 
