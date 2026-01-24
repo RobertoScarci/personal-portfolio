@@ -27,9 +27,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Header — fissato in alto, nessun centramento */}
-        <div className="w-full flex-shrink-0 relative z-10">
-          <div className="w-full max-w-6xl mx-auto px-6 md:px-8 pt-0">
+        {/* Header — stesso flex dell'hero, max-width leggermente più alta */}
+        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
+          <div className="w-full max-w-7xl mx-auto px-6 md:px-8 flex flex-col pt-0">
             <Header />
           </div>
         </div>
