@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { 
-  FaTwitter, 
-  FaLinkedin, 
-  FaGithub, 
-  FaInstagram 
+import {
+  FaTwitter,
+  FaLinkedin,
+  FaGithub,
+  FaInstagram,
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -18,38 +18,33 @@ const socialLinks = [
 
 export default function SocialIcons() {
   return (
-    <div className="flex items-center gap-6">
+    <div className="flex items-center gap-8 md:gap-10">
       {socialLinks.map((social, index) => {
         const Icon = social.icon;
         return (
           <motion.div
             key={social.name}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              delay: 0.7 + index * 0.1,
-              duration: 0.5,
-              ease: [0.25, 0.46, 0.45, 0.94]
+            transition={{
+              delay: 0.35 + index * 0.06,
+              duration: 0.45,
+              ease: [0.16, 1, 0.3, 1],
             }}
           >
             <Link
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground/60 hover:text-foreground transition-all duration-300 group"
+              className="text-foreground/55 hover:text-foreground transition-all duration-300 group"
               aria-label={social.name}
             >
               <motion.div
-                whileHover={{ scale: 1.2, y: -3 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ 
-                  type: 'spring', 
-                  stiffness: 500, 
-                  damping: 30,
-                  duration: 0.3
-                }}
+                whileHover={{ scale: 1.12, y: -2 }}
+                whileTap={{ scale: 0.92 }}
+                transition={{ type: 'spring', stiffness: 450, damping: 28, duration: 0.28 }}
               >
-                <Icon className="w-5 h-5 md:w-6 md:h-6" />
+                <Icon className="w-5 h-5 md:w-[1.35rem] md:h-[1.35rem]" />
               </motion.div>
             </Link>
           </motion.div>
