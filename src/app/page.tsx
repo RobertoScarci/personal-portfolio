@@ -81,7 +81,7 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
-            <div className="flex justify-start items-center gap-8 md:gap-10 mt-28 md:mt-40">
+            <div className="flex justify-start items-center gap-8 md:gap-10 mt-36 md:mt-48">
               <SocialIcons />
             </div>
           </div>
