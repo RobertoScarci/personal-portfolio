@@ -1,6 +1,7 @@
 'use client';
 
 import Layout from '@/components/Layout';
+import PageWatermark from '@/components/PageWatermark';
 import { useState } from 'react';
 // Note: Metadata cannot be exported from client components
 // Consider creating a separate metadata file or using generateMetadata
@@ -31,6 +32,7 @@ export default function Contatti() {
 
   return (
     <Layout>
+      <PageWatermark label="CONTACT" className="text-[380px]" />
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
