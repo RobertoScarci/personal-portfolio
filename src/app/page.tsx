@@ -27,12 +27,16 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Single container: navbar + hero content */}
-        <div className="flex-1 flex flex-col w-full max-w-3xl mx-auto px-6 md:px-8 relative z-10">
-          <Header />
+        {/* Container: centrato orizzontalmente e verticalmente */}
+        <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10">
+          <div className="w-full flex flex-col items-center gap-0">
+            {/* Navbar — max-width più ampia */}
+            <div className="w-full max-w-6xl mx-auto px-6 md:px-8">
+              <Header />
+            </div>
 
-          {/* Hero content — optically centered */}
-          <div className="flex-1 flex flex-col justify-center pt-12 md:pt-16 pb-20 md:pb-28 min-h-[60vh]">
+            {/* Hero content — max-width contenuto */}
+            <div className="w-full max-w-4xl mx-auto px-6 md:px-8 flex flex-col pt-12 md:pt-16 pb-20 md:pb-28">
             <div className="text-left mb-12 md:mb-16">
               <HeroTitle />
             </div>
@@ -77,9 +81,10 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
-            <div className="flex justify-start items-center gap-8 md:gap-10">
+            <div className="flex justify-start items-center gap-8 md:gap-10 mt-16 md:mt-24">
               <SocialIcons />
             </div>
+          </div>
           </div>
         </div>
       </section>
