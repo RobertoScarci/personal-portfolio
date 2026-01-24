@@ -2,22 +2,43 @@
 
 import { useTheme } from '@/contexts/ThemeContext';
 
+/** Icona semicerchio: metà scura, metà chiara (tema dark/light) */
+function HalfCircleIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      {/* Cerchio esterno */}
+      <circle cx="12" cy="12" r="10" />
+      {/* Linea che divide il cerchio a metà (metà "piena" a destra) */}
+      <path d="M12 2a10 10 0 0 1 0 20V2z" fill="currentColor" />
+    </svg>
+  );
+}
+
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <button
+      type="button"
       onClick={toggleTheme}
-      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-      className="relative h-6 w-12 rounded-full bg-gray-300 dark:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+      aria-label={theme === 'dark' ? 'Passa alla modalità chiara' : 'Passa alla modalità scura'}
+      className="rounded-full p-1.5 text-foreground/70 hover:text-foreground transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background"
     >
       <span
-        className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white dark:bg-gray-900 transition-transform duration-300 ${
-          theme === 'dark' ? 'translate-x-6' : 'translate-x-0'
+        className={`block w-5 h-5 transition-transform duration-300 ${
+          theme === 'dark' ? 'rotate-0' : 'rotate-180'
         }`}
-      />
-      <span className="sr-only">
-        {theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+      >
+        <HalfCircleIcon />
       </span>
     </button>
   );
