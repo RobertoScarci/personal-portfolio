@@ -44,8 +44,8 @@
   --accent: #ec4899;
   --accent-foreground: #ffffff;
   
-  /* Grid Pattern (dark mode - subtle and decorative) */
-  --grid-color: rgba(99, 102, 241, 0.08);
+  /* Grid Pattern (dark mode - more visible, subtle depth) */
+  --grid-color: rgba(99, 102, 241, 0.12);
   
   /* Gradient background colors */
   --bg-gradient-start: #0a0a0f;
@@ -116,12 +116,12 @@ body {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.04) 0%, transparent 70%);
+    radial-gradient(ellipse 80% 60% at 30% 40%, rgba(99, 102, 241, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 70% 60%, rgba(236, 72, 153, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 80% at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 75%);
   pointer-events: none;
   z-index: 0;
-  animation: glowPulse 12s ease-in-out infinite;
+  animation: glowPulse 14s ease-in-out infinite;
   will-change: opacity;
 }
 
@@ -146,12 +146,12 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(var(--grid-color) 0.5px, transparent 0.5px),
-    linear-gradient(90deg, var(--grid-color) 0.5px, transparent 0.5px);
-  background-size: 40px 40px;
+    linear-gradient(var(--grid-color) 0.75px, transparent 0.75px),
+    linear-gradient(90deg, var(--grid-color) 0.75px, transparent 0.75px);
+  background-size: 36px 36px;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.4;
+  opacity: 0.65;
   transition: opacity 0.3s ease;
   will-change: opacity;
 }
@@ -167,11 +167,11 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 
-/* Hero title specific styling - Bold, characterful, with refined tracking */
+/* Hero title specific styling - Bold, characterful, letter-spacing */
 h1 {
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  font-weight: 700;
   font-feature-settings: 'kern' 1, 'liga' 1;
 }
 
@@ -256,6 +256,19 @@ a:hover, button:hover {
   .dark {
     --border: #ffffff;
   }
+}
+
+/* ============================================
+   HERO DECORATIVE WATERMARK
+   ============================================ */
+
+.hero-watermark {
+  left: -12%;
+  bottom: 8%;
+  opacity: 0.025;
+  filter: blur(100px);
+  font-family: var(--font-geist-sans);
+  letter-spacing: -0.05em;
 }
 
 /* ============================================
