@@ -1,7 +1,7 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
-import { motion } from 'framer-motion';
+import PageWatermark from '@/components/PageWatermark';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -61,6 +61,7 @@ const projects: Project[] = [
 export default function Progetti() {
   return (
     <Layout>
+      <PageWatermark label="PROJECTS" className="text-[320px]" />
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
