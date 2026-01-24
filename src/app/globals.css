@@ -21,7 +21,7 @@
   --accent-foreground: #ffffff;
   
   /* Grid Pattern (light mode - subtle) */
-  --grid-color: rgba(59, 130, 246, 0.05);
+  --grid-color: rgba(59, 130, 246, 0.06);
   
   /* Typography */
   --font-sans: var(--font-geist-sans);
@@ -45,7 +45,7 @@
   --accent-foreground: #ffffff;
   
   /* Grid Pattern (dark mode - more visible, subtle depth) */
-  --grid-color: rgba(99, 102, 241, 0.12);
+  --grid-color: rgba(99, 102, 241, 0.15);
   
   /* Gradient background colors */
   --bg-gradient-start: #0a0a0f;
@@ -148,7 +148,7 @@ body::before {
   background-image: 
     linear-gradient(var(--grid-color) 0.75px, transparent 0.75px),
     linear-gradient(90deg, var(--grid-color) 0.75px, transparent 0.75px);
-  background-size: 64px 64px;
+  background-size: 80px 80px;
   pointer-events: none;
   z-index: 1;
   opacity: 0.65;
