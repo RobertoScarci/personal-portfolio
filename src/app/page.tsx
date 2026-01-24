@@ -35,14 +35,14 @@ export default function Home() {
               <Header />
             </div>
 
-            {/* Hero content — max-width contenuto */}
-            <div className="w-full max-w-4xl mx-auto px-6 md:px-8 flex flex-col pt-12 md:pt-16 pb-20 md:pb-28">
+            {/* Hero content — max-width contenuto (più ampio di prima, meno della navbar) */}
+            <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col pt-20 md:pt-28 pb-20 md:pb-28">
             <div className="text-left mb-12 md:mb-16">
               <HeroTitle />
             </div>
 
             <AnimatedSection delay={0.15}>
-              <div className="text-sm md:text-base text-foreground/80 text-left font-extralight max-w-2xl mb-14 md:mb-20 leading-[2.25]">
+              <div className="text-sm md:text-base text-foreground/80 text-left font-extralight max-w-3xl mb-14 md:mb-20 leading-[2.25]">
                 <p className="mb-10 md:mb-14">
                   Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
                   Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
@@ -81,7 +81,7 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
-            <div className="flex justify-start items-center gap-8 md:gap-10 mt-24 md:mt-32">
+            <div className="flex justify-start items-center gap-8 md:gap-10 mt-28 md:mt-40">
               <SocialIcons />
             </div>
           </div>
