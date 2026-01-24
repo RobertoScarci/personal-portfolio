@@ -44,7 +44,7 @@ export default function SocialIcons() {
                 whileTap={{ scale: 0.92 }}
                 transition={{ type: 'spring', stiffness: 450, damping: 28, duration: 0.28 }}
               >
-                <Icon className="w-5 h-5 md:w-[1.35rem] md:h-[1.35rem]" />
+                <Icon className="w-4 h-4 md:w-5 md:h-5" />
               </motion.div>
             </Link>
           </motion.div>
