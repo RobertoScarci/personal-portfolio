@@ -7,43 +7,34 @@ import { useTheme } from '@/contexts/ThemeContext';
 const title = "SONO ROBERTO SCARCI";
 const words = title.split(' ');
 
-// Custom easing for premium feel
-const premiumEase = [0.16, 1, 0.3, 1];
-
 export default function HeroTitle() {
   const { animationKey } = useTheme();
   const [key, setKey] = useState(0);
 
-  // Re-trigger animation when theme changes
   useEffect(() => {
     setKey(animationKey);
   }, [animationKey]);
 
   return (
-    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.08] tracking-[-0.02em] md:tracking-[-0.01em] glitch-text">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-[0.04em] glitch-text pr-4">
       {words.map((word, wordIndex) => {
         const isAccent = word === 'ROBERTO';
-        
+        const isLastName = word === 'SCARCI';
+        const marginRight = isLastName
+          ? 'mr-0'
+          : isAccent
+            ? 'mr-12 md:mr-16 lg:mr-20'
+            : 'mr-8 md:mr-12 lg:mr-14';
         return (
           <motion.span
             key={`word-${wordIndex}-${key}`}
-            className={`inline-block mr-8 md:mr-12 lg:mr-16 ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
-            initial={{ 
-              opacity: 0, 
-              y: 24, 
-              filter: 'blur(8px)',
-              scale: 0.85
-            }}
-            animate={{ 
-              opacity: 1, 
-              y: 0, 
-              filter: 'blur(0px)',
-              scale: 1
-            }}
-            transition={{ 
-              duration: 0.9,
-              delay: wordIndex * 0.1,
-              ease: [0.16, 1, 0.3, 1]
+            className={`inline-block ${marginRight} ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: wordIndex * 0.08,
+              ease: [0.16, 1, 0.3, 1],
             }}
           >
             {word}
@@ -54,4 +45,3 @@ export default function HeroTitle() {
     </h1>
   );
 }
-
