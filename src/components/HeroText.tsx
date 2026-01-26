@@ -2,20 +2,28 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useTheme } from '@/contexts/ThemeContext';
 
 interface HeroTextProps {
   delay?: number;
 }
 
 export default function HeroText({ delay = 0.7 }: HeroTextProps) {
+  const { animationKey } = useTheme();
+  
+  // Al cambio tema (animationKey > 0), animazione immediata senza delay
+  // Al primo caricamento (animationKey === 0), usa il delay per sequenza gerarchica
+  const animationDelay = animationKey === 0 ? delay : 0;
+
   return (
     <motion.div
+      key={animationKey}
       className="flex-shrink-0"
       initial={{ clipPath: 'inset(0 100% 0 0)' }}
       animate={{ clipPath: 'inset(0 0% 0 0)' }}
       transition={{
         duration: 1.8,
-        delay,
+        delay: animationDelay,
         ease: [0.16, 1, 0.3, 1],
       }}
     >
