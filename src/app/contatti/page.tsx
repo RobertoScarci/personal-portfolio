@@ -212,6 +212,7 @@ export default function Contatti() {
               </div>
             </div>
           </div>
+          </div>
         </div>
       </section>
     </Layout>
