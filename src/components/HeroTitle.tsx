@@ -20,11 +20,12 @@ export default function HeroTitle() {
       {words.map((word, wordIndex) => {
         const isAccent = word === 'ROBERTO';
         const isLastName = word === 'SCARCI';
+        // Margini più grandi e distinti tra le tre parole
         const marginRight = isLastName
           ? 'mr-0'
           : isAccent
-            ? 'mr-16 md:mr-20 lg:mr-24'
-            : 'mr-16 md:mr-20 lg:mr-24';
+            ? 'mr-20 md:mr-28 lg:mr-32'
+            : 'mr-20 md:mr-28 lg:mr-32';
         return (
           <motion.span
             key={`word-${wordIndex}-${key}`}
@@ -38,7 +39,6 @@ export default function HeroTitle() {
             }}
           >
             {word}
-            {wordIndex < words.length - 1 && ' '}
           </motion.span>
         );
       })}
