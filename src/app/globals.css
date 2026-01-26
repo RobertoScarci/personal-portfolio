@@ -263,10 +263,9 @@ a:hover, button:hover {
    ============================================ */
 
 .hero-watermark {
-  left: -12%;
-  bottom: 8%;
-  opacity: 0.055;
-  filter: blur(60px);
+  left: 0%;
+  bottom: -5%;
+  opacity: 0.85;
   font-family: var(--font-geist-sans);
   letter-spacing: -0.05em;
 }
