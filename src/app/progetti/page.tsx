@@ -2,6 +2,7 @@ import Layout from '@/components/Layout';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
 import PageWatermark from '@/components/PageWatermark';
+import Header from '@/components/Header';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -62,19 +63,31 @@ export default function Progetti() {
   return (
     <Layout>
       <PageWatermark label="PROJECTS" className="text-[200px] md:text-[240px]" />
-      <div className="container mx-auto px-6 py-20">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="mb-16 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Progetti</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Una selezione dei progetti che ho sviluppato, mostrando problemi risolti, 
-              soluzioni implementate e risultati ottenuti.
-            </p>
-          </div>
+      <section className="relative w-full min-h-screen flex flex-col">
+        {/* Spacer sopra header — altezza fissa, come per hero */}
+        <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
 
-          {/* Projects Grid */}
-          <div className="space-y-24">
+        {/* Header — stesso flex dell'hero, max-width leggermente più alta */}
+        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
+          <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
+            <Header />
+          </div>
+        </div>
+
+        {/* Content — centrato orizzontalmente e verticalmente, stessa max-width della home */}
+        <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto">
+          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-12 md:pt-16 pb-20 md:pb-28">
+            {/* Header */}
+            <div className="mb-16 text-center flex-shrink-0">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">Progetti</h1>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Una selezione dei progetti che ho sviluppato, mostrando problemi risolti, 
+                soluzioni implementate e risultati ottenuti.
+              </p>
+            </div>
+
+            {/* Projects Grid */}
+            <div className="space-y-24">
             {projects.map((project, index) => (
               <AnimatedSection key={project.id} delay={index * 0.2}>
                 <article
@@ -149,9 +162,10 @@ export default function Progetti() {
                 </article>
               </AnimatedSection>
             ))}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 }
