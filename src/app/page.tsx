@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <Layout>
-      <PageWatermark label="RS" className="text-[700px]" />
+      <PageWatermark label="RS" className="text-[280px] md:text-[320px]" />
       <section className="relative w-full min-h-screen flex flex-col">
         {/* Background */}
         <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">

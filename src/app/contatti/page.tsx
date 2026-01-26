@@ -32,7 +32,7 @@ export default function Contatti() {
 
   return (
     <Layout>
-      <PageWatermark label="CONTACT" className="text-[380px]" />
+      <PageWatermark label="CONTACT" className="text-[220px] md:text-[260px]" />
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto">
           {/* Header */}

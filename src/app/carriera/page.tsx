@@ -50,7 +50,7 @@ const timeline: TimelineItem[] = [
 export default function Carriera() {
   return (
     <Layout>
-      <PageWatermark label="ABOUT" className="text-[500px]" />
+      <PageWatermark label="ABOUT" className="text-[240px] md:text-[280px]" />
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto">
           {/* Header */}

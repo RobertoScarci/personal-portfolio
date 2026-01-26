@@ -61,7 +61,7 @@ const projects: Project[] = [
 export default function Progetti() {
   return (
     <Layout>
-      <PageWatermark label="PROJECTS" className="text-[320px]" />
+      <PageWatermark label="PROJECTS" className="text-[200px] md:text-[240px]" />
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
