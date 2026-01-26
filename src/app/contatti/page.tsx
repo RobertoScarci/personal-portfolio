@@ -2,6 +2,7 @@
 
 import Layout from '@/components/Layout';
 import PageWatermark from '@/components/PageWatermark';
+import Header from '@/components/Header';
 import { useState } from 'react';
 // Note: Metadata cannot be exported from client components
 // Consider creating a separate metadata file or using generateMetadata
@@ -33,18 +34,30 @@ export default function Contatti() {
   return (
     <Layout>
       <PageWatermark label="CONTACT" className="text-[220px] md:text-[260px]" />
-      <div className="container mx-auto px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="mb-16 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Contatti</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Hai un progetto in mente? Vuoi collaborare? Scrivimi pure, 
-              sono sempre disponibile per nuove sfide.
-            </p>
-          </div>
+      <section className="relative w-full min-h-screen flex flex-col">
+        {/* Spacer sopra header — altezza fissa, come per hero */}
+        <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
 
-          <div className="grid md:grid-cols-2 gap-12">
+        {/* Header — stesso flex dell'hero, max-width leggermente più alta */}
+        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
+          <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
+            <Header />
+          </div>
+        </div>
+
+        {/* Content — centrato orizzontalmente e verticalmente, stessa max-width della home */}
+        <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto">
+          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-12 md:pt-16 pb-20 md:pb-28">
+            {/* Header */}
+            <div className="mb-16 text-center flex-shrink-0">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">Contatti</h1>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Hai un progetto in mente? Vuoi collaborare? Scrivimi pure, 
+                sono sempre disponibile per nuove sfide.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
               <h2 className="text-2xl font-bold mb-6">Invia un Messaggio</h2>
@@ -200,7 +213,7 @@ export default function Contatti() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 }
