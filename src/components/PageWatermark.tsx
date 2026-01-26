@@ -14,11 +14,12 @@ export default function PageWatermark({
 }: PageWatermarkProps) {
   return (
     <div
-      className="fixed inset-0 -z-10 pointer-events-none select-none overflow-hidden"
+      className="fixed inset-0 z-[2] pointer-events-none select-none overflow-hidden"
       aria-hidden="true"
     >
       <div
-        className={`hero-watermark absolute font-black text-foreground leading-none ${className}`}
+        className={`hero-watermark absolute font-light leading-none ${className}`}
+        style={{ color: 'rgba(26, 26, 46, 0.6)' }}
       >
         {label}
       </div>
