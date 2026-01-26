@@ -16,6 +16,9 @@ export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Filtra i link per escludere quello della pagina corrente
+  const visibleNavigation = navigation.filter((item) => pathname !== item.href);
+
   return (
     <header className="relative z-50 w-full flex-shrink-0 h-16 flex items-center">
       <nav className="w-full flex items-center justify-between py-0">
@@ -33,8 +36,7 @@ export default function Header() {
         </motion.div>
 
         <div className="hidden md:flex items-center gap-10">
-          {navigation.map((item, index) => {
-            const isActive = pathname === item.href;
+          {visibleNavigation.map((item, index) => {
             return (
               <motion.div
                 key={item.name}
@@ -42,22 +44,37 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
-                <Link
-                  href={item.href}
-                  className={`text-sm font-medium transition-all duration-300 relative group ${
-                    isActive ? 'text-foreground' : 'text-foreground/70 hover:text-foreground'
-                  }`}
+                <motion.div
+                  className="relative"
+                  whileHover="hover"
+                  initial="initial"
                 >
-                  {item.name}
+                  <Link
+                    href={item.href}
+                    className="text-sm font-medium transition-all duration-300 relative text-foreground/70 hover:text-foreground"
+                  >
+                    {item.name}
+                  </Link>
                   <motion.span
-                    layoutId="activeTab"
-                    className={`absolute -bottom-2 left-0 h-[1.5px] bg-accent ${
-                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`}
-                    initial={false}
-                    transition={{ type: 'spring', stiffness: 400, damping: 30, duration: 0.4 }}
+                    layoutId={`activeTab-${item.name}`}
+                    className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-[1.5px] bg-accent origin-center"
+                    style={{
+                      width: '100%',
+                    }}
+                    variants={{
+                      initial: {
+                        scaleX: 0,
+                      },
+                      hover: {
+                        scaleX: 1,
+                      },
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
                   />
-                </Link>
+                </motion.div>
               </motion.div>
             );
           })}
@@ -95,16 +112,13 @@ export default function Header() {
             className="md:hidden border-t border-border"
           >
             <nav className="py-4 flex flex-col gap-4">
-              {navigation.map((item) => {
-                const isActive = pathname === item.href;
+              {visibleNavigation.map((item) => {
                 return (
                   <Link
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-base font-medium transition-colors py-2 ${
-                      isActive ? 'text-accent' : 'text-foreground/70 hover:text-foreground'
-                    }`}
+                    className="text-base font-medium transition-colors py-2 text-foreground/70 hover:text-foreground"
                   >
                     {item.name}
                   </Link>
