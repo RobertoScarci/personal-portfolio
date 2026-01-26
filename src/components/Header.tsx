@@ -16,8 +16,10 @@ export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Filtra i link per escludere quello della pagina corrente
-  const visibleNavigation = navigation.filter((item) => pathname !== item.href);
+  // Filtra i link per escludere quello della pagina corrente (ma mostra tutti se siamo in home)
+  const visibleNavigation = pathname === '/' 
+    ? navigation 
+    : navigation.filter((item) => pathname !== item.href);
 
   return (
     <header className="relative z-50 w-full flex-shrink-0 h-16 flex items-center">
@@ -112,7 +114,7 @@ export default function Header() {
             className="md:hidden border-t border-border"
           >
             <nav className="py-4 flex flex-col gap-4">
-              {visibleNavigation.map((item) => {
+              {(pathname === '/' ? navigation : visibleNavigation).map((item) => {
                 return (
                   <Link
                     key={item.name}
