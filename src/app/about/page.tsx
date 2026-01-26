@@ -110,7 +110,7 @@ export default function About() {
         <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto">
           <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-20 md:pt-28 pb-20 md:pb-28">
             {/* Header */}
-            <div className="mb-20 md:mb-24 flex-shrink-0">
+            <div className="mb-28 md:mb-32 flex-shrink-0">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">About Me.</h1>
             </div>
 
@@ -127,9 +127,9 @@ export default function About() {
                     
                     <div className="flex items-start justify-between gap-6">
                       <div className="flex-1 space-y-6">
-                        <div className="flex items-center gap-3">
-                          <FaGithub className="w-5 h-5 text-foreground/60" />
+                        <div className="flex items-center gap-2">
                           <h2 className="text-2xl md:text-3xl font-bold">Engineering</h2>
+                          <FaGithub className="w-3.5 h-3.5 md:w-4 md:h-4 text-foreground/60" />
                         </div>
                         <p className="text-sm md:text-base text-foreground/60 font-extralight leading-[2]">
                           Il potere delle prime impressioni non può essere sottovalutato, e la porta d'accesso per sfruttarle risiede in un design eccezionale del sito web. Un sito web eccezionale trascende la mera estetica e estende la sua influenza per comprendere funzionalità senza soluzione di continuità e navigazione user-friendly. Attingendo alla mia esperienza come programmatore esperto, possiedo l'abilità unica di affrontare sfide tecniche intricate mentre creo siti web che emanano eleganza e fascino visivo. Inoltre, la mia vasta conoscenza degli standard tecnici riconosciuti è completata dalla mia competenza nelle pratiche di costruzione moderne, garantendo che ogni aspetto del tuo sito web sia perfettamente ottimizzato.
@@ -159,9 +159,9 @@ export default function About() {
                     
                     <div className="flex items-start justify-between gap-6">
                       <div className="flex-1 space-y-6">
-                        <div className="flex items-center gap-3">
-                          <FaBox className="w-5 h-5 text-foreground/60" />
+                        <div className="flex items-center gap-2">
                           <h2 className="text-2xl md:text-3xl font-bold">Product</h2>
+                          <FaBox className="w-3.5 h-3.5 md:w-4 md:h-4 text-foreground/60" />
                         </div>
                         <p className="text-sm md:text-base text-foreground/60 font-extralight leading-[2]">
                           Anche se potrei non adattarmi allo stampo convenzionale di un product manager, il mio insieme di competenze diversificate nella ricerca, nel design del prodotto e nella coordinazione del prodotto mi consente di guidare la crescita di un prodotto dalla sua concezione. Come pensatore analitico eccezionale, possiedo la capacità di sostenere la visione del prodotto durante tutto il suo percorso, collegando efficacemente gli aspetti tecnici e del prodotto. Sfruttando la mia esperienza, posso navigare il percorso da 0 a 1, garantendo il successo del prodotto in ogni fase.
@@ -189,9 +189,9 @@ export default function About() {
                     
                     <div className="flex items-start justify-between gap-6">
                       <div className="flex-1 space-y-6">
-                        <div className="flex items-center gap-3">
-                          <FaPalette className="w-5 h-5 text-foreground/60" />
+                        <div className="flex items-center gap-2">
                           <h2 className="text-2xl md:text-3xl font-bold">Design</h2>
+                          <FaPalette className="w-3.5 h-3.5 md:w-4 md:h-4 text-foreground/60" />
                         </div>
                         <p className="text-sm md:text-base text-foreground/60 font-extralight leading-[2]">
                           Nonostante non mi adatti allo stereotipo tipico del designer, le mie eccezionali abilità visive mi permettono di eccellere come presentatore, trasmettendo efficacemente i concetti di design agli stakeholder e ai team di design. Possiedo una notevole attitudine per la concettualizzazione, permettendomi di immaginare e portare avanti creazioni sorprendenti. Inoltre, la mia competenza risiede nel perfezionare i fogli di stile e creare esperienze utente senza soluzione di continuità che fluiscono senza sforzo.
