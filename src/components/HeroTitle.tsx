@@ -23,17 +23,17 @@ export default function HeroTitle() {
         const marginRight = isLastName
           ? 'mr-0'
           : isAccent
-            ? 'mr-10 md:mr-14 lg:mr-18'
-            : 'mr-10 md:mr-14 lg:mr-18';
+            ? 'mr-16 md:mr-20 lg:mr-24'
+            : 'mr-16 md:mr-20 lg:mr-24';
         return (
           <motion.span
             key={`word-${wordIndex}-${key}`}
             className={`inline-block ${marginRight} ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.6,
-              delay: wordIndex * 0.08,
+              duration: 0.7,
+              delay: wordIndex * 0.1,
               ease: [0.16, 1, 0.3, 1],
             }}
           >
