@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import HeroCTA from '@/components/HeroCTA';
 import SocialIcons from '@/components/SocialIcons';
 import PageWatermark from '@/components/PageWatermark';
+import HeroText from '@/components/HeroText';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -43,40 +44,8 @@ export default function Home() {
             </AnimatedSection>
             <div className="h-6 md:h-8 flex-shrink-0" aria-hidden="true" />
 
-            {/* Testi — delay dopo herotitle (0.7s = 0.3 + 0.4) */}
-            <AnimatedSection delay={0.7} className="flex-shrink-0">
-              <div className="text-sm md:text-base text-foreground/80 text-left font-extralight max-w-5xl mb-14 md:mb-20 leading-[2.25]">
-                <p className="mb-12 md:mb-16">
-                  Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
-                  Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
-                  <Link
-                    href="/progetti"
-                    className="font-semibold text-foreground hover:text-accent transition-colors duration-300 underline-offset-4 hover:underline"
-                  >
-                    PROGETTI
-                  </Link>{' '}
-                  e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.
-                </p>
-                <p className="pt-2 md:pt-3">
-                  Appassionato di fotografia e design minimale, trovo bellezza nella semplicità e nell'ordine.
-                  Quando non sto creando esperienze web curate, puoi trovarmi a leggere{' '}
-                  <Link
-                    href="#"
-                    className="font-semibold text-foreground hover:text-accent transition-colors duration-300 underline-offset-4 hover:underline"
-                  >
-                    ARTICOLI
-                  </Link>{' '}
-                  o ad ascoltare musica, perdendomi nel flusso delle melodie. In ogni caso puoi sempre{' '}
-                  <Link
-                    href="/contatti"
-                    className="font-semibold text-foreground hover:text-accent transition-colors duration-300 underline-offset-4 hover:underline"
-                  >
-                    CONTATTARMI
-                  </Link>
-                  .
-                </p>
-              </div>
-            </AnimatedSection>
+            {/* Testi — delay dopo herotitle (0.7s = 0.3 + 0.4) con animazione barra di caricamento */}
+            <HeroText delay={0.7} />
 
             <div className="h-8 md:h-10 flex-shrink-0" aria-hidden="true" />
 
