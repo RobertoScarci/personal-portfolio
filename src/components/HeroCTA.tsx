@@ -5,11 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroCTA() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-    >
+    <div>
       <Link
         href="/carriera"
         className="group inline-flex items-center gap-3 py-3 pr-1 text-foreground/95 hover:text-foreground transition-all duration-300 font-medium text-base md:text-lg"
@@ -32,6 +28,6 @@ export default function HeroCTA() {
           →
         </motion.span>
       </Link>
-    </motion.div>
+    </div>
   );
 }

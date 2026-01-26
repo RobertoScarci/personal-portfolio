@@ -28,21 +28,23 @@ export default function Home() {
         <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
 
         {/* Header — stesso flex dell'hero, max-width leggermente più alta */}
-        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
+        <AnimatedSection delay={0} className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
           <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
             <Header />
           </div>
-        </div>
+        </AnimatedSection>
 
         {/* Hero content — centrato orizzontalmente e verticalmente */}
         <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto">
           <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-12 md:pt-16 pb-20 md:pb-28">
-            <div className="text-left flex-shrink-0">
+            {/* HeroTitle — delay dopo header (0.3s) */}
+            <AnimatedSection delay={0.3} className="text-left flex-shrink-0">
               <HeroTitle />
-            </div>
+            </AnimatedSection>
             <div className="h-6 md:h-8 flex-shrink-0" aria-hidden="true" />
 
-            <AnimatedSection delay={0.15} className="flex-shrink-0">
+            {/* Testi — delay dopo herotitle (0.7s = 0.3 + 0.4) */}
+            <AnimatedSection delay={0.7} className="flex-shrink-0">
               <div className="text-sm md:text-base text-foreground/80 text-left font-extralight max-w-5xl mb-14 md:mb-20 leading-[2.25]">
                 <p className="mb-12 md:mb-16">
                   Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
@@ -78,7 +80,8 @@ export default function Home() {
 
             <div className="h-8 md:h-10 flex-shrink-0" aria-hidden="true" />
 
-            <AnimatedSection delay={0.25} className="flex-shrink-0">
+            {/* CTA — delay dopo testi (1.1s = 0.7 + 0.4) */}
+            <AnimatedSection delay={1.1} className="flex-shrink-0">
               <div className="mb-16 md:mb-20">
                 <HeroCTA />
               </div>
