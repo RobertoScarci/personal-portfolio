@@ -1,6 +1,7 @@
 import Layout from '@/components/Layout';
 import AnimatedSection from '@/components/AnimatedSection';
 import PageWatermark from '@/components/PageWatermark';
+import Header from '@/components/Header';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -51,16 +52,28 @@ export default function Carriera() {
   return (
     <Layout>
       <PageWatermark label="ABOUT" className="text-[240px] md:text-[280px]" />
-      <div className="container mx-auto px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Carriera</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
-              Il mio percorso di studi ed esperienze professionali, un viaggio continuo 
-              di crescita tecnica e personale.
-            </p>
+      <section className="relative w-full min-h-screen flex flex-col">
+        {/* Spacer sopra header — altezza fissa, come per hero */}
+        <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
+
+        {/* Header — stesso flex dell'hero, max-width leggermente più alta */}
+        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
+          <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
+            <Header />
           </div>
+        </div>
+
+        {/* Content — centrato orizzontalmente e verticalmente, stessa max-width della home */}
+        <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto">
+          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-12 md:pt-16 pb-20 md:pb-28">
+            {/* Header */}
+            <div className="mb-16 flex-shrink-0">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">Carriera</h1>
+              <p className="text-lg text-muted-foreground max-w-2xl">
+                Il mio percorso di studi ed esperienze professionali, un viaggio continuo 
+                di crescita tecnica e personale.
+              </p>
+            </div>
 
           {/* Timeline */}
           <div className="relative">
@@ -142,8 +155,9 @@ export default function Carriera() {
               </div>
             </div>
           </div>
+          </div>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 }
