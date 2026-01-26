@@ -100,7 +100,7 @@ export default function About() {
         <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
 
         {/* Header — stesso flex dell'hero, max-width leggermente più alta */}
-        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
+        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10 mb-16 md:mb-20">
           <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
             <Header />
           </div>
@@ -119,11 +119,11 @@ export default function About() {
               {/* Timeline Line */}
               <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
 
-              <div className="space-y-24 md:space-y-32 pl-0 md:pl-12">
+              <div className="space-y-24 md:space-y-32 pl-0 md:pl-16">
                 <AnimatedSection delay={0.1}>
                   <div className="relative">
                     {/* Timeline Circle */}
-                    <div className="absolute -left-[18px] top-1 w-4 h-4 rounded-full bg-foreground border-2 border-background hidden md:block" />
+                    <div className="absolute -left-[22px] top-1 w-4 h-4 rounded-full bg-foreground border-2 border-background hidden md:block" />
                     
                     <div className="flex items-start justify-between gap-6">
                       <div className="flex-1 space-y-6">
@@ -155,7 +155,7 @@ export default function About() {
                 <AnimatedSection delay={0.2}>
                   <div className="relative">
                     {/* Timeline Circle */}
-                    <div className="absolute -left-[18px] top-1 w-4 h-4 rounded-full bg-foreground border-2 border-background hidden md:block" />
+                    <div className="absolute -left-[22px] top-1 w-4 h-4 rounded-full bg-foreground border-2 border-background hidden md:block" />
                     
                     <div className="flex items-start justify-between gap-6">
                       <div className="flex-1 space-y-6">
@@ -185,7 +185,7 @@ export default function About() {
                 <AnimatedSection delay={0.3}>
                   <div className="relative">
                     {/* Timeline Circle */}
-                    <div className="absolute -left-[18px] top-1 w-4 h-4 rounded-full bg-foreground border-2 border-background hidden md:block" />
+                    <div className="absolute -left-[22px] top-1 w-4 h-4 rounded-full bg-foreground border-2 border-background hidden md:block" />
                     
                     <div className="flex items-start justify-between gap-6">
                       <div className="flex-1 space-y-6">
