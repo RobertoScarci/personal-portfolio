@@ -31,8 +31,8 @@ export default function SocialIcons() {
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              delay: 0.35 + index * 0.06,
-              duration: 0.45,
+              delay: 1.3 + index * 0.06,
+              duration: 0.5,
               ease: [0.16, 1, 0.3, 1],
             }}
           >
