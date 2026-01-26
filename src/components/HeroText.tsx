@@ -14,7 +14,7 @@ export default function HeroText({ delay = 0.7 }: HeroTextProps) {
       initial={{ clipPath: 'inset(0 100% 0 0)' }}
       animate={{ clipPath: 'inset(0 0% 0 0)' }}
       transition={{
-        duration: 1.2,
+        duration: 1.8,
         delay,
         ease: [0.16, 1, 0.3, 1],
       }}
