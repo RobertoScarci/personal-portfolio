@@ -16,20 +16,13 @@ export default function HeroTitle() {
   }, [animationKey]);
 
   return (
-    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-[0.04em] glitch-text pr-4">
+    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-[0.04em] glitch-text pr-4 flex flex-wrap items-center gap-x-6 md:gap-x-8 lg:gap-x-10">
       {words.map((word, wordIndex) => {
         const isAccent = word === 'ROBERTO';
-        const isLastName = word === 'SCARCI';
-        // Margini più grandi e distinti tra le tre parole
-        const marginRight = isLastName
-          ? 'mr-0'
-          : isAccent
-            ? 'mr-20 md:mr-28 lg:mr-32'
-            : 'mr-20 md:mr-28 lg:mr-32';
         return (
           <motion.span
             key={`word-${wordIndex}-${key}`}
-            className={`inline-block ${marginRight} ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
+            className={`inline-block ${isAccent ? 'text-accent glitch-text-accent' : ''}`}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
