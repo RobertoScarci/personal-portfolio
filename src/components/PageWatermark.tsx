@@ -23,8 +23,8 @@ export default function PageWatermark({
   // Stile per posizionamento verticale (projects)
   const verticalStyle = vertical
     ? {
-        left: '0%',
-        top: '100%',
+        left: '2%',
+        top: '50%',
         transform: 'translateY(-50%) rotate(90deg)',
         transformOrigin: 'left center',
       }
