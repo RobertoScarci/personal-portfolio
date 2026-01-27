@@ -62,7 +62,7 @@ const projects: Project[] = [
 export default function Progetti() {
   return (
     <Layout>
-      <PageWatermark label="PROJECTS" className="text-[200px] md:text-[240px]" />
+      <PageWatermark label="PROJECTS" className="text-[200px] md:text-[240px]" vertical />
       <section className="relative w-full min-h-screen flex flex-col">
         {/* Spacer sopra header — altezza fissa, come per hero */}
         <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />

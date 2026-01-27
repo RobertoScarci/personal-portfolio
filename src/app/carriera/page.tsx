@@ -51,7 +51,7 @@ const timeline: TimelineItem[] = [
 export default function Carriera() {
   return (
     <Layout>
-      <PageWatermark label="ABOUT" className="text-[240px] md:text-[280px]" />
+      <PageWatermark label="CAREER" className="text-[240px] md:text-[280px]" />
       <section className="relative w-full min-h-screen flex flex-col">
         {/* Spacer sopra header — altezza fissa, come per hero */}
         <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
