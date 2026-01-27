@@ -20,8 +20,9 @@ export default function PageWatermark({
       <div
         className={`hero-watermark absolute font-light italic leading-none ${className}`}
         style={{ 
-          color: 'rgba(150, 150, 170, 0.4)',
+          color: 'rgba(150, 150, 170, 0.25)',
           transform: 'scaleY(0.75)',
+          fontFamily: 'Georgia, "Times New Roman", serif',
         }}
       >
         {label}
