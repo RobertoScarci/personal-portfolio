@@ -30,7 +30,7 @@ export default function Header() {
           aria-label="Home"
         >
           <motion.div
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-transparent relative"
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-transparent relative"
             whileHover={{
               scale: 1.1,
             }}
