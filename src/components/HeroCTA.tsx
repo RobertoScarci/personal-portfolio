@@ -5,19 +5,17 @@ import { motion } from 'framer-motion';
 
 export default function HeroCTA() {
   return (
-    <div>
+    <motion.div
+      className="relative"
+      whileHover="hover"
+      initial="initial"
+    >
       <Link
         href="/carriera"
-        className="group inline-flex items-center gap-3 py-3 pr-1 text-foreground/95 hover:text-foreground transition-all duration-300 font-medium text-base md:text-lg"
+        className="group inline-flex items-center gap-3 py-3 pr-1 text-foreground/80 hover:text-foreground transition-all duration-300 font-medium text-base md:text-lg"
       >
         <span className="relative pb-1">
           Scopri la mia storia
-          <motion.span
-            className="absolute -bottom-1 left-0 h-[1.5px] bg-accent"
-            initial={{ width: 0 }}
-            whileHover={{ width: '100%' }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          />
         </span>
         <motion.span
           className="inline-block text-accent opacity-85 group-hover:opacity-100"
@@ -28,6 +26,24 @@ export default function HeroCTA() {
           →
         </motion.span>
       </Link>
-    </div>
+      <motion.span
+        className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-[1.5px] bg-accent origin-center"
+        style={{
+          width: '100%',
+        }}
+        variants={{
+          initial: {
+            scaleX: 0,
+          },
+          hover: {
+            scaleX: 1,
+          },
+        }}
+        transition={{
+          duration: 0.6,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+      />
+    </motion.div>
   );
 }
