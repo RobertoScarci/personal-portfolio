@@ -20,18 +20,13 @@ export default function PageWatermark({
     ? label 
     : label.charAt(0).toUpperCase() + label.slice(1).toLowerCase();
 
-  // Opacità diversa per watermark verticale (projects) vs normale
-  const opacity = vertical ? 0.15 : 0.06;
-
   // Stile per posizionamento verticale (projects)
   const verticalStyle = vertical
     ? {
-        left: '0',
+        left: '2%',
         top: '50%',
         transform: 'translateY(-50%) rotate(-90deg)',
         transformOrigin: 'left center',
-        marginLeft: '0',
-        paddingLeft: '0',
       }
     : {
         transform: 'scaleY(0.75)',
@@ -45,7 +40,7 @@ export default function PageWatermark({
       <div
         className={`hero-watermark absolute font-light leading-none ${className} ${label !== 'RS' ? 'italic' : ''}`}
         style={{ 
-          color: `rgba(150, 150, 170, ${opacity})`,
+          color: 'rgba(150, 150, 170, 0.06)',
           fontFamily: 'Georgia, "Times New Roman", serif',
           ...verticalStyle,
         }}
