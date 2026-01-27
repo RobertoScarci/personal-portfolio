@@ -18,8 +18,11 @@ export default function PageWatermark({
       aria-hidden="true"
     >
       <div
-        className={`hero-watermark absolute font-light leading-none ${className}`}
-        style={{ color: 'rgba(26, 26, 46, 0.6)' }}
+        className={`hero-watermark absolute font-light italic leading-none ${className}`}
+        style={{ 
+          color: 'rgba(150, 150, 170, 0.4)',
+          transform: 'scaleY(0.75)',
+        }}
       >
         {label}
       </div>
