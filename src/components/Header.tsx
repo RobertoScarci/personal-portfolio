@@ -24,18 +24,33 @@ export default function Header() {
   return (
     <header className="relative z-50 w-full flex-shrink-0 h-16 flex items-center">
       <nav className="w-full flex items-center justify-between py-0">
-        <motion.div
-          whileHover={{ scale: 1.06, rotate: 90 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 25, duration: 0.25 }}
+        <Link
+          href="/"
+          className="relative inline-block"
+          aria-label="Home"
         >
-          <Link
-            href="/"
-            className="text-2xl md:text-3xl font-bold text-foreground hover:text-accent transition-colors duration-300"
-            aria-label="Home"
+          <motion.div
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-transparent relative"
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{ type: 'spring', stiffness: 400, damping: 25, duration: 0.3 }}
           >
-            <span className="text-accent">*</span>
-          </Link>
-        </motion.div>
+            <img
+              src="/images/profile.jpg"
+              alt="Roberto Scarci"
+              className="w-full h-full object-cover"
+            />
+            <motion.div
+              className="absolute inset-0 rounded-full border-2 border-accent/0"
+              whileHover={{
+                borderColor: 'rgba(236, 72, 153, 0.8)',
+                boxShadow: '0 0 20px rgba(236, 72, 153, 0.5), 0 0 30px rgba(236, 72, 153, 0.3), inset 0 0 20px rgba(236, 72, 153, 0.2)',
+              }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+            />
+          </motion.div>
+        </Link>
 
         <div className="hidden md:flex items-center gap-10">
           {visibleNavigation.map((item, index) => {
