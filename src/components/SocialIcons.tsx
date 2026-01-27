@@ -13,11 +13,11 @@ import { motion } from 'framer-motion';
 
 const socialLinks = [
   { name: 'Twitter', href: '#', icon: FaTwitter },
-  { name: 'LinkedIn', href: '#', icon: FaLinkedin },
-  { name: 'GitHub', href: '#', icon: FaGithub },
-  { name: 'Instagram', href: '#', icon: FaInstagram },
-  { name: 'Facebook', href: '#', icon: FaFacebook },
-  { name: 'TikTok', href: '#', icon: FaTiktok },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/roberto-scarci-0625ab2a6/', icon: FaLinkedin },
+  { name: 'GitHub', href: 'https://github.com/RobertoScarci', icon: FaGithub },
+  { name: 'Instagram', href: 'https://www.instagram.com/robertoscarci_/', icon: FaInstagram },
+  { name: 'Facebook', href: 'https://www.facebook.com/roberto.scarci', icon: FaFacebook },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@robertoscarci?lang=en', icon: FaTiktok },
 ];
 
 export default function SocialIcons() {
