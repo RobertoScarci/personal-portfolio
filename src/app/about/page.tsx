@@ -100,7 +100,7 @@ export default function About() {
         <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
 
         {/* Header — stesso flex dell'hero, max-width leggermente più alta */}
-        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10 mb-16 md:mb-20">
+        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10 mb-12 md:mb-16">
           <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
             <Header />
           </div>
@@ -108,27 +108,29 @@ export default function About() {
 
         {/* Content — centrato orizzontalmente e verticalmente, stessa max-width della home */}
         <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto">
-          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-20 md:pt-28 pb-20 md:pb-28">
+          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-16 md:pt-24 pb-20 md:pb-28">
             {/* Header */}
-            <div className="mb-28 md:mb-32 flex-shrink-0">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">About Me.</h1>
+            <div className="mb-20 md:mb-24 flex-shrink-0">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-[0.04em] mb-4">About Me.</h1>
             </div>
 
             {/* Engineering, Product, Design — con timeline a sinistra */}
             <div className="relative mb-20">
               {/* Timeline Line */}
-              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
+              <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
 
-              <div className="space-y-24 md:space-y-32 pl-0 md:pl-16">
+              <div className="space-y-20 md:space-y-24 pl-0 md:pl-16">
                 <AnimatedSection delay={0.1}>
                   <div className="relative">
                     {/* Timeline Circle */}
-                    <div className="absolute -left-[22px] top-1 w-4 h-4 rounded-full bg-foreground border-2 border-background hidden md:block" />
+                    <div className="absolute left-3 top-1 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background hidden md:block -translate-x-1/2 transform" />
                     
                     <div className="flex items-start justify-between gap-6">
-                      <div className="flex-1 space-y-6">
+                      <div className="flex-1 space-y-4 max-w-3xl">
                         <div className="flex items-center gap-2">
-                          <h2 className="text-2xl md:text-3xl font-bold">Engineering</h2>
+                          <h2 className="text-xl md:text-2xl font-semibold tracking-[0.08em] uppercase">
+                            Engineering
+                          </h2>
                           <FaGithub className="w-3.5 h-3.5 md:w-4 md:h-4 text-foreground/60" />
                         </div>
                         <p className="text-sm md:text-base text-foreground/60 font-extralight leading-[2]">
@@ -155,12 +157,14 @@ export default function About() {
                 <AnimatedSection delay={0.2}>
                   <div className="relative">
                     {/* Timeline Circle */}
-                    <div className="absolute -left-[22px] top-1 w-4 h-4 rounded-full bg-foreground border-2 border-background hidden md:block" />
+                    <div className="absolute left-3 top-1 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background hidden md:block -translate-x-1/2 transform" />
                     
                     <div className="flex items-start justify-between gap-6">
-                      <div className="flex-1 space-y-6">
+                      <div className="flex-1 space-y-4 max-w-3xl">
                         <div className="flex items-center gap-2">
-                          <h2 className="text-2xl md:text-3xl font-bold">Product</h2>
+                          <h2 className="text-xl md:text-2xl font-semibold tracking-[0.08em] uppercase">
+                            Product
+                          </h2>
                           <FaBox className="w-3.5 h-3.5 md:w-4 md:h-4 text-foreground/60" />
                         </div>
                         <p className="text-sm md:text-base text-foreground/60 font-extralight leading-[2]">
@@ -185,12 +189,14 @@ export default function About() {
                 <AnimatedSection delay={0.3}>
                   <div className="relative">
                     {/* Timeline Circle */}
-                    <div className="absolute -left-[22px] top-1 w-4 h-4 rounded-full bg-foreground border-2 border-background hidden md:block" />
+                    <div className="absolute left-3 top-1 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background hidden md:block -translate-x-1/2 transform" />
                     
                     <div className="flex items-start justify-between gap-6">
-                      <div className="flex-1 space-y-6">
+                      <div className="flex-1 space-y-4 max-w-3xl">
                         <div className="flex items-center gap-2">
-                          <h2 className="text-2xl md:text-3xl font-bold">Design</h2>
+                          <h2 className="text-xl md:text-2xl font-semibold tracking-[0.08em] uppercase">
+                            Design
+                          </h2>
                           <FaPalette className="w-3.5 h-3.5 md:w-4 md:h-4 text-foreground/60" />
                         </div>
                         <p className="text-sm md:text-base text-foreground/60 font-extralight leading-[2]">
