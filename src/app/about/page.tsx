@@ -99,19 +99,25 @@ export default function About() {
         {/* Spacer sopra header — altezza fissa, come per hero */}
         <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
 
-        {/* Header — contenitore dedicato, distaccato dal contenuto sotto */}
+        {/* Header — contenitore dedicato */}
         <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
           <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
             <Header />
           </div>
         </div>
 
-        {/* Content — contenitore separato con margine dall'header, titolo About Me più distaccato */}
-        <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto mt-16 md:mt-20">
-          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-8 md:pt-12 pb-20 md:pb-28">
-            {/* Titolo About Me — contenitore separato con più margine dall'header */}
-            <div className="mb-20 md:mb-24 flex-shrink-0">
-              <h1 className="text-3xl md:text-5xl font-bold tracking-[0.04em] mb-4">About Me.</h1>
+        {/* Spacer tra header e About Me — un po' meno per portare il titolo poco più sopra */}
+        <div className="h-14 md:h-24 lg:h-32 flex-shrink-0" aria-hidden="true" />
+
+        {/* Content — un solo blocco con stessa griglia per titolo e timeline */}
+        <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
+          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
+            {/* Titolo About Me — stessa griglia a 2 colonne della timeline: così è allineato a Engineering */}
+            <div className="flex flex-col md:flex-row md:gap-0 gap-6 mb-[7rem] md:mb-[9rem]">
+              <div className="hidden md:block md:w-20 md:flex-shrink-0" aria-hidden="true" />
+              <div className="flex-1 min-w-0">
+                <h1 className="text-3xl md:text-5xl font-bold tracking-[0.04em]">About Me.</h1>
+              </div>
             </div>
 
             {/* Engineering, Product, Design — timeline a sinistra con spazio dedicato */}
