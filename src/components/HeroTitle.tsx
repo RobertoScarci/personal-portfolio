@@ -16,7 +16,7 @@ export default function HeroTitle() {
   }, [animationKey]);
 
   return (
-    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-[0.04em] glitch-text pr-4 flex flex-wrap items-center gap-x-3 md:gap-x-4 lg:gap-x-5">
+    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-[0.04em] glitch-text pr-4 flex flex-wrap items-center gap-x-3 md:gap-x-4 lg:gap-x-3">
       {words.map((word, wordIndex) => {
         const isAccent = word === 'ROBERTO';
         return (
