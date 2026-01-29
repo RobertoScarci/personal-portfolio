@@ -67,27 +67,27 @@ export default function Progetti() {
         {/* Spacer sopra header — altezza fissa, come per hero */}
         <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
 
-        {/* Header — stesso flex dell'hero, max-width leggermente più alta */}
+        {/* Header — contenitore dedicato, distaccato dal contenuto */}
         <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
           <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
             <Header />
           </div>
         </div>
 
-        {/* Content — centrato orizzontalmente e verticalmente, stessa max-width della home */}
-        <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto">
-          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-12 md:pt-16 pb-20 md:pb-28">
+        {/* Content — più margine dall'header, più aria tra i progetti */}
+        <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto mt-16 md:mt-20">
+          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-8 md:pt-12 pb-20 md:pb-28">
             {/* Header */}
-            <div className="mb-16 text-center flex-shrink-0">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">Progetti</h1>
+            <div className="mb-20 md:mb-24 text-center flex-shrink-0">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4">Progetti</h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Una selezione dei progetti che ho sviluppato, mostrando problemi risolti, 
                 soluzioni implementate e risultati ottenuti.
               </p>
             </div>
 
-            {/* Projects Grid */}
-            <div className="space-y-24">
+            {/* Projects Grid — più spazio verticale tra i progetti */}
+            <div className="space-y-28 md:space-y-32">
             {projects.map((project, index) => (
               <AnimatedSection key={project.id} delay={index * 0.2}>
                 <article
