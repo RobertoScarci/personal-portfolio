@@ -109,31 +109,44 @@ export default function About() {
         {/* Spacer tra header e About Me — un po' meno per portare il titolo poco più sopra */}
         <div className="h-14 md:h-24 lg:h-32 flex-shrink-0" aria-hidden="true" />
 
-        {/* Content — un solo blocco con stessa griglia per titolo e timeline */}
+        {/* Content — contenitori separati per sezione: spacing con padding (niente margin collapse) */}
         <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
           <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
-            {/* Titolo About Me — stessa griglia a 2 colonne della timeline: così è allineato a Engineering */}
-            <div className="flex flex-col md:flex-row md:gap-0 gap-6 mb-[7rem] md:mb-[9rem]">
-              <div className="hidden md:block md:w-20 md:flex-shrink-0" aria-hidden="true" />
-              <div className="flex-1 min-w-0">
-                <h1 className="text-3xl md:text-5xl font-bold tracking-[0.04em]">About Me.</h1>
-              </div>
-            </div>
-
-            {/* Engineering, Product, Design — timeline a sinistra con spazio dedicato */}
-            <div className="relative mb-20">
+            {/* Titolo About Me — spaziatura sotto ridotta */}
+            <section
+              className="block"
+              style={{ paddingBottom: 'clamp(2.25rem, 4.5vw, 3rem)' }}
+              aria-labelledby="about-me-title"
+            >
               <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                {/* Colonna timeline: linea + pallini, larghezza fissa per evitare sovrapposizioni */}
-                <div className="hidden md:flex md:w-20 md:flex-shrink-0 md:justify-center md:relative">
+                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
+                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h1 id="about-me-title" className="text-3xl md:text-5xl font-bold tracking-[0.04em]">About Me.</h1>
+                </div>
+              </div>
+            </section>
+
+            {/* Sezione 2: Engineering — poco più spazio sotto prima di My Reads */}
+            <section
+              className="block"
+              style={{ paddingTop: 'clamp(2rem, 4vw, 3rem)', paddingBottom: 'clamp(3.25rem, 6.5vw, 4.25rem)' }}
+              aria-labelledby="engineering-heading"
+            >
+            <div className="relative">
+              <div className="flex flex-col md:flex-row md:gap-0 gap-6">
+                {/* Colonna timeline: più stretta per avvicinare il testo alla linea */}
+                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
                   <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
                 </div>
 
-                {/* Colonna contenuto: titoli e paragrafi con spazio chiaro dalla linea */}
+                {/* Colonna contenuto: titoli e paragrafi più vicini alla timeline */}
                 <div className="flex-1 min-w-0 space-y-20 md:space-y-24">
                 <AnimatedSection delay={0.1}>
                   <div className="relative flex items-start gap-6">
-                    {/* Pallino timeline — centrato sulla linea (colonna timeline = 80px, linea a 40px) */}
-                    <div className="hidden md:block absolute -left-10 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
+                    {/* Pallino timeline — centrato sulla linea (colonna w-14 = 56px, centro 28px) */}
+                    <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
                     
                     <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
                       <div className="flex-1 space-y-4 max-w-3xl">
@@ -166,7 +179,7 @@ export default function About() {
 
                 <AnimatedSection delay={0.2}>
                   <div className="relative flex items-start gap-6">
-                    <div className="hidden md:block absolute -left-10 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
+                    <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
                     
                     <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
                       <div className="flex-1 space-y-4 max-w-3xl">
@@ -197,7 +210,7 @@ export default function About() {
 
                 <AnimatedSection delay={0.3}>
                   <div className="relative flex items-start gap-6">
-                    <div className="hidden md:block absolute -left-10 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
+                    <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
                     
                     <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
                       <div className="flex-1 space-y-4 max-w-3xl">
@@ -228,19 +241,35 @@ export default function About() {
                 </div>
               </div>
             </div>
+            </section>
 
-            {/* My Reads — con timeline come Engineering/Product/Design */}
-            <div className="relative mb-20">
-              <h2 className="text-xl md:text-2xl font-bold mb-10 md:mb-12">My Reads.</h2>
+            {/* Titolo My Reads — poco più spazio sopra (dopo Engineering) */}
+            <section
+              className="block"
+              style={{ paddingTop: 'clamp(2.75rem, 5.5vw, 4.25rem)', paddingBottom: 'clamp(3rem, 6vw, 4rem)' }}
+              aria-labelledby="my-reads-heading"
+            >
               <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                <div className="hidden md:flex md:w-20 md:flex-shrink-0 md:justify-center md:relative">
+                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
+                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h2 id="my-reads-heading" className="text-xl md:text-2xl font-bold">My Reads.</h2>
+                </div>
+              </div>
+            </section>
+
+            {/* Contenuto My Reads — poco più spazio sotto prima di My Playlist */}
+            <section className="block" style={{ paddingBottom: 'clamp(2.75rem, 5.5vw, 4.25rem)' }}>
+              <div className="flex flex-col md:flex-row md:gap-0 gap-6">
+                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
                   <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
                 </div>
                 <div className="flex-1 min-w-0 space-y-10 md:space-y-12">
                   {reads.map((read, index) => (
                     <AnimatedSection key={index} delay={0.1 + index * 0.1}>
                       <div className="relative flex items-start gap-6">
-                        <div className="hidden md:block absolute -left-10 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
+                        <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
                         <div className="flex-1 min-w-0 pl-0 md:pl-0">
                           <div className="space-y-2">
                             <div className="flex items-baseline gap-2 flex-wrap">
@@ -258,20 +287,35 @@ export default function About() {
                   ))}
                 </div>
               </div>
-            </div>
+            </section>
 
-            {/* My Playlist — con timeline come Engineering/Product/Design */}
-            <div className="relative mb-20">
-              <h2 className="text-xl md:text-2xl font-bold mb-10 md:mb-12">My Playlist.</h2>
+            {/* Titolo My Playlist — poco più spazio sopra (dopo My Reads) */}
+            <section
+              className="block"
+              style={{ paddingTop: 'clamp(2.75rem, 5.5vw, 4.25rem)', paddingBottom: 'clamp(3rem, 6vw, 4rem)' }}
+              aria-labelledby="my-playlist-heading"
+            >
               <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                <div className="hidden md:flex md:w-20 md:flex-shrink-0 md:justify-center md:relative">
+                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
+                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h2 id="my-playlist-heading" className="text-xl md:text-2xl font-bold">My Playlist.</h2>
+                </div>
+              </div>
+            </section>
+
+            {/* Contenuto My Playlist — poco più spazio sotto prima del CTA */}
+            <section className="block" style={{ paddingBottom: 'clamp(2.25rem, 4.5vw, 3.25rem)' }}>
+              <div className="flex flex-col md:flex-row md:gap-0 gap-6">
+                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
                   <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
                 </div>
                 <div className="flex-1 min-w-0 space-y-10 md:space-y-12">
                   {playlists.map((playlist, index) => (
                     <AnimatedSection key={index} delay={0.1 + index * 0.1}>
                       <div className="relative flex items-start gap-6">
-                        <div className="hidden md:block absolute -left-10 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
+                        <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
                         <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
                           <div className="flex-1 space-y-2 max-w-3xl">
                             <h3 className="text-base md:text-lg font-semibold">{playlist.title}.</h3>
@@ -298,11 +342,11 @@ export default function About() {
                   ))}
                 </div>
               </div>
-            </div>
+            </section>
 
-            {/* CTA to Projects */}
+            {/* CTA to Projects — poco più spazio sopra (dopo My Playlist) */}
             <AnimatedSection delay={0.4}>
-              <div className="text-center pt-8">
+              <div className="text-center pt-10">
                 <Link
                   href="/progetti"
                   className="inline-flex items-center gap-2 text-base font-medium text-foreground/70 hover:text-foreground transition-colors"
