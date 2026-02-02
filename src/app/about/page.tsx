@@ -141,8 +141,8 @@ export default function About() {
                   <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
                 </div>
 
-                {/* Colonna contenuto: titoli e paragrafi più vicini alla timeline */}
-                <div className="flex-1 min-w-0 space-y-20 md:space-y-24">
+                {/* Colonna contenuto: gap invece di space-y così il reset CSS non annulla lo spazio */}
+                <div className="flex-1 min-w-0 flex flex-col gap-24 md:gap-28">
                 <AnimatedSection delay={0.1}>
                   <div className="relative flex items-start gap-6">
                     {/* Pallino timeline — centrato sulla linea (colonna w-14 = 56px, centro 28px) */}
@@ -259,13 +259,13 @@ export default function About() {
               </div>
             </section>
 
-            {/* Contenuto My Reads — poco più spazio sotto prima di My Playlist */}
+            {/* Contenuto My Reads — gap come in My Playlist, spacing visibile tra voci */}
             <section className="block" style={{ paddingBottom: 'clamp(2.75rem, 5.5vw, 4.25rem)' }}>
               <div className="flex flex-col md:flex-row md:gap-0 gap-6">
                 <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
                   <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
                 </div>
-                <div className="flex-1 min-w-0 space-y-10 md:space-y-12">
+                <div className="flex-1 min-w-0 flex flex-col gap-16 md:gap-20">
                   {reads.map((read, index) => (
                     <AnimatedSection key={index} delay={0.1 + index * 0.1}>
                       <div className="relative flex items-start gap-6">
@@ -305,13 +305,13 @@ export default function About() {
               </div>
             </section>
 
-            {/* Contenuto My Playlist — poco più spazio sotto prima del CTA */}
+            {/* Contenuto My Playlist — gap come in riferimento: spazio chiaro tra una voce e la successiva */}
             <section className="block" style={{ paddingBottom: 'clamp(2.25rem, 4.5vw, 3.25rem)' }}>
               <div className="flex flex-col md:flex-row md:gap-0 gap-6">
                 <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
                   <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
                 </div>
-                <div className="flex-1 min-w-0 space-y-10 md:space-y-12">
+                <div className="flex-1 min-w-0 flex flex-col gap-16 md:gap-20">
                   {playlists.map((playlist, index) => (
                     <AnimatedSection key={index} delay={0.1 + index * 0.1}>
                       <div className="relative flex items-start gap-6">
