@@ -4,6 +4,7 @@ import Layout from '@/components/Layout';
 import PageWatermark from '@/components/PageWatermark';
 import Header from '@/components/Header';
 import AnimatedSection from '@/components/AnimatedSection';
+import SocialIcons from '@/components/SocialIcons';
 import { useState } from 'react';
 
 export default function Contatti() {
@@ -105,7 +106,7 @@ export default function Contatti() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-4 md:py-5 rounded-md bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40"
+                    className="w-full px-4 py-5 md:py-6 rounded-md bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40"
                     placeholder="Name"
                   />
                 </div>
@@ -120,7 +121,7 @@ export default function Contatti() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-4 md:py-5 rounded-md bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40"
+                    className="w-full px-4 py-5 md:py-6 rounded-md bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40"
                     placeholder="Email"
                   />
                 </div>
@@ -134,14 +135,14 @@ export default function Contatti() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={8}
-                    className="w-full min-h-[180px] px-4 py-4 md:py-5 rounded-md bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40"
+                    rows={9}
+                    className="w-full min-h-[200px] px-4 py-5 md:py-6 rounded-md bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40"
                     placeholder="Message"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="mt-2 w-full md:w-auto px-8 py-4 md:py-5 rounded-md bg-foreground text-background font-medium text-sm tracking-wide hover:bg-accent hover:text-foreground transition-colors"
+                  className="mt-2 w-full md:w-auto px-8 py-5 md:py-6 rounded-md bg-foreground text-background font-medium text-sm tracking-wide hover:bg-accent hover:text-foreground transition-colors"
                 >
                   Invia
                 </button>
@@ -149,7 +150,7 @@ export default function Contatti() {
             </section>
             </AnimatedSection>
 
-            {/* Sezione 4: Info di contatto */}
+            {/* Sezione 4: Social — stessi loghi e design della homepage */}
             <AnimatedSection delay={0.25}>
             <section
               className="block border-t border-border/60"
@@ -158,45 +159,9 @@ export default function Contatti() {
                 paddingBottom: 'clamp(2rem, 4vw, 2.75rem)',
               }}
             >
-              <p className="text-xs uppercase tracking-widest text-foreground/50 mb-3">
-                Altri modi per contattarmi
-              </p>
-              <div className="flex flex-col gap-2 text-sm text-foreground/70">
-                <p>
-                  <span className="font-semibold text-foreground">Email</span>{' '}
-                  <a
-                    href="mailto:hello@robertoscarci.dev"
-                    className="text-accent hover:text-foreground underline-offset-4 hover:underline"
-                  >
-                    hello@robertoscarci.dev
-                  </a>
-                </p>
-                <p>
-                  <span className="font-semibold text-foreground">LinkedIn</span>{' '}
-                  <a
-                    href="https://www.linkedin.com/in/roberto-scarci-0625ab2a6/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:text-foreground underline-offset-4 hover:underline"
-                  >
-                    /roberto-scarci
-                  </a>
-                </p>
-                <p>
-                  <span className="font-semibold text-foreground">GitHub</span>{' '}
-                  <a
-                    href="https://github.com/RobertoScarci"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:text-foreground underline-offset-4 hover:underline"
-                  >
-                    /RobertoScarci
-                  </a>
-                </p>
+              <div className="flex justify-start items-center gap-8 md:gap-10">
+                <SocialIcons />
               </div>
-              <p className="mt-4 text-xs text-foreground/50">
-                Rispondo di solito entro 24–48 ore nei giorni lavorativi.
-              </p>
             </section>
             </AnimatedSection>
 
