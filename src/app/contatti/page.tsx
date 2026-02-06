@@ -40,9 +40,12 @@ export default function Contatti() {
           </div>
         </div>
 
-        {/* Content — sezioni distinte per spaziature uniformi (come riferimento) */}
-        <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto mt-16 md:mt-20">
-          <div className="w-full max-w-2xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-8 md:pt-12 pb-20 md:pb-28">
+        {/* Spacer tra header e Contact — stesso di About (contenitori separati) */}
+        <div className="h-14 md:h-24 lg:h-32 flex-shrink-0" aria-hidden="true" />
+
+        {/* Content — max-width come About (max-w-5xl), stesso pt */}
+        <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
+          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
             {/* Sezione 1: Titolo */}
             <AnimatedSection delay={0.1}>
               <section
