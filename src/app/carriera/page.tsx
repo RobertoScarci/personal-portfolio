@@ -2,6 +2,7 @@ import Layout from '@/components/Layout';
 import AnimatedSection from '@/components/AnimatedSection';
 import PageWatermark from '@/components/PageWatermark';
 import Header from '@/components/Header';
+import CareerTimeline, { type TimelineItem } from '@/components/CareerTimeline';
 import {
   SiReact,
   SiNextdotjs,
@@ -26,14 +27,6 @@ export const metadata: Metadata = {
   title: 'Carriera',
   description: 'Il mio percorso di studi ed esperienze professionali, un viaggio continuo di crescita tecnica e personale.',
 };
-
-interface TimelineItem {
-  year: string;
-  title: string;
-  organization: string;
-  description: string;
-  type: 'education' | 'experience';
-}
 
 const timeline: TimelineItem[] = [
   {
@@ -81,54 +74,53 @@ export default function Carriera() {
           </div>
         </div>
 
-        {/* Content — margine dall'header */}
-        <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto mt-16 md:mt-20">
-          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-8 md:pt-12 pb-20 md:pb-28">
-            {/* Intro — sezione distinta */}
-            <div className="mb-20 flex-shrink-0">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">Carriera</h1>
-              <p className="text-base md:text-lg text-muted-foreground max-w-2xl">
-                Il mio percorso di studi ed esperienze professionali, un viaggio continuo
-                di crescita tecnica e personale.
-              </p>
-            </div>
+        {/* Spacer tra header e contenuto — come About */}
+        <div className="h-14 md:h-24 lg:h-32 flex-shrink-0" aria-hidden="true" />
 
-            {/* Timeline — sezione dedicata (percorso vita) */}
-            <div className="relative mb-24 md:mb-32">
-              <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                <div className="hidden md:flex md:w-20 md:flex-shrink-0 md:justify-center md:relative">
-                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+        {/* Content — stesso schema di About: pt-4 md:pt-6, nessun mt */}
+        <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
+          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
+            {/* Intro — stessi margini della sezione titolo in About */}
+            <AnimatedSection delay={0.1}>
+              <section
+                className="block"
+                style={{ paddingBottom: 'clamp(2.25rem, 4.5vw, 3rem)' }}
+                aria-labelledby="carriera-title"
+              >
+                <div className="flex flex-col md:flex-row md:gap-0 gap-6">
+                  <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
+                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h1 id="carriera-title" className="text-3xl md:text-5xl font-bold tracking-[0.04em]">
+                      Carriera
+                    </h1>
+                    <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-2xl">
+                      Il mio percorso di studi ed esperienze professionali, un viaggio continuo
+                      di crescita tecnica e personale.
+                    </p>
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0 space-y-12">
-                  {timeline.map((item, index) => (
-                    <AnimatedSection key={index} delay={index * 0.15}>
-                      <div className="relative flex items-start gap-6">
-                        <div className="hidden md:block absolute -left-10 top-2 w-4 h-4 rounded-full bg-accent/20 border-2 border-accent -translate-x-1/2 flex-shrink-0" />
-                        <div className="flex-1 min-w-0 pl-0 md:pl-0">
-                          <div className="flex items-center gap-2 mb-2">
-                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                              item.type === 'education'
-                                ? 'bg-foreground/10 text-foreground/90'
-                                : 'bg-accent/20 text-accent'
-                            }`}>
-                              {item.type === 'education' ? 'Formazione' : 'Esperienza'}
-                            </span>
-                            <span className="text-sm font-semibold text-foreground/70">{item.year}</span>
-                          </div>
-                          <h3 className="text-xl md:text-2xl font-bold mb-1">{item.title}</h3>
-                          <p className="text-accent font-medium text-sm mb-2">{item.organization}</p>
-                          <p className="text-muted-foreground text-sm md:text-base">{item.description}</p>
-                        </div>
-                      </div>
-                    </AnimatedSection>
-                  ))}
-                </div>
-              </div>
-            </div>
+              </section>
+            </AnimatedSection>
 
-            {/* Competenze Tecniche — sezione distinta, design diverso con logo monocromatici */}
+            {/* Timeline — linea animata, spaziatura come About (gap-24 md:gap-28), titoli distaccati */}
+            <section
+              className="block"
+              style={{ paddingTop: 'clamp(2rem, 4vw, 3rem)', paddingBottom: 'clamp(3.25rem, 6.5vw, 4.25rem)' }}
+              aria-label="Percorso"
+            >
+              <CareerTimeline items={timeline} />
+            </section>
+
+            {/* Competenze Tecniche — più sotto rispetto alla timeline */}
+            <section
+              className="block"
+              style={{ paddingTop: 'clamp(3.5rem, 7vw, 5rem)' }}
+              aria-labelledby="competenze-heading"
+            >
             <div className="rounded-2xl bg-surface/40 border border-border/50 p-8 md:p-10 backdrop-blur-sm">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8">Competenze Tecniche</h2>
+              <h2 id="competenze-heading" className="text-2xl md:text-3xl font-bold mb-8">Competenze Tecniche</h2>
               <div className="grid md:grid-cols-2 gap-10 md:gap-12">
                 <div className="space-y-6">
                   <h3 className="text-lg font-semibold text-foreground/90">Frontend</h3>
@@ -217,6 +209,7 @@ export default function Carriera() {
                 </div>
               </div>
             </div>
+            </section>
           </div>
         </div>
       </section>
