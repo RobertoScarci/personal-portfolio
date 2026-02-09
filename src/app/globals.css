@@ -390,3 +390,13 @@ a:hover, button:hover {
     transform: translate(1px, 1px);
   }
 }
+
+/* Marquee — linguaggi che scorrono (Competenze) */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-scroll {
+  animation: marquee-scroll 40s linear infinite;
+  width: max-content;
+}
