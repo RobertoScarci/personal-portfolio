@@ -120,92 +120,100 @@ export default function Carriera() {
               aria-labelledby="competenze-heading"
             >
             <div className="rounded-2xl bg-surface/40 border border-border/50 p-8 md:p-10 backdrop-blur-sm">
-              <h2 id="competenze-heading" className="text-2xl md:text-3xl font-bold mb-8">Competenze Tecniche</h2>
-              <div className="grid md:grid-cols-2 gap-10 md:gap-12">
-                <div className="space-y-6">
-                  <h3 className="text-lg font-semibold text-foreground/90">Frontend</h3>
-                  <div className="flex flex-wrap gap-4 items-center">
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiReact className="w-6 h-6 text-foreground" aria-hidden />
-                      React
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiNextdotjs className="w-6 h-6 text-foreground" aria-hidden />
-                      Next.js
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiTypescript className="w-6 h-6 text-foreground" aria-hidden />
-                      TypeScript
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiTailwindcss className="w-6 h-6 text-foreground" aria-hidden />
-                      Tailwind
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiRedux className="w-6 h-6 text-foreground" aria-hidden />
-                      Redux
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiJest className="w-6 h-6 text-foreground" aria-hidden />
-                      Jest
-                    </span>
-                  </div>
+              <h2 id="competenze-heading" className="text-2xl md:text-3xl font-bold mb-10 md:mb-12">Competenze Tecniche</h2>
+
+              <div className="flex flex-col gap-12 md:gap-14">
+                {/* Frontend — ordine: framework, linguaggi, styling, state, test */}
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/70 mb-5 md:mb-6">Frontend</h3>
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-4 md:gap-y-5" aria-label="Tecnologie frontend">
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiReact className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">React</span>
+                    </li>
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiNextdotjs className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">Next.js</span>
+                    </li>
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiTypescript className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">TypeScript</span>
+                    </li>
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiTailwindcss className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">Tailwind</span>
+                    </li>
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiRedux className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">Redux</span>
+                    </li>
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiJest className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">Jest</span>
+                    </li>
+                  </ul>
                 </div>
-                <div className="space-y-6">
-                  <h3 className="text-lg font-semibold text-foreground/90">Backend</h3>
-                  <div className="flex flex-wrap gap-4 items-center">
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiNodedotjs className="w-6 h-6 text-foreground" aria-hidden />
-                      Node.js
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiExpress className="w-6 h-6 text-foreground" aria-hidden />
-                      Express
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiNestjs className="w-6 h-6 text-foreground" aria-hidden />
-                      NestJS
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiPostgresql className="w-6 h-6 text-foreground" aria-hidden />
-                      PostgreSQL
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiMongodb className="w-6 h-6 text-foreground" aria-hidden />
-                      MongoDB
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiGraphql className="w-6 h-6 text-foreground" aria-hidden />
-                      GraphQL
-                    </span>
-                  </div>
+
+                {/* Backend — ordine: runtime, framework, db, api */}
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/70 mb-5 md:mb-6">Backend</h3>
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-4 md:gap-y-5" aria-label="Tecnologie backend">
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiNodedotjs className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">Node.js</span>
+                    </li>
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiExpress className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">Express</span>
+                    </li>
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiNestjs className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">NestJS</span>
+                    </li>
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiPostgresql className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">PostgreSQL</span>
+                    </li>
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiMongodb className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">MongoDB</span>
+                    </li>
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiGraphql className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">GraphQL</span>
+                    </li>
+                  </ul>
                 </div>
-                <div className="space-y-6">
-                  <h3 className="text-lg font-semibold text-foreground/90">Tools & DevOps</h3>
-                  <div className="flex flex-wrap gap-4 items-center">
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiGit className="w-6 h-6 text-foreground" aria-hidden />
-                      Git
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiDocker className="w-6 h-6 text-foreground" aria-hidden />
-                      Docker
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiAmazon className="w-6 h-6 text-foreground" aria-hidden />
-                      AWS
-                    </span>
-                  </div>
+
+                {/* Tools & DevOps */}
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/70 mb-5 md:mb-6">Tools & DevOps</h3>
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 md:gap-y-5" aria-label="Tools e DevOps">
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiGit className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">Git</span>
+                    </li>
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiDocker className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">Docker</span>
+                    </li>
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiAmazon className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">AWS</span>
+                    </li>
+                  </ul>
                 </div>
-                <div className="space-y-6">
-                  <h3 className="text-lg font-semibold text-foreground/90">Design</h3>
-                  <div className="flex flex-wrap gap-4 items-center">
-                    <span className="flex items-center gap-2 text-sm text-foreground/80">
-                      <SiFigma className="w-6 h-6 text-foreground" aria-hidden />
-                      Figma
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground pt-2">Agile, Scrum, Problem Solving</p>
+
+                {/* Design e metodologie */}
+                <div>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/70 mb-5 md:mb-6">Design & Metodologie</h3>
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 md:gap-y-5" aria-label="Design e metodologie">
+                    <li className="flex items-center gap-3 min-w-0">
+                      <SiFigma className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
+                      <span className="text-sm text-foreground/85">Figma</span>
+                    </li>
+                  </ul>
+                  <p className="mt-4 text-sm text-foreground/70">Agile, Scrum, Problem Solving</p>
                 </div>
               </div>
             </div>
