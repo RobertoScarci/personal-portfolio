@@ -3,24 +3,7 @@ import AnimatedSection from '@/components/AnimatedSection';
 import PageWatermark from '@/components/PageWatermark';
 import Header from '@/components/Header';
 import CareerTimeline, { type TimelineItem } from '@/components/CareerTimeline';
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiNodedotjs,
-  SiPostgresql,
-  SiMongodb,
-  SiTailwindcss,
-  SiDocker,
-  SiAmazon,
-  SiFigma,
-  SiJest,
-  SiRedux,
-  SiExpress,
-  SiNestjs,
-  SiGraphql,
-  SiGit,
-} from 'react-icons/si';
+import CompetenzeSection from '@/components/CompetenzeSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -113,110 +96,16 @@ export default function Carriera() {
               <CareerTimeline items={timeline} />
             </section>
 
-            {/* Competenze Tecniche — più sotto rispetto alla timeline */}
+            {/* Competenze Tecniche — più sotto, padding sotto per non attaccare al fondo */}
             <section
               className="block"
-              style={{ paddingTop: 'clamp(3.5rem, 7vw, 5rem)' }}
+              style={{
+                paddingTop: 'clamp(3.5rem, 7vw, 5rem)',
+                paddingBottom: 'clamp(4rem, 10vw, 6rem)',
+              }}
               aria-labelledby="competenze-heading"
             >
-            <div className="rounded-2xl bg-surface/40 border border-border/50 p-8 md:p-10 backdrop-blur-sm">
-              <h2 id="competenze-heading" className="text-2xl md:text-3xl font-bold mb-10 md:mb-12">Competenze Tecniche</h2>
-
-              <div className="flex flex-col gap-12 md:gap-14">
-                {/* Frontend — ordine: framework, linguaggi, styling, state, test */}
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/70 mb-5 md:mb-6">Frontend</h3>
-                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-4 md:gap-y-5" aria-label="Tecnologie frontend">
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiReact className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">React</span>
-                    </li>
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiNextdotjs className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">Next.js</span>
-                    </li>
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiTypescript className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">TypeScript</span>
-                    </li>
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiTailwindcss className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">Tailwind</span>
-                    </li>
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiRedux className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">Redux</span>
-                    </li>
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiJest className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">Jest</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Backend — ordine: runtime, framework, db, api */}
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/70 mb-5 md:mb-6">Backend</h3>
-                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-4 md:gap-y-5" aria-label="Tecnologie backend">
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiNodedotjs className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">Node.js</span>
-                    </li>
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiExpress className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">Express</span>
-                    </li>
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiNestjs className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">NestJS</span>
-                    </li>
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiPostgresql className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">PostgreSQL</span>
-                    </li>
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiMongodb className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">MongoDB</span>
-                    </li>
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiGraphql className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">GraphQL</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Tools & DevOps */}
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/70 mb-5 md:mb-6">Tools & DevOps</h3>
-                  <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 md:gap-y-5" aria-label="Tools e DevOps">
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiGit className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">Git</span>
-                    </li>
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiDocker className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">Docker</span>
-                    </li>
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiAmazon className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">AWS</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Design e metodologie */}
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/70 mb-5 md:mb-6">Design & Metodologie</h3>
-                  <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 md:gap-y-5" aria-label="Design e metodologie">
-                    <li className="flex items-center gap-3 min-w-0">
-                      <SiFigma className="w-5 h-5 text-foreground flex-shrink-0" aria-hidden />
-                      <span className="text-sm text-foreground/85">Figma</span>
-                    </li>
-                  </ul>
-                  <p className="mt-4 text-sm text-foreground/70">Agile, Scrum, Problem Solving</p>
-                </div>
-              </div>
-            </div>
+              <CompetenzeSection />
             </section>
           </div>
         </div>
