@@ -106,7 +106,7 @@ export default function Contatti() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full p-6 md:p-8 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 min-h-[56px] md:min-h-[64px]"
+                    className="w-full py-6 md:py-8 pr-6 md:pr-8 pl-8 md:pl-10 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 min-h-[56px] md:min-h-[64px]"
                     placeholder="Name"
                   />
                 </div>
@@ -121,7 +121,7 @@ export default function Contatti() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full p-6 md:p-8 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 min-h-[56px] md:min-h-[64px]"
+                    className="w-full py-6 md:py-8 pr-6 md:pr-8 pl-8 md:pl-10 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 min-h-[56px] md:min-h-[64px]"
                     placeholder="Email"
                   />
                 </div>
@@ -136,13 +136,13 @@ export default function Contatti() {
                     onChange={handleChange}
                     required
                     rows={9}
-                    className="w-full min-h-[240px] md:min-h-[280px] p-6 md:p-8 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40"
+                    className="w-full min-h-[240px] md:min-h-[280px] py-6 md:py-8 pr-6 md:pr-8 pl-8 md:pl-10 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40"
                     placeholder="Message"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="mt-1 w-auto px-6 py-3 rounded-md bg-foreground text-background font-medium text-sm tracking-wide hover:bg-accent hover:text-foreground transition-colors"
+                  className="mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md border border-border/60 bg-surface/40 text-xs md:text-sm text-foreground hover:bg-accent/20 hover:border-accent/60 hover:text-accent transition-colors"
                 >
                   Invia
                 </button>
@@ -171,13 +171,14 @@ export default function Contatti() {
               className="block"
               style={{
                 paddingTop: 'clamp(2rem, 4vw, 2.75rem)',
+                paddingBottom: 'clamp(3rem, 6vw, 4rem)',
               }}
             >
               <h2 className="text-lg font-semibold mb-2">Prenota una call</h2>
               <p className="text-sm text-foreground/60 mb-4">
                 Scegli uno slot nel calendario per una chiamata veloce (Calendly, ecc.).
               </p>
-              <div className="rounded-xl border border-border/40 bg-surface/30 p-4 max-w-xs">
+              <div className="w-full max-w-md rounded-2xl border border-border/40 bg-surface/40 p-5 md:p-6 shadow-[0_18px_60px_rgba(0,0,0,0.65)]">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-medium text-foreground/80">Calendario</span>
                   <span className="text-[10px] text-foreground/50">Coming soon</span>
@@ -196,7 +197,7 @@ export default function Contatti() {
                     <button
                       key={i}
                       type="button"
-                      className="aspect-square rounded-md bg-surface-elevated/40 hover:bg-accent/20 text-foreground/60 hover:text-foreground transition-colors"
+                      className="h-8 md:h-9 rounded-lg bg-surface-elevated/50 hover:bg-accent/20 text-foreground/70 hover:text-foreground text-[11px] md:text-xs flex items-center justify-center transition-colors"
                     >
                       {i + 1}
                     </button>
