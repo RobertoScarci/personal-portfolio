@@ -107,7 +107,7 @@ export default function Contatti() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full py-6 md:py-8 pr-6 md:pr-8 pl-8 md:pl-10 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 min-h-[56px] md:min-h-[64px]"
+                    className="w-full py-6 md:py-8 px-8 md:px-10 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 min-h-[56px] md:min-h-[64px]"
                     placeholder="Name"
                   />
                 </div>
@@ -122,7 +122,7 @@ export default function Contatti() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full py-6 md:py-8 pr-6 md:pr-8 pl-8 md:pl-10 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 min-h-[56px] md:min-h-[64px]"
+                    className="w-full py-6 md:py-8 px-8 md:px-10 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 min-h-[56px] md:min-h-[64px]"
                     placeholder="Email"
                   />
                 </div>
@@ -137,13 +137,13 @@ export default function Contatti() {
                     onChange={handleChange}
                     required
                     rows={9}
-                    className="w-full min-h-[240px] md:min-h-[280px] py-6 md:py-8 pr-6 md:pr-8 pl-8 md:pl-10 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40"
+                    className="w-full min-h-[240px] md:min-h-[280px] py-6 md:py-8 px-8 md:px-10 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40"
                     placeholder="Message"
                   />
                 </div>
                 <motion.button
                   type="submit"
-                  className="mt-3 inline-flex items-center justify-center self-start w-auto px-5 md:px-6 py-2 md:py-2.5 rounded-md bg-foreground text-background text-xs md:text-sm font-medium tracking-wide hover:bg-accent hover:text-foreground transition-colors"
+                  className="mt-3 inline-flex items-center justify-center self-start w-auto px-6 md:px-7 py-2.5 md:py-3 rounded-md bg-foreground text-background text-xs md:text-sm font-medium tracking-wide hover:bg-accent hover:text-foreground transition-colors"
                   whileHover={{ scale: 1.05, y: -1 }}
                   whileTap={{ scale: 0.96, y: 0 }}
                   transition={{ type: 'spring', stiffness: 380, damping: 26 }}
