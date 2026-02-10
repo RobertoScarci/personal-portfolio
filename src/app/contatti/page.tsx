@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import AnimatedSection from '@/components/AnimatedSection';
 import SocialIcons from '@/components/SocialIcons';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Contatti() {
   const [formData, setFormData] = useState({
@@ -140,12 +141,15 @@ export default function Contatti() {
                     placeholder="Message"
                   />
                 </div>
-                <button
+                <motion.button
                   type="submit"
-                  className="mt-3 inline-flex items-center justify-center self-start w-auto max-w-fit px-2.5 py-1.5 rounded-md bg-foreground text-background text-[11px] font-medium hover:bg-accent hover:text-foreground transition-colors"
+                  className="mt-3 inline-flex items-center justify-center self-start w-auto px-4 md:px-5 py-2 md:py-2.5 rounded-md bg-foreground text-background text-xs md:text-sm font-medium tracking-wide hover:bg-accent hover:text-foreground transition-colors"
+                  whileHover={{ scale: 1.05, y: -1 }}
+                  whileTap={{ scale: 0.96, y: 0 }}
+                  transition={{ type: 'spring', stiffness: 380, damping: 26 }}
                 >
                   Invia
-                </button>
+                </motion.button>
               </form>
             </section>
             </AnimatedSection>
