@@ -142,7 +142,7 @@ export default function Contatti() {
                 </div>
                 <button
                   type="submit"
-                  className="mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md border border-border/60 bg-surface/40 text-xs md:text-sm text-foreground hover:bg-accent/20 hover:border-accent/60 hover:text-accent transition-colors"
+                  className="mt-4 inline-flex items-center justify-center px-3 py-1.5 rounded-md border border-border/60 bg-surface/30 text-[11px] md:text-xs text-foreground/80 hover:bg-accent/20 hover:border-accent/60 hover:text-accent transition-colors"
                 >
                   Invia
                 </button>
@@ -174,16 +174,16 @@ export default function Contatti() {
                 paddingBottom: 'clamp(3rem, 6vw, 4rem)',
               }}
             >
-              <h2 className="text-lg font-semibold mb-2">Prenota una call</h2>
-              <p className="text-sm text-foreground/60 mb-4">
+              <h2 className="text-lg font-semibold mb-3 md:mb-4">Prenota una call</h2>
+              <p className="text-sm text-foreground/60 mb-6">
                 Scegli uno slot nel calendario per una chiamata veloce (Calendly, ecc.).
               </p>
               <div className="w-full max-w-md rounded-2xl border border-border/40 bg-surface/40 p-5 md:p-6 shadow-[0_18px_60px_rgba(0,0,0,0.65)]">
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-medium text-foreground/80">Calendario</span>
                   <span className="text-[10px] text-foreground/50">Coming soon</span>
                 </div>
-                <div className="grid grid-cols-7 gap-1 text-[10px] text-center text-foreground/50 mb-2">
+                <div className="grid grid-cols-7 gap-1 text-[10px] text-center text-foreground/50 mb-3">
                   <span>L</span>
                   <span>M</span>
                   <span>M</span>
