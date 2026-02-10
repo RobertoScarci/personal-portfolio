@@ -142,7 +142,7 @@ export default function Contatti() {
                 </div>
                 <button
                   type="submit"
-                  className="mt-4 inline-flex items-center justify-center px-3 py-1.5 rounded-md border border-border/60 bg-surface/30 text-[11px] md:text-xs text-foreground/80 hover:bg-accent/20 hover:border-accent/60 hover:text-accent transition-colors"
+                  className="mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-foreground text-background text-xs md:text-sm font-medium tracking-wide hover:bg-accent hover:text-foreground transition-colors"
                 >
                   Invia
                 </button>
@@ -170,20 +170,20 @@ export default function Contatti() {
             <section
               className="block"
               style={{
-                paddingTop: 'clamp(2rem, 4vw, 2.75rem)',
-                paddingBottom: 'clamp(3rem, 6vw, 4rem)',
+                paddingTop: 'clamp(2.5rem, 5vw, 3.5rem)',
+                paddingBottom: 'clamp(4rem, 8vw, 5rem)',
               }}
             >
-              <h2 className="text-lg font-semibold mb-3 md:mb-4">Prenota una call</h2>
-              <p className="text-sm text-foreground/60 mb-6">
+              <h2 className="text-lg md:text-xl font-semibold mb-4 md:mb-5">Prenota una call</h2>
+              <p className="text-sm text-foreground/60 mb-8">
                 Scegli uno slot nel calendario per una chiamata veloce (Calendly, ecc.).
               </p>
-              <div className="w-full max-w-md rounded-2xl border border-border/40 bg-surface/40 p-5 md:p-6 shadow-[0_18px_60px_rgba(0,0,0,0.65)]">
-                <div className="flex items-center justify-between mb-4">
+              <div className="w-full max-w-xl rounded-2xl border border-border/40 bg-surface/40 p-6 md:p-8 shadow-[0_22px_70px_rgba(0,0,0,0.75)]">
+                <div className="flex items-center justify-between mb-5">
                   <span className="text-xs font-medium text-foreground/80">Calendario</span>
                   <span className="text-[10px] text-foreground/50">Coming soon</span>
                 </div>
-                <div className="grid grid-cols-7 gap-1 text-[10px] text-center text-foreground/50 mb-3">
+                <div className="grid grid-cols-7 gap-1.5 text-[11px] md:text-xs text-center text-foreground/50 mb-4">
                   <span>L</span>
                   <span>M</span>
                   <span>M</span>
@@ -192,12 +192,12 @@ export default function Contatti() {
                   <span>S</span>
                   <span>D</span>
                 </div>
-                <div className="grid grid-cols-7 gap-1 text-xs">
+                <div className="grid grid-cols-7 gap-1.5 text-xs md:text-sm">
                   {Array.from({ length: 28 }).map((_, i) => (
                     <button
                       key={i}
                       type="button"
-                      className="h-8 md:h-9 rounded-lg bg-surface-elevated/50 hover:bg-accent/20 text-foreground/70 hover:text-foreground text-[11px] md:text-xs flex items-center justify-center transition-colors"
+                      className="h-9 md:h-11 rounded-lg bg-surface-elevated/50 hover:bg-accent/20 text-foreground/80 hover:text-foreground text-[11px] md:text-xs flex items-center justify-center transition-colors"
                     >
                       {i + 1}
                     </button>
