@@ -107,7 +107,8 @@ export default function Contatti() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full p-7 md:p-9 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40"
+                    style={{ padding: '1.4rem 2rem' }}
+                    className="w-full rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40"
                     placeholder="Name"
                   />
                 </div>
@@ -122,7 +123,8 @@ export default function Contatti() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full p-7 md:p-9 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40"
+                    style={{ padding: '1.4rem 2rem' }}
+                    className="w-full rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40"
                     placeholder="Email"
                   />
                 </div>
@@ -137,13 +139,15 @@ export default function Contatti() {
                     onChange={handleChange}
                     required
                     rows={9}
-                    className="w-full min-h-[260px] md:min-h-[300px] p-7 md:p-9 rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40"
+                    style={{ padding: '1.4rem 2rem' }}
+                    className="w-full min-h-[260px] md:min-h-[300px] rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40"
                     placeholder="Message"
                   />
                 </div>
                 <motion.button
                   type="submit"
-                  className="mt-3 inline-flex items-center justify-center self-start w-auto px-7 md:px-8 py-2.5 md:py-3 rounded-md bg-foreground text-background text-xs md:text-sm font-medium tracking-wide hover:bg-accent hover:text-foreground transition-colors"
+                  style={{ padding: '0.6rem 1.5rem' }}
+                  className="mt-3 inline-flex items-center justify-center self-start w-auto rounded-md bg-foreground text-background text-sm font-medium tracking-wide hover:bg-accent hover:text-foreground transition-colors"
                   whileHover={{ scale: 1.05, y: -1 }}
                   whileTap={{ scale: 0.96, y: 0 }}
                   transition={{ type: 'spring', stiffness: 380, damping: 26 }}
