@@ -79,9 +79,10 @@
    BASE STYLES
    ============================================ */
 
+/* Usa i reset di Tailwind per margin/padding.
+   Manteniamo solo box-sizing globale per evitare di
+   sovrascrivere le utility (mt/mb/p/px/py, ecc.). */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
