@@ -14,13 +14,11 @@ interface Project {
   id: string;
   title: string;
   description: string;
-  problem: string;
-  solution: string;
   technologies: string[];
-  result: string;
+  category: 'Projects' | 'Dev Tools' | 'Open Source' | 'Designs';
+  image: string;
   link?: string;
   github?: string;
-  image?: string;
 }
 
 const projects: Project[] = [
@@ -28,10 +26,10 @@ const projects: Project[] = [
     id: '1',
     title: 'E-Commerce Platform',
     description: 'Piattaforma e-commerce completa con gestione prodotti, carrello e checkout.',
-    problem: 'I clienti necessitavano di una soluzione e-commerce scalabile e performante per vendere i loro prodotti online.',
-    solution: 'Ho sviluppato una piattaforma full-stack con Next.js, integrando sistema di pagamento, gestione inventario e dashboard admin.',
+    category: 'Projects',
     technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
-    result: 'Aumento del 40% delle vendite online e riduzione del 60% del tempo di caricamento rispetto alla soluzione precedente.',
+    image:
+      'https://images.pexels.com/photos/7947719/pexels-photo-7947719.jpeg?auto=compress&cs=tinysrgb&w=1600',
     link: '#',
     github: '#',
   },
@@ -39,10 +37,10 @@ const projects: Project[] = [
     id: '2',
     title: 'SaaS Dashboard',
     description: 'Dashboard analytics per startup con visualizzazioni dati in tempo reale.',
-    problem: 'L\'azienda aveva bisogno di monitorare metriche chiave e performance in tempo reale.',
-    solution: 'Ho creato una dashboard interattiva con grafici dinamici, filtri avanzati e export dati, utilizzando React e librerie di visualizzazione.',
+    category: 'Dev Tools',
     technologies: ['React', 'TypeScript', 'Chart.js', 'Node.js', 'MongoDB'],
-    result: 'Miglioramento del 50% nella velocità di analisi dei dati e feedback positivi da parte degli utenti.',
+    image:
+      'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1600',
     link: '#',
     github: '#',
   },
@@ -50,10 +48,10 @@ const projects: Project[] = [
     id: '3',
     title: 'Portfolio Website',
     description: 'Sito portfolio moderno e responsive per un designer freelance.',
-    problem: 'Il designer aveva bisogno di un portfolio professionale che mostrasse il suo lavoro in modo efficace.',
-    solution: 'Ho progettato e sviluppato un sito minimale e performante, ottimizzato per SEO e con animazioni fluide.',
+    category: 'Designs',
     technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
-    result: 'Aumento del 200% delle richieste di contatto e miglioramento significativo della presenza online.',
+    image:
+      'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1600',
     link: '#',
     github: '#',
   },
@@ -67,102 +65,126 @@ export default function Progetti() {
         {/* Spacer sopra header — altezza fissa, come per hero */}
         <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
 
-        {/* Header — contenitore dedicato, distaccato dal contenuto */}
+        {/* Header — contenitore dedicato (stessa struttura di About) */}
         <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
           <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
             <Header />
           </div>
         </div>
 
-        {/* Content — più margine dall'header, più aria tra i progetti */}
-        <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto mt-16 md:mt-20">
-          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-8 md:pt-12 pb-20 md:pb-28">
-            {/* Header */}
-            <div className="mb-20 md:mb-24 text-center flex-shrink-0">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">Progetti</h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Una selezione dei progetti che ho sviluppato, mostrando problemi risolti, 
-                soluzioni implementate e risultati ottenuti.
+        {/* Spacer tra header e contenuto — come About */}
+        <div className="h-14 md:h-24 lg:h-32 flex-shrink-0" aria-hidden="true" />
+
+        {/* Content — max-w-5xl, padding come About */}
+        <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
+          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
+            {/* Titolo e intro — sezione con padding come altre pagine */}
+            <section
+              className="block"
+              style={{ paddingBottom: 'clamp(2rem, 4vw, 2.75rem)' }}
+              aria-labelledby="projects-title"
+            >
+              <h1 id="projects-title" className="text-3xl md:text-5xl font-bold tracking-[0.04em]">
+                Projects.
+              </h1>
+              <p className="mt-3 text-base md:text-lg text-muted-foreground max-w-2xl">
+                Una selezione di progetti e sperimentazioni. Al passaggio del mouse ogni card
+                mostra una mini anteprima.
               </p>
-            </div>
 
-            {/* Projects Grid — più spazio verticale tra i progetti */}
-            <div className="space-y-28 md:space-y-32">
-            {projects.map((project, index) => (
-              <AnimatedSection key={project.id} delay={index * 0.2}>
-                <article
-                  className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}
-                >
-                {/* Project Image Placeholder */}
-                <div className="flex-1 w-full">
-                  <div className="aspect-video bg-surface-elevated rounded-lg border border-border flex items-center justify-center">
-                    <span className="text-muted-foreground">Immagine Progetto</span>
-                  </div>
-                </div>
+              {/* Filtri: All = pill scura selezionata, altri = solo testo grigio, spaziatura orizzontale uniforme */}
+              <div className="mt-6 flex flex-wrap items-center gap-4 md:gap-5">
+                {['All', 'Projects', 'Dev Tools', 'Open Source', 'Designs'].map((tab) => (
+                  <button
+                    key={tab}
+                    type="button"
+                    className={
+                      tab === 'All'
+                        ? 'rounded-full bg-surface-elevated px-4 py-2 text-sm font-medium text-foreground'
+                        : 'text-sm text-muted-foreground hover:text-foreground/80 transition-colors'
+                    }
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+            </section>
 
-                {/* Project Content */}
-                <div className="flex-1 space-y-6">
-                  <div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-3">{project.title}</h2>
-                    <p className="text-lg text-muted-foreground">{project.description}</p>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="font-semibold mb-2 text-accent">Problema</h3>
-                      <p className="text-muted-foreground">{project.problem}</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2 text-accent">Soluzione</h3>
-                      <p className="text-muted-foreground">{project.solution}</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2 text-accent">Tecnologie</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 bg-surface rounded-full text-sm border border-border"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+            {/* Griglia progetti — card più compatte */}
+            <section
+              className="block"
+              style={{ paddingTop: 'clamp(2rem, 4vw, 2.75rem)' }}
+              aria-label="Elenco progetti"
+            >
+              <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
+                {projects.map((project, index) => (
+                  <AnimatedSection key={project.id} delay={index * 0.12}>
+                    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-surface/40 shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                      {/* Preview image con animazione hover */}
+                      <div className="relative aspect-[16/9] overflow-hidden">
+                        <div
+                          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 group-hover:translate-y-[-4%]"
+                          style={{ backgroundImage: `url(${project.image})` }}
+                        />
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent opacity-90" />
                       </div>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2 text-accent">Risultato</h3>
-                      <p className="text-muted-foreground">{project.result}</p>
-                    </div>
-                  </div>
 
-                  {/* Links */}
-                  <div className="flex gap-4 pt-4">
-                    {project.link && (
-                      <Link
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-2 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors"
-                      >
-                        Vedi Progetto
-                      </Link>
-                    )}
-                    {project.github && (
-                      <Link
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-2 border border-border rounded-full font-medium hover:bg-surface transition-colors"
-                      >
-                        GitHub
-                      </Link>
-                    )}
-                  </div>
-                </div>
-                </article>
-              </AnimatedSection>
-            ))}
-            </div>
+                      <div className="relative flex flex-col gap-3 p-4 md:p-5">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-[10px] uppercase tracking-[0.12em] text-foreground/60">
+                            {project.category}
+                          </span>
+                          {project.link && (
+                            <span className="text-[10px] text-foreground/50">Preview</span>
+                          )}
+                        </div>
+
+                        <div>
+                          <h2 className="text-lg md:text-xl font-semibold mb-0.5">{project.title}</h2>
+                          <p className="text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                            {project.description}
+                          </p>
+                        </div>
+
+                        <div className="flex flex-wrap gap-1.5">
+                          {project.technologies.slice(0, 3).map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-2.5 py-0.5 rounded-full border border-border/80 bg-surface/60 text-[11px] text-foreground/80"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="flex gap-2 pt-1">
+                          {project.link && (
+                            <Link
+                              href={project.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-background hover:bg-accent hover:text-foreground transition-colors"
+                            >
+                              Apri progetto
+                            </Link>
+                          )}
+                          {project.github && (
+                            <Link
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs font-medium text-foreground/80 hover:bg-surface/70 transition-colors"
+                            >
+                              Codice
+                            </Link>
+                          )}
+                        </div>
+                      </div>
+                    </article>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </section>
           </div>
         </div>
       </section>
