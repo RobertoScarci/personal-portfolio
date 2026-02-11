@@ -75,10 +75,10 @@ export default function Progetti() {
         {/* Spacer tra header e contenuto — come About */}
         <div className="h-14 md:h-24 lg:h-32 flex-shrink-0" aria-hidden="true" />
 
-        {/* Content — max-w-5xl, padding come About */}
+        {/* Content — max-w-4xl (più stretto), padding come About */}
         <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
-          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
-            {/* Titolo e intro — sezione con padding come altre pagine */}
+          <div className="w-full max-w-4xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
+            {/* Solo il titolo "Projects." — left-aligned */}
             <section
               className="block"
               style={{ paddingBottom: 'clamp(2rem, 4vw, 2.75rem)' }}
@@ -87,36 +87,42 @@ export default function Progetti() {
               <h1 id="projects-title" className="text-3xl md:text-5xl font-bold tracking-[0.04em]">
                 Projects.
               </h1>
-              <p className="mt-3 text-base md:text-lg text-muted-foreground max-w-2xl">
+            </section>
+
+            {/* Resto della sezione centrato: sottotitolo, filtri, griglia */}
+            <div className="flex flex-col items-center w-full">
+              <p className="text-center text-base md:text-lg text-muted-foreground max-w-2xl">
                 Una selezione di progetti e sperimentazioni. Al passaggio del mouse ogni card
                 mostra una mini anteprima.
               </p>
 
-              {/* Filtri: All = pill scura selezionata, altri = solo testo grigio, spaziatura orizzontale uniforme */}
-              <div className="mt-6 flex flex-wrap items-center gap-4 md:gap-5">
+              {/* Navbar sezioni: grafica reference — barra scura, All = pill attiva, altri = testo grigio */}
+              <nav
+                className="mt-6 flex flex-wrap items-center justify-center gap-5 md:gap-6 rounded-full bg-[#252830] px-4 py-2 border border-border/40"
+                aria-label="Filtri progetti"
+              >
                 {['All', 'Projects', 'Dev Tools', 'Open Source', 'Designs'].map((tab) => (
                   <button
                     key={tab}
                     type="button"
                     className={
                       tab === 'All'
-                        ? 'rounded-full bg-surface-elevated px-4 py-2 text-sm font-medium text-foreground'
-                        : 'text-sm text-muted-foreground hover:text-foreground/80 transition-colors'
+                        ? 'rounded-full bg-[#3e424b] px-4 py-2 text-sm font-semibold text-white'
+                        : 'text-sm text-[#a6acb7] hover:text-foreground/90 transition-colors'
                     }
                   >
                     {tab}
                   </button>
                 ))}
-              </div>
-            </section>
+              </nav>
 
-            {/* Griglia progetti — card più compatte */}
-            <section
-              className="block"
-              style={{ paddingTop: 'clamp(2rem, 4vw, 2.75rem)' }}
-              aria-label="Elenco progetti"
-            >
-              <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
+              {/* Griglia progetti — card più compatte, centrata */}
+              <section
+                className="block w-full"
+                style={{ paddingTop: 'clamp(2rem, 4vw, 2.75rem)' }}
+                aria-label="Elenco progetti"
+              >
+                <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
                 {projects.map((project, index) => (
                   <AnimatedSection key={project.id} delay={index * 0.12}>
                     <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-surface/40 shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur-sm">
@@ -185,6 +191,7 @@ export default function Progetti() {
                 ))}
               </div>
             </section>
+            </div>
           </div>
         </div>
       </section>
