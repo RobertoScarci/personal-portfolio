@@ -182,12 +182,25 @@ export default function Contatti() {
                 paddingBottom: 'clamp(5rem, 9vw, 6.25rem)',
               }}
             >
-              <h2 className="text-lg md:text-xl font-semibold mb-5 md:mb-6">Prenota una call</h2>
-              <p className="text-sm text-foreground/60 mb-10">
+              <h2
+                className="text-lg md:text-xl font-semibold"
+                style={{ marginBottom: '1rem' }}
+              >
+                Prenota una call
+              </h2>
+              <p
+                className="text-sm text-foreground/60"
+                style={{ marginTop: 0, marginBottom: '1.5rem' }}
+              >
                 Scegli uno slot nel calendario per una chiamata veloce (Calendly, ecc.).
               </p>
-              <div className="w-full max-w-3xl rounded-2xl border border-border/40 bg-surface/40 p-7 md:p-9 shadow-[0_26px_80px_rgba(0,0,0,0.8)]">
-                <div className="flex items-center justify-between mb-6">
+
+              {/* Calendario staccato dal testo sopra */}
+              <div
+                className="w-full max-w-3xl rounded-2xl border border-border/40 bg-surface/40 px-7 py-7 md:px-9 md:py-9 shadow-[0_26px_80px_rgba(0,0,0,0.8)]"
+                style={{ marginTop: '1.5rem' }}
+              >
+                <div className="flex items-center justify-between mb-6 md:mb-7">
                   <span className="text-xs font-medium text-foreground/80">Calendario</span>
                   <span className="text-[10px] text-foreground/50">Coming soon</span>
                 </div>
