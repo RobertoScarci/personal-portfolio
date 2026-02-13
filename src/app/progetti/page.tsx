@@ -126,64 +126,52 @@ export default function Progetti() {
                 {projects.map((project, index) => (
                   <AnimatedSection key={project.id} delay={index * 0.12}>
                     <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-surface/40 shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur-sm">
-                      {/* Preview image con animazione hover */}
+                      {/* Solo immagine di default; in hover appare overlay con titolo, didascalia e banner tech */}
                       <div className="relative aspect-[16/9] overflow-hidden">
                         <div
-                          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 group-hover:translate-y-[-4%]"
+                          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                           style={{ backgroundImage: `url(${project.image})` }}
                         />
-                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent opacity-90" />
-                      </div>
-
-                      <div className="relative flex flex-col gap-3 p-4 md:p-5">
-                        <div className="flex items-center justify-between gap-2">
-                          <span className="text-[10px] uppercase tracking-[0.12em] text-foreground/60">
-                            {project.category}
-                          </span>
-                          {project.link && (
-                            <span className="text-[10px] text-foreground/50">Preview</span>
-                          )}
-                        </div>
-
-                        <div>
-                          <h2 className="text-lg md:text-xl font-semibold mb-0.5">{project.title}</h2>
-                          <p className="text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                        {/* Overlay scuro visibile solo in hover: titolo + didascalia + 3–4 banner linguaggi */}
+                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100 p-6 text-center">
+                          <h2 className="text-xl md:text-2xl font-bold text-white">
+                            {project.title}
+                          </h2>
+                          <p className="text-sm text-white/90 max-w-md line-clamp-2">
                             {project.description}
                           </p>
-                        </div>
-
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.technologies.slice(0, 3).map((tech) => (
-                            <span
-                              key={tech}
-                              className="px-2.5 py-0.5 rounded-full border border-border/80 bg-surface/60 text-[11px] text-foreground/80"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-
-                        <div className="flex gap-2 pt-1">
-                          {project.link && (
-                            <Link
-                              href={project.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-background hover:bg-accent hover:text-foreground transition-colors"
-                            >
-                              Apri progetto
-                            </Link>
-                          )}
-                          {project.github && (
-                            <Link
-                              href={project.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs font-medium text-foreground/80 hover:bg-surface/70 transition-colors"
-                            >
-                              Codice
-                            </Link>
-                          )}
+                          <div className="flex flex-wrap justify-center gap-2">
+                            {project.technologies.slice(0, 4).map((tech) => (
+                              <span
+                                key={tech}
+                                className="rounded-md bg-white/20 px-3 py-1.5 text-xs font-medium text-white"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                          <div className="flex gap-2 pt-2">
+                            {project.link && (
+                              <Link
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center rounded-full bg-white px-3 py-1.5 text-xs font-medium text-black hover:bg-white/90 transition-colors"
+                              >
+                                Apri progetto
+                              </Link>
+                            )}
+                            {project.github && (
+                              <Link
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center rounded-full border border-white/60 px-3 py-1.5 text-xs font-medium text-white hover:bg-white/20 transition-colors"
+                              >
+                                Codice
+                              </Link>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </article>
