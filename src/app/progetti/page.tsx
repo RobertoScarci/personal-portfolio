@@ -96,9 +96,9 @@ export default function Progetti() {
                 mostra una mini anteprima.
               </p>
 
-              {/* Navbar sezioni: grafica reference — barra scura, All = pill attiva, altri = testo grigio */}
+              {/* Navbar: nessun background sulla barra, solo la tab attiva ha un mini background con padding generoso */}
               <nav
-                className="mt-6 flex flex-wrap items-center justify-center gap-5 md:gap-6 rounded-full bg-[#252830] px-4 py-2 border border-border/40"
+                className="mt-6 flex flex-wrap items-center justify-center gap-5 md:gap-6"
                 aria-label="Filtri progetti"
               >
                 {['All', 'Projects', 'Dev Tools', 'Open Source', 'Designs'].map((tab) => (
@@ -107,7 +107,7 @@ export default function Progetti() {
                     type="button"
                     className={
                       tab === 'All'
-                        ? 'rounded-full bg-[#3e424b] px-4 py-2 text-sm font-semibold text-white'
+                        ? 'rounded-lg bg-[#3e424b] px-6 py-3 text-sm font-semibold text-white'
                         : 'text-sm text-[#a6acb7] hover:text-foreground/90 transition-colors'
                     }
                   >
