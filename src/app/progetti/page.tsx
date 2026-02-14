@@ -55,6 +55,50 @@ const projects: Project[] = [
     link: '#',
     github: '#',
   },
+  {
+    id: '4',
+    title: 'Task Manager App',
+    description: 'App per gestione task e board Kanban con sync in tempo reale e notifiche.',
+    category: 'Dev Tools',
+    technologies: ['React', 'Node.js', 'Socket.io', 'PostgreSQL'],
+    image:
+      'https://images.pexels.com/photos/7376/startup-photos.jpg?auto=compress&cs=tinysrgb&w=1600',
+    link: '#',
+    github: '#',
+  },
+  {
+    id: '5',
+    title: 'Landing Page Agency',
+    description: 'Landing ad alte conversioni per agenzia creativa con animazioni e form contatto.',
+    category: 'Projects',
+    technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+    image:
+      'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    link: '#',
+    github: '#',
+  },
+  {
+    id: '6',
+    title: 'UI Kit Open Source',
+    description: 'Libreria di componenti React riutilizzabili e accessibili, documentata con Storybook.',
+    category: 'Open Source',
+    technologies: ['React', 'TypeScript', 'Storybook', 'Tailwind CSS'],
+    image:
+      'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    link: '#',
+    github: '#',
+  },
+  {
+    id: '7',
+    title: 'Brand Identity',
+    description: 'Identità visiva e asset grafici per startup tech: logo, palette, tipografia.',
+    category: 'Designs',
+    technologies: ['Figma', 'Illustrator', 'Design system'],
+    image:
+      'https://images.pexels.com/photos/1591061/pexels-photo-1591061.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    link: '#',
+    github: '#',
+  },
 ];
 
 export default function Progetti() {
@@ -127,9 +171,9 @@ export default function Progetti() {
                           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                           style={{ backgroundImage: `url(${project.image})` }}
                         />
-                        {/* Overlay quasi trasparente (si vede a mala pena), visibile solo in hover */}
+                        {/* Overlay quasi trasparente, sfumato in alto (niente linea netta), visibile solo in hover */}
                         <div className="absolute inset-0 flex flex-col justify-end opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                          <div className="h-1/2 flex flex-col items-center justify-center gap-2 bg-gradient-to-b from-black/20 to-black/35 p-5 text-center">
+                          <div className="h-1/2 flex flex-col items-center justify-center gap-2 bg-gradient-to-b from-transparent via-black/18 to-black/42 p-5 text-center">
                             <h2 className="text-xl md:text-2xl font-bold text-white">
                               {project.title}
                             </h2>
