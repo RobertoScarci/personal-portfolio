@@ -42,21 +42,21 @@ export default function Home() {
             <AnimatedSection delay={0.3} className="text-left flex-shrink-0">
               <HeroTitle />
             </AnimatedSection>
-            <div className="h-6 md:h-8 flex-shrink-0" aria-hidden="true" />
+            <div className="h-4 md:h-5 flex-shrink-0" aria-hidden="true" />
 
             {/* Testi — delay dopo herotitle (0.7s = 0.3 + 0.4) con animazione barra di caricamento */}
             <HeroText delay={0.7} />
 
-            <div className="h-8 md:h-10 flex-shrink-0" aria-hidden="true" />
+            <div className="h-3 md:h-4 flex-shrink-0" aria-hidden="true" />
 
             {/* CTA — delay dopo testi (1.1s = 0.7 + 0.4) */}
             <AnimatedSection delay={1.1} className="flex-shrink-0">
-              <div className="mb-16 md:mb-20">
+              <div className="mb-4 md:mb-6">
                 <HeroCTA />
               </div>
             </AnimatedSection>
 
-            <div className="h-10 md:h-14 flex-shrink-0" aria-hidden="true" />
+            <div className="h-4 md:h-6 flex-shrink-0" aria-hidden="true" />
             <div className="flex justify-start items-center gap-8 md:gap-10 flex-shrink-0">
               <SocialIcons />
             </div>

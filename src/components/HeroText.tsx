@@ -27,8 +27,8 @@ export default function HeroText({ delay = 0.7 }: HeroTextProps) {
         ease: [0.16, 1, 0.3, 1],
       }}
     >
-      <div className="text-sm md:text-base text-foreground/80 text-left font-extralight max-w-5xl mb-14 md:mb-20 leading-[2.25]">
-        <p className="mb-12 md:mb-16">
+      <div className="text-sm md:text-base text-foreground/80 text-left font-extralight max-w-5xl mb-2 md:mb-3 leading-[1.75]">
+        <p className="mb-3 md:mb-4">
           Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
           Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
           <Link
@@ -39,7 +39,7 @@ export default function HeroText({ delay = 0.7 }: HeroTextProps) {
           </Link>{' '}
           e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.
         </p>
-        <p className="pt-2 md:pt-3">
+        <p>
           Appassionato di fotografia e design minimale, trovo bellezza nella semplicità e nell'ordine.
           Quando non sto creando esperienze web curate, puoi trovarmi a leggere{' '}
           <Link
