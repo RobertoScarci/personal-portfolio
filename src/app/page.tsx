@@ -37,7 +37,7 @@ export default function Home() {
 
         {/* Hero content — centrato orizzontalmente e verticalmente */}
         <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 min-h-0 overflow-y-auto">
-          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-12 md:pt-16 pb-20 md:pb-28">
+          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-16 md:pt-20 pb-20 md:pb-28">
             {/* HeroTitle — delay dopo header (0.3s) */}
             <AnimatedSection delay={0.3} className="text-left flex-shrink-0">
               <HeroTitle />
