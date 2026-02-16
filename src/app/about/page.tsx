@@ -5,6 +5,7 @@ import Link from 'next/link';
 import ScrollRevealSection from '@/components/ScrollRevealSection';
 import PageWatermark from '@/components/PageWatermark';
 import Header from '@/components/Header';
+import ProgressiveTimelineSection from '@/components/ProgressiveTimelineSection';
 import { FaGithub, FaBox, FaPalette } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -130,164 +131,56 @@ export default function About() {
               </section>
             </ScrollRevealSection>
 
-            {/* Sezione 2: Engineering — poco più spazio sotto prima di My Reads */}
+            {/* Sezione 2: Engineering — stessa struttura timeline progressiva della Carriera */}
             <section
               className="block"
               style={{ paddingTop: 'clamp(2rem, 4vw, 3rem)', paddingBottom: 'clamp(3.25rem, 6.5vw, 4.25rem)' }}
               aria-labelledby="engineering-heading"
             >
-            <div className="relative">
-              <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                {/* Colonna timeline: più stretta per avvicinare il testo alla linea */}
-                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative overflow-hidden">
-                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 rounded-full">
-                    <motion.div
-                      className="h-full w-full rounded-full bg-gradient-to-b from-accent/90 via-accent/40 to-border"
-                      initial={{ scaleY: 0 }}
-                      whileInView={{ scaleY: 1 }}
-                      viewport={{ once: true, amount: 0.01 }}
-                      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-                      style={{ transformOrigin: 'top' }}
-                    />
+              <ProgressiveTimelineSection>
+                <div className="flex flex-1 items-start justify-between gap-6 min-w-0">
+                  <div className="flex-1 space-y-4 max-w-3xl">
+                    <div className="flex items-center gap-2">
+                      <h2 className="text-lg md:text-xl font-semibold tracking-[0.08em] uppercase">Engineering</h2>
+                      <FaGithub className="w-3 h-3 md:w-3.5 md:h-3.5 text-foreground/60" />
+                    </div>
+                    <p className="text-xs md:text-sm text-foreground/60 font-extralight leading-[1.9]">
+                      Formato come Full Stack Developer da Boolean, lavoro con HTML, CSS, JavaScript, Laravel, Vue.js e React per costruire interfacce e backend solidi. Ho replicato da zero progetti come Airbnb (in team), Netflix con Vue e API, WhatsApp e layout Spotify, curando design responsive e funzionalità reali. Punto a creare siti e app veloci, user-friendly e facili da mantenere.
+                    </p>
                   </div>
+                  <motion.div whileHover={{ x: 4 }} transition={{ type: 'spring', stiffness: 400, damping: 25 }}>
+                    <Link href="https://github.com/RobertoScarci" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm font-medium text-foreground/70 hover:text-foreground transition-colors underline underline-offset-4 whitespace-nowrap">View Github →</Link>
+                  </motion.div>
                 </div>
-
-                {/* Colonna contenuto: gap invece di space-y così il reset CSS non annulla lo spazio */}
-                <div className="flex-1 min-w-0 flex flex-col gap-24 md:gap-28">
-                <ScrollRevealSection delay={0.05}>
-                  <div className="relative flex items-start gap-6">
-                    <motion.div
-                      className="hidden md:flex absolute -left-[35px] top-1.5 w-5 h-5 items-center justify-center flex-shrink-0"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true, amount: 0.08 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <motion.span
-                        className="absolute inset-0 rounded-full border-2 border-foreground/40"
-                        initial={{ scale: 0.3, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        viewport={{ once: true, amount: 0.08 }}
-                        transition={{ type: 'spring', stiffness: 260, damping: 24, delay: 0.25 }}
-                      />
-                      <motion.div
-                        className="absolute w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background"
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: true, amount: 0.08 }}
-                        transition={{ type: 'spring', stiffness: 400, damping: 20, delay: 0.35 }}
-                      />
-                    </motion.div>
-                    
-                    <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
-                      <div className="flex-1 space-y-4 max-w-3xl">
-                        <div className="flex items-center gap-2">
-                          <h2 className="text-lg md:text-xl font-semibold tracking-[0.08em] uppercase">
-                            Engineering
-                          </h2>
-                          <FaGithub className="w-3 h-3 md:w-3.5 md:h-3.5 text-foreground/60" />
-                        </div>
-                        <p className="text-xs md:text-sm text-foreground/60 font-extralight leading-[1.9]">
-                          Formato come Full Stack Developer da Boolean, lavoro con HTML, CSS, JavaScript, Laravel, Vue.js e React per costruire interfacce e backend solidi. Ho replicato da zero progetti come Airbnb (in team), Netflix con Vue e API, WhatsApp e layout Spotify, curando design responsive e funzionalità reali. Punto a creare siti e app veloci, user-friendly e facili da mantenere.
-                        </p>
-                      </div>
-                      <motion.div
-                        whileHover={{ x: 4 }}
-                        transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-                      >
-                        <Link
-                          href="https://github.com/RobertoScarci"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs md:text-sm font-medium text-foreground/70 hover:text-foreground transition-colors underline underline-offset-4 whitespace-nowrap"
-                        >
-                          View Github →
-                        </Link>
-                      </motion.div>
+                <div className="flex flex-1 items-start justify-between gap-6 min-w-0">
+                  <div className="flex-1 space-y-4 max-w-3xl">
+                    <div className="flex items-center gap-2">
+                      <h2 className="text-lg md:text-xl font-semibold tracking-[0.08em] uppercase">Product</h2>
+                      <FaBox className="w-3 h-3 md:w-3.5 md:h-3.5 text-foreground/60" />
                     </div>
+                    <p className="text-xs md:text-sm text-foreground/60 font-extralight leading-[1.9]">
+                      Anche se potrei non adattarmi allo stampo convenzionale di un product manager, il mio insieme di competenze diversificate nella ricerca, nel design del prodotto e nella coordinazione del prodotto mi consente di guidare la crescita di un prodotto dalla sua concezione. Come pensatore analitico eccezionale, possiedo la capacità di sostenere la visione del prodotto durante tutto il suo percorso, collegando efficacemente gli aspetti tecnici e del prodotto. Sfruttando la mia esperienza, posso navigare il percorso da 0 a 1, garantendo il successo del prodotto in ogni fase.
+                    </p>
                   </div>
-                </ScrollRevealSection>
-
-                <ScrollRevealSection delay={0.1}>
-                  <div className="relative flex items-start gap-6">
-                    <motion.div
-                      className="hidden md:flex absolute -left-[35px] top-1.5 w-5 h-5 items-center justify-center flex-shrink-0"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true, amount: 0.08 }}
-                      transition={{ delay: 0.35 }}
-                    >
-                      <motion.span className="absolute inset-0 rounded-full border-2 border-foreground/40" initial={{ scale: 0.3, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 260, damping: 24, delay: 0.3 }} />
-                      <motion.div className="absolute w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 400, damping: 20, delay: 0.4 }} />
-                    </motion.div>
-                    <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
-                      <div className="flex-1 space-y-4 max-w-3xl">
-                        <div className="flex items-center gap-2">
-                          <h2 className="text-lg md:text-xl font-semibold tracking-[0.08em] uppercase">
-                            Product
-                          </h2>
-                          <FaBox className="w-3 h-3 md:w-3.5 md:h-3.5 text-foreground/60" />
-                        </div>
-                        <p className="text-xs md:text-sm text-foreground/60 font-extralight leading-[1.9]">
-                          Anche se potrei non adattarmi allo stampo convenzionale di un product manager, il mio insieme di competenze diversificate nella ricerca, nel design del prodotto e nella coordinazione del prodotto mi consente di guidare la crescita di un prodotto dalla sua concezione. Come pensatore analitico eccezionale, possiedo la capacità di sostenere la visione del prodotto durante tutto il suo percorso, collegando efficacemente gli aspetti tecnici e del prodotto. Sfruttando la mia esperienza, posso navigare il percorso da 0 a 1, garantendo il successo del prodotto in ogni fase.
-                        </p>
-                      </div>
-                      <motion.div
-                        whileHover={{ x: 4 }}
-                        transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-                      >
-                        <Link
-                          href="/progetti"
-                          className="text-xs md:text-sm font-medium text-foreground/70 hover:text-foreground transition-colors underline underline-offset-4 whitespace-nowrap"
-                        >
-                          View Products →
-                        </Link>
-                      </motion.div>
-                    </div>
-                  </div>
-                </ScrollRevealSection>
-
-                <ScrollRevealSection delay={0.15}>
-                  <div className="relative flex items-start gap-6">
-                    <motion.div
-                      className="hidden md:flex absolute -left-[35px] top-1.5 w-5 h-5 items-center justify-center flex-shrink-0"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true, amount: 0.08 }}
-                      transition={{ delay: 0.4 }}
-                    >
-                      <motion.span className="absolute inset-0 rounded-full border-2 border-foreground/40" initial={{ scale: 0.3, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 260, damping: 24, delay: 0.35 }} />
-                      <motion.div className="absolute w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 400, damping: 20, delay: 0.45 }} />
-                    </motion.div>
-                    <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
-                      <div className="flex-1 space-y-4 max-w-3xl">
-                        <div className="flex items-center gap-2">
-                          <h2 className="text-lg md:text-xl font-semibold tracking-[0.08em] uppercase">
-                            Design
-                          </h2>
-                          <FaPalette className="w-3 h-3 md:w-3.5 md:h-3.5 text-foreground/60" />
-                        </div>
-                        <p className="text-xs md:text-sm text-foreground/60 font-extralight leading-[1.9]">
-                          Nonostante non mi adatti allo stereotipo tipico del designer, le mie eccezionali abilità visive mi permettono di eccellere come presentatore, trasmettendo efficacemente i concetti di design agli stakeholder e ai team di design. Possiedo una notevole attitudine per la concettualizzazione, permettendomi di immaginare e portare avanti creazioni sorprendenti. Inoltre, la mia competenza risiede nel perfezionare i fogli di stile e creare esperienze utente senza soluzione di continuità che fluiscono senza sforzo.
-                        </p>
-                      </div>
-                      <motion.div
-                        whileHover={{ x: 4 }}
-                        transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-                      >
-                        <Link
-                          href="#"
-                          className="text-xs md:text-sm font-medium text-foreground/70 hover:text-foreground transition-colors underline underline-offset-4 whitespace-nowrap"
-                        >
-                          View Dribbble →
-                        </Link>
-                      </motion.div>
-                    </div>
-                  </div>
-                </ScrollRevealSection>
+                  <motion.div whileHover={{ x: 4 }} transition={{ type: 'spring', stiffness: 400, damping: 25 }}>
+                    <Link href="/progetti" className="text-xs md:text-sm font-medium text-foreground/70 hover:text-foreground transition-colors underline underline-offset-4 whitespace-nowrap">View Products →</Link>
+                  </motion.div>
                 </div>
-              </div>
-            </div>
+                <div className="flex flex-1 items-start justify-between gap-6 min-w-0">
+                  <div className="flex-1 space-y-4 max-w-3xl">
+                    <div className="flex items-center gap-2">
+                      <h2 className="text-lg md:text-xl font-semibold tracking-[0.08em] uppercase">Design</h2>
+                      <FaPalette className="w-3 h-3 md:w-3.5 md:h-3.5 text-foreground/60" />
+                    </div>
+                    <p className="text-xs md:text-sm text-foreground/60 font-extralight leading-[1.9]">
+                      Nonostante non mi adatti allo stereotipo tipico del designer, le mie eccezionali abilità visive mi permettono di eccellere come presentatore, trasmettendo efficacemente i concetti di design agli stakeholder e ai team di design. Possiedo una notevole attitudine per la concettualizzazione, permettendomi di immaginare e portare avanti creazioni sorprendenti. Inoltre, la mia competenza risiede nel perfezionare i fogli di stile e creare esperienze utente senza soluzione di continuità che fluiscono senza sforzo.
+                    </p>
+                  </div>
+                  <motion.div whileHover={{ x: 4 }} transition={{ type: 'spring', stiffness: 400, damping: 25 }}>
+                    <Link href="#" className="text-xs md:text-sm font-medium text-foreground/70 hover:text-foreground transition-colors underline underline-offset-4 whitespace-nowrap">View Dribbble →</Link>
+                  </motion.div>
+                </div>
+              </ProgressiveTimelineSection>
             </section>
 
             {/* Titolo My Reads — poco più spazio sopra (dopo Engineering) */}
@@ -308,39 +201,24 @@ export default function About() {
               </section>
             </ScrollRevealSection>
 
-            {/* Contenuto My Reads — gap come in My Playlist, spacing visibile tra voci */}
+            {/* Contenuto My Reads — stessa timeline progressiva della Carriera */}
             <section className="block" style={{ paddingBottom: 'clamp(2.75rem, 5.5vw, 4.25rem)' }}>
-              <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative overflow-hidden">
-                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 rounded-full">
-                    <motion.div className="h-full w-full rounded-full bg-gradient-to-b from-accent/90 via-accent/40 to-border" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, amount: 0.01 }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }} style={{ transformOrigin: 'top' }} />
-                  </div>
-                </div>
-                <div className="flex-1 min-w-0 flex flex-col gap-16 md:gap-20">
-                  {reads.map((read, index) => (
-                    <ScrollRevealSection key={index} delay={0.05 + index * 0.06}>
-                      <div className="relative flex items-start gap-6">
-                        <motion.div className="hidden md:flex absolute -left-[35px] top-1.5 w-5 h-5 items-center justify-center flex-shrink-0" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ delay: 0.3 + index * 0.05 }}>
-                          <motion.span className="absolute inset-0 rounded-full border-2 border-foreground/40" initial={{ scale: 0.3, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 260, damping: 24, delay: 0.25 + index * 0.05 }} />
-                          <motion.div className="absolute w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 400, damping: 20, delay: 0.35 + index * 0.05 }} />
-                        </motion.div>
-                        <div className="flex-1 min-w-0 pl-0 md:pl-0">
-                          <div className="space-y-2">
-                            <div className="flex items-baseline gap-2 flex-wrap">
-                              <h3 className="text-base md:text-lg font-semibold">{read.title}.</h3>
-                              <span className="text-xs text-foreground/50">{read.source}</span>
-                              <span className="text-xs text-foreground/50">{read.period}</span>
-                            </div>
-                            <p className="text-xs md:text-sm text-foreground/60 font-extralight leading-[1.9]">
-                              {read.description}
-                            </p>
-                          </div>
-                        </div>
+              <ProgressiveTimelineSection>
+                {reads.map((read, index) => (
+                  <div key={index} className="flex-1 min-w-0">
+                    <div className="space-y-2">
+                      <div className="flex items-baseline gap-2 flex-wrap">
+                        <h3 className="text-base md:text-lg font-semibold">{read.title}.</h3>
+                        <span className="text-xs text-foreground/50">{read.source}</span>
+                        <span className="text-xs text-foreground/50">{read.period}</span>
                       </div>
-                    </ScrollRevealSection>
-                  ))}
-                </div>
-              </div>
+                      <p className="text-xs md:text-sm text-foreground/60 font-extralight leading-[1.9]">
+                        {read.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </ProgressiveTimelineSection>
             </section>
 
             {/* Titolo My Playlist — poco più spazio sopra (dopo My Reads) */}
@@ -361,48 +239,25 @@ export default function About() {
               </section>
             </ScrollRevealSection>
 
-            {/* Contenuto My Playlist — gap come in riferimento: spazio chiaro tra una voce e la successiva */}
+            {/* Contenuto My Playlist — stessa timeline progressiva della Carriera */}
             <section className="block" style={{ paddingBottom: 'clamp(2.25rem, 4.5vw, 3.25rem)' }}>
-              <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative overflow-hidden">
-                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 rounded-full">
-                    <motion.div className="h-full w-full rounded-full bg-gradient-to-b from-accent/90 via-accent/40 to-border" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, amount: 0.01 }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }} style={{ transformOrigin: 'top' }} />
+              <ProgressiveTimelineSection>
+                {playlists.map((playlist, index) => (
+                  <div key={index} className="flex flex-1 items-start justify-between gap-6 min-w-0">
+                    <div className="flex-1 space-y-2 max-w-3xl">
+                      <h3 className="text-base md:text-lg font-semibold">{playlist.title}.</h3>
+                      <p className="text-xs md:text-sm text-foreground/60 font-extralight leading-[1.9]">
+                        {playlist.description}
+                      </p>
+                    </div>
+                    <motion.div whileHover={{ x: 4 }} transition={{ type: 'spring', stiffness: 400, damping: 25 }}>
+                      <Link href={playlist.link} target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm font-medium text-foreground/70 hover:text-foreground transition-colors underline underline-offset-4 whitespace-nowrap">
+                        {playlist.platform} View Playlist →
+                      </Link>
+                    </motion.div>
                   </div>
-                </div>
-                <div className="flex-1 min-w-0 flex flex-col gap-16 md:gap-20">
-                  {playlists.map((playlist, index) => (
-                    <ScrollRevealSection key={index} delay={0.05 + index * 0.06}>
-                      <div className="relative flex items-start gap-6">
-                        <motion.div className="hidden md:flex absolute -left-[35px] top-1.5 w-5 h-5 items-center justify-center flex-shrink-0" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ delay: 0.3 + index * 0.05 }}>
-                          <motion.span className="absolute inset-0 rounded-full border-2 border-foreground/40" initial={{ scale: 0.3, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 260, damping: 24, delay: 0.25 + index * 0.05 }} />
-                          <motion.div className="absolute w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 400, damping: 20, delay: 0.35 + index * 0.05 }} />
-                        </motion.div>
-                        <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
-                          <div className="flex-1 space-y-2 max-w-3xl">
-                            <h3 className="text-base md:text-lg font-semibold">{playlist.title}.</h3>
-                            <p className="text-xs md:text-sm text-foreground/60 font-extralight leading-[1.9]">
-                              {playlist.description}
-                            </p>
-                          </div>
-                          <motion.div
-                            whileHover={{ x: 4 }}
-                            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-                          >
-                            <Link
-                              href={playlist.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-xs md:text-sm font-medium text-foreground/70 hover:text-foreground transition-colors underline underline-offset-4 whitespace-nowrap"
-                            >
-                              {playlist.platform} View Playlist →
-                            </Link>
-                          </motion.div>
-                        </div>
-                      </div>
-                    </ScrollRevealSection>
-                  ))}
-                </div>
-              </div>
+                ))}
+              </ProgressiveTimelineSection>
             </section>
 
             {/* CTA to Projects — poco più spazio sopra (dopo My Playlist) */}
