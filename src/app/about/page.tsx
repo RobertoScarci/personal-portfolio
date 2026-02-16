@@ -27,34 +27,34 @@ interface Playlist {
 
 const reads: Read[] = [
   {
-    title: 'Human Centered Design 101',
-    source: 'Acumen',
-    period: '2017 - 2018',
-    description: 'Esperienza intensiva e pratica che ti sfida a uscire dalla sedia e andare nel mondo reale per parlare con le persone e testare le tue idee.',
+    title: 'Full-Stack Web Development',
+    source: 'Boolean',
+    period: 'Mar 2024',
+    description: 'Certificazione in sviluppo web full stack: HTML, CSS, JavaScript, Laravel, Vue.js. Progetti reali in gruppo e in singolo (repliche Airbnb, Netflix, WhatsApp, Spotify).',
   },
   {
-    title: 'Data Structure And Algorithm',
-    source: 'Udemy',
-    period: '2019',
-    description: 'Molti sviluppatori autodidatti sentono che uno dei principali svantaggi rispetto ai laureati in informatica è la mancanza di conoscenza su algoritmi, strutture dati e la notazione Big-O.',
+    title: 'Informatica e sviluppo informatico',
+    source: 'Università Telematica Pegaso',
+    period: '2024 - 2027',
+    description: 'Laurea in corso. Percorso strutturato per approfondire programmazione e informatica e mettermi costantemente alla prova.',
   },
   {
-    title: 'Adaptive Leadership',
-    source: 'edX',
-    period: '2019',
-    description: 'Corso introduttivo che aiuta a identificare e progredire su una sfida di leadership nella propria vita, team o comunità.',
+    title: 'Grafica e Comunicazione',
+    source: 'Istituto Tecnico',
+    period: 'Diploma 2021',
+    description: 'Cinque anni di formazione in grafica digitale: Photoshop, Illustrator, comunicazione visiva e layout.',
   },
   {
-    title: 'Learning to Learn [Efficient Learning]',
-    source: 'Udemy',
-    period: '2020',
-    description: 'Migliora memoria e produttività usando le competenze dei migliori performer mondiali e strategie di apprendimento provate dalla ricerca.',
+    title: 'Management e Diritto Sportivo',
+    source: 'Università',
+    period: 'Post-diploma',
+    description: 'Esperienza universitaria che ha arricchito il bagaglio culturale prima della svolta verso la programmazione.',
   },
   {
     title: 'Learning Something Great 😉',
-    source: 'Currently',
+    source: 'Ogni giorno',
     period: 'Attualmente',
-    description: 'Continuiamo ad apprendere ogni giorno.',
+    description: 'Continuo ad apprendere e a mettere in pratica ciò che studio.',
   },
 ];
 
@@ -139,16 +139,45 @@ export default function About() {
             <div className="relative">
               <div className="flex flex-col md:flex-row md:gap-0 gap-6">
                 {/* Colonna timeline: più stretta per avvicinare il testo alla linea */}
-                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
-                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative overflow-hidden">
+                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 rounded-full">
+                    <motion.div
+                      className="h-full w-full rounded-full bg-gradient-to-b from-accent/90 via-accent/40 to-border"
+                      initial={{ scaleY: 0 }}
+                      whileInView={{ scaleY: 1 }}
+                      viewport={{ once: true, amount: 0.01 }}
+                      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+                      style={{ transformOrigin: 'top' }}
+                    />
+                  </div>
                 </div>
 
                 {/* Colonna contenuto: gap invece di space-y così il reset CSS non annulla lo spazio */}
                 <div className="flex-1 min-w-0 flex flex-col gap-24 md:gap-28">
                 <ScrollRevealSection delay={0.05}>
                   <div className="relative flex items-start gap-6">
-                    {/* Pallino timeline — centrato sulla linea (colonna w-14 = 56px, centro 28px) */}
-                    <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
+                    <motion.div
+                      className="hidden md:flex absolute -left-[35px] top-1.5 w-5 h-5 items-center justify-center flex-shrink-0"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true, amount: 0.08 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <motion.span
+                        className="absolute inset-0 rounded-full border-2 border-foreground/40"
+                        initial={{ scale: 0.3, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true, amount: 0.08 }}
+                        transition={{ type: 'spring', stiffness: 260, damping: 24, delay: 0.25 }}
+                      />
+                      <motion.div
+                        className="absolute w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background"
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true, amount: 0.08 }}
+                        transition={{ type: 'spring', stiffness: 400, damping: 20, delay: 0.35 }}
+                      />
+                    </motion.div>
                     
                     <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
                       <div className="flex-1 space-y-4 max-w-3xl">
@@ -159,7 +188,7 @@ export default function About() {
                           <FaGithub className="w-3 h-3 md:w-3.5 md:h-3.5 text-foreground/60" />
                         </div>
                         <p className="text-xs md:text-sm text-foreground/60 font-extralight leading-[1.9]">
-                          Il potere delle prime impressioni non può essere sottovalutato, e la porta d'accesso per sfruttarle risiede in un design eccezionale del sito web. Un sito web eccezionale trascende la mera estetica e estende la sua influenza per comprendere funzionalità senza soluzione di continuità e navigazione user-friendly. Attingendo alla mia esperienza come programmatore esperto, possiedo l'abilità unica di affrontare sfide tecniche intricate mentre creo siti web che emanano eleganza e fascino visivo. Inoltre, la mia vasta conoscenza degli standard tecnici riconosciuti è completata dalla mia competenza nelle pratiche di costruzione moderne, garantendo che ogni aspetto del tuo sito web sia perfettamente ottimizzato.
+                          Formato come Full Stack Developer da Boolean, lavoro con HTML, CSS, JavaScript, Laravel, Vue.js e React per costruire interfacce e backend solidi. Ho replicato da zero progetti come Airbnb (in team), Netflix con Vue e API, WhatsApp e layout Spotify, curando design responsive e funzionalità reali. Punto a creare siti e app veloci, user-friendly e facili da mantenere.
                         </p>
                       </div>
                       <motion.div
@@ -167,7 +196,7 @@ export default function About() {
                         transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                       >
                         <Link
-                          href="https://github.com"
+                          href="https://github.com/RobertoScarci"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-xs md:text-sm font-medium text-foreground/70 hover:text-foreground transition-colors underline underline-offset-4 whitespace-nowrap"
@@ -181,8 +210,16 @@ export default function About() {
 
                 <ScrollRevealSection delay={0.1}>
                   <div className="relative flex items-start gap-6">
-                    <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
-                    
+                    <motion.div
+                      className="hidden md:flex absolute -left-[35px] top-1.5 w-5 h-5 items-center justify-center flex-shrink-0"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true, amount: 0.08 }}
+                      transition={{ delay: 0.35 }}
+                    >
+                      <motion.span className="absolute inset-0 rounded-full border-2 border-foreground/40" initial={{ scale: 0.3, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 260, damping: 24, delay: 0.3 }} />
+                      <motion.div className="absolute w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 400, damping: 20, delay: 0.4 }} />
+                    </motion.div>
                     <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
                       <div className="flex-1 space-y-4 max-w-3xl">
                         <div className="flex items-center gap-2">
@@ -212,8 +249,16 @@ export default function About() {
 
                 <ScrollRevealSection delay={0.15}>
                   <div className="relative flex items-start gap-6">
-                    <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
-                    
+                    <motion.div
+                      className="hidden md:flex absolute -left-[35px] top-1.5 w-5 h-5 items-center justify-center flex-shrink-0"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true, amount: 0.08 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      <motion.span className="absolute inset-0 rounded-full border-2 border-foreground/40" initial={{ scale: 0.3, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 260, damping: 24, delay: 0.35 }} />
+                      <motion.div className="absolute w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 400, damping: 20, delay: 0.45 }} />
+                    </motion.div>
                     <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
                       <div className="flex-1 space-y-4 max-w-3xl">
                         <div className="flex items-center gap-2">
@@ -253,8 +298,8 @@ export default function About() {
                 aria-labelledby="my-reads-heading"
               >
                 <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                  <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
-                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+                  <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative overflow-hidden">
+                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 rounded-full bg-gradient-to-b from-accent/90 via-accent/40 to-border" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h2 id="my-reads-heading" className="text-xl md:text-2xl font-bold">My Reads.</h2>
@@ -266,14 +311,19 @@ export default function About() {
             {/* Contenuto My Reads — gap come in My Playlist, spacing visibile tra voci */}
             <section className="block" style={{ paddingBottom: 'clamp(2.75rem, 5.5vw, 4.25rem)' }}>
               <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
-                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative overflow-hidden">
+                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 rounded-full">
+                    <motion.div className="h-full w-full rounded-full bg-gradient-to-b from-accent/90 via-accent/40 to-border" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, amount: 0.01 }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }} style={{ transformOrigin: 'top' }} />
+                  </div>
                 </div>
                 <div className="flex-1 min-w-0 flex flex-col gap-16 md:gap-20">
                   {reads.map((read, index) => (
                     <ScrollRevealSection key={index} delay={0.05 + index * 0.06}>
                       <div className="relative flex items-start gap-6">
-                        <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
+                        <motion.div className="hidden md:flex absolute -left-[35px] top-1.5 w-5 h-5 items-center justify-center flex-shrink-0" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ delay: 0.3 + index * 0.05 }}>
+                          <motion.span className="absolute inset-0 rounded-full border-2 border-foreground/40" initial={{ scale: 0.3, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 260, damping: 24, delay: 0.25 + index * 0.05 }} />
+                          <motion.div className="absolute w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 400, damping: 20, delay: 0.35 + index * 0.05 }} />
+                        </motion.div>
                         <div className="flex-1 min-w-0 pl-0 md:pl-0">
                           <div className="space-y-2">
                             <div className="flex items-baseline gap-2 flex-wrap">
@@ -301,8 +351,8 @@ export default function About() {
                 aria-labelledby="my-playlist-heading"
               >
                 <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                  <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
-                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+                  <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative overflow-hidden">
+                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 rounded-full bg-gradient-to-b from-accent/90 via-accent/40 to-border" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h2 id="my-playlist-heading" className="text-xl md:text-2xl font-bold">My Playlist.</h2>
@@ -314,14 +364,19 @@ export default function About() {
             {/* Contenuto My Playlist — gap come in riferimento: spazio chiaro tra una voce e la successiva */}
             <section className="block" style={{ paddingBottom: 'clamp(2.25rem, 4.5vw, 3.25rem)' }}>
               <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
-                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative overflow-hidden">
+                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 rounded-full">
+                    <motion.div className="h-full w-full rounded-full bg-gradient-to-b from-accent/90 via-accent/40 to-border" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true, amount: 0.01 }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }} style={{ transformOrigin: 'top' }} />
+                  </div>
                 </div>
                 <div className="flex-1 min-w-0 flex flex-col gap-16 md:gap-20">
                   {playlists.map((playlist, index) => (
                     <ScrollRevealSection key={index} delay={0.05 + index * 0.06}>
                       <div className="relative flex items-start gap-6">
-                        <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
+                        <motion.div className="hidden md:flex absolute -left-[35px] top-1.5 w-5 h-5 items-center justify-center flex-shrink-0" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ delay: 0.3 + index * 0.05 }}>
+                          <motion.span className="absolute inset-0 rounded-full border-2 border-foreground/40" initial={{ scale: 0.3, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 260, damping: 24, delay: 0.25 + index * 0.05 }} />
+                          <motion.div className="absolute w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.08 }} transition={{ type: 'spring', stiffness: 400, damping: 20, delay: 0.35 + index * 0.05 }} />
+                        </motion.div>
                         <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
                           <div className="flex-1 space-y-2 max-w-3xl">
                             <h3 className="text-base md:text-lg font-semibold">{playlist.title}.</h3>
