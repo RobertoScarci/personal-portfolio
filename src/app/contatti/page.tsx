@@ -3,7 +3,7 @@
 import Layout from '@/components/Layout';
 import PageWatermark from '@/components/PageWatermark';
 import Header from '@/components/Header';
-import AnimatedSection from '@/components/AnimatedSection';
+import ScrollRevealSection from '@/components/ScrollRevealSection';
 import SocialIcons from '@/components/SocialIcons';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
@@ -49,7 +49,7 @@ export default function Contatti() {
         <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
           <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
             {/* Sezione 1: Titolo */}
-            <AnimatedSection delay={0.1}>
+            <ScrollRevealSection delay={0.05}>
               <section
                 className="block"
                 style={{ paddingBottom: 'clamp(2rem, 4vw, 2.75rem)' }}
@@ -59,10 +59,10 @@ export default function Contatti() {
                   Contact.
                 </h1>
               </section>
-            </AnimatedSection>
+            </ScrollRevealSection>
 
             {/* Sezione 2: Intro e email */}
-            <AnimatedSection delay={0.15}>
+            <ScrollRevealSection delay={0.1}>
             <section
               className="block"
               style={{
@@ -81,10 +81,10 @@ export default function Contatti() {
                 .
               </p>
             </section>
-            </AnimatedSection>
+            </ScrollRevealSection>
 
             {/* Sezione 3: Form — Name, Email, Message (come riferimento) */}
-            <AnimatedSection delay={0.2}>
+            <ScrollRevealSection delay={0.15}>
             <section
               className="block"
               style={{
@@ -156,10 +156,10 @@ export default function Contatti() {
                 </motion.button>
               </form>
             </section>
-            </AnimatedSection>
+            </ScrollRevealSection>
 
             {/* Sezione 4: Social — stessi loghi e design della homepage */}
-            <AnimatedSection delay={0.25}>
+            <ScrollRevealSection delay={0.2}>
             <section
               className="block border-t border-border/60"
               style={{
@@ -171,10 +171,10 @@ export default function Contatti() {
                 <SocialIcons />
               </div>
             </section>
-            </AnimatedSection>
+            </ScrollRevealSection>
 
             {/* Sezione 5: Calendario */}
-            <AnimatedSection delay={0.3}>
+            <ScrollRevealSection delay={0.25}>
             <section
               className="block"
               style={{
@@ -226,7 +226,7 @@ export default function Contatti() {
                 </div>
               </div>
             </section>
-            </AnimatedSection>
+            </ScrollRevealSection>
           </div>
         </div>
       </section>
