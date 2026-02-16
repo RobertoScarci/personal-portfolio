@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout';
-import AnimatedSection from '@/components/AnimatedSection';
+import ScrollRevealSection from '@/components/ScrollRevealSection';
 import PageWatermark from '@/components/PageWatermark';
 import Header from '@/components/Header';
 import CareerTimeline, { type TimelineItem } from '@/components/CareerTimeline';
@@ -64,7 +64,7 @@ export default function Carriera() {
         <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
           <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
             {/* Intro — stessi margini della sezione titolo in About */}
-            <AnimatedSection delay={0.1}>
+            <ScrollRevealSection delay={0.05}>
               <section
                 className="block"
                 style={{ paddingBottom: 'clamp(2.25rem, 4.5vw, 3rem)' }}
@@ -85,7 +85,7 @@ export default function Carriera() {
                   </div>
                 </div>
               </section>
-            </AnimatedSection>
+            </ScrollRevealSection>
 
             {/* Timeline — linea animata, spaziatura come About (gap-24 md:gap-28), titoli distaccati */}
             <section
@@ -97,16 +97,18 @@ export default function Carriera() {
             </section>
 
             {/* Competenze Tecniche — più sotto, padding sotto per non attaccare al fondo */}
-            <section
-              className="block"
-              style={{
-                paddingTop: 'clamp(3.5rem, 7vw, 5rem)',
-                paddingBottom: 'clamp(4rem, 10vw, 6rem)',
-              }}
-              aria-labelledby="competenze-heading"
-            >
-              <CompetenzeSection />
-            </section>
+            <ScrollRevealSection delay={0.05}>
+              <section
+                className="block"
+                style={{
+                  paddingTop: 'clamp(3.5rem, 7vw, 5rem)',
+                  paddingBottom: 'clamp(4rem, 10vw, 6rem)',
+                }}
+                aria-labelledby="competenze-heading"
+              >
+                <CompetenzeSection />
+              </section>
+            </ScrollRevealSection>
           </div>
         </div>
       </section>

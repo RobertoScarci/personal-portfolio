@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import AnimatedSection from '@/components/AnimatedSection';
+import ScrollRevealSection from '@/components/ScrollRevealSection';
 
 export interface TimelineItem {
   year: string;
@@ -32,7 +32,7 @@ export default function CareerTimeline({ items }: CareerTimelineProps) {
         {/* Colonna contenuto — gap come About (gap-24 md:gap-28), titoli distaccati dalla linea */}
         <div className="flex-1 min-w-0 flex flex-col gap-24 md:gap-28">
           {items.map((item, index) => (
-            <AnimatedSection key={index} delay={0.25 + index * 0.12}>
+            <ScrollRevealSection key={index} delay={0.05 + index * 0.06}>
               <div className="relative flex items-start gap-6">
                 {/* Pallino sulla linea — stesso posizionamento di About (-left-7) */}
                 <motion.div
@@ -66,7 +66,7 @@ export default function CareerTimeline({ items }: CareerTimelineProps) {
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{item.description}</p>
                 </div>
               </div>
-            </AnimatedSection>
+            </ScrollRevealSection>
           ))}
         </div>
       </div>
