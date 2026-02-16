@@ -2,7 +2,7 @@
 
 import Layout from '@/components/Layout';
 import Link from 'next/link';
-import AnimatedSection from '@/components/AnimatedSection';
+import ScrollRevealSection from '@/components/ScrollRevealSection';
 import PageWatermark from '@/components/PageWatermark';
 import Header from '@/components/Header';
 import { FaGithub, FaBox, FaPalette } from 'react-icons/fa';
@@ -113,20 +113,22 @@ export default function About() {
         <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
           <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
             {/* Titolo About Me — spaziatura sotto ridotta */}
-            <section
-              className="block"
-              style={{ paddingBottom: 'clamp(2.25rem, 4.5vw, 3rem)' }}
-              aria-labelledby="about-me-title"
-            >
-              <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
-                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+            <ScrollRevealSection delay={0}>
+              <section
+                className="block"
+                style={{ paddingBottom: 'clamp(2.25rem, 4.5vw, 3rem)' }}
+                aria-labelledby="about-me-title"
+              >
+                <div className="flex flex-col md:flex-row md:gap-0 gap-6">
+                  <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
+                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h1 id="about-me-title" className="text-3xl md:text-5xl font-bold tracking-[0.04em]">About Me.</h1>
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h1 id="about-me-title" className="text-3xl md:text-5xl font-bold tracking-[0.04em]">About Me.</h1>
-                </div>
-              </div>
-            </section>
+              </section>
+            </ScrollRevealSection>
 
             {/* Sezione 2: Engineering — poco più spazio sotto prima di My Reads */}
             <section
@@ -143,7 +145,7 @@ export default function About() {
 
                 {/* Colonna contenuto: gap invece di space-y così il reset CSS non annulla lo spazio */}
                 <div className="flex-1 min-w-0 flex flex-col gap-24 md:gap-28">
-                <AnimatedSection delay={0.1}>
+                <ScrollRevealSection delay={0.05}>
                   <div className="relative flex items-start gap-6">
                     {/* Pallino timeline — centrato sulla linea (colonna w-14 = 56px, centro 28px) */}
                     <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
@@ -175,9 +177,9 @@ export default function About() {
                       </motion.div>
                     </div>
                   </div>
-                </AnimatedSection>
+                </ScrollRevealSection>
 
-                <AnimatedSection delay={0.2}>
+                <ScrollRevealSection delay={0.1}>
                   <div className="relative flex items-start gap-6">
                     <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
                     
@@ -206,9 +208,9 @@ export default function About() {
                       </motion.div>
                     </div>
                   </div>
-                </AnimatedSection>
+                </ScrollRevealSection>
 
-                <AnimatedSection delay={0.3}>
+                <ScrollRevealSection delay={0.15}>
                   <div className="relative flex items-start gap-6">
                     <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
                     
@@ -237,27 +239,29 @@ export default function About() {
                       </motion.div>
                     </div>
                   </div>
-                </AnimatedSection>
+                </ScrollRevealSection>
                 </div>
               </div>
             </div>
             </section>
 
             {/* Titolo My Reads — poco più spazio sopra (dopo Engineering) */}
-            <section
-              className="block"
-              style={{ paddingTop: 'clamp(2.75rem, 5.5vw, 4.25rem)', paddingBottom: 'clamp(3rem, 6vw, 4rem)' }}
-              aria-labelledby="my-reads-heading"
-            >
-              <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
-                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+            <ScrollRevealSection delay={0}>
+              <section
+                className="block"
+                style={{ paddingTop: 'clamp(2.75rem, 5.5vw, 4.25rem)', paddingBottom: 'clamp(3rem, 6vw, 4rem)' }}
+                aria-labelledby="my-reads-heading"
+              >
+                <div className="flex flex-col md:flex-row md:gap-0 gap-6">
+                  <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
+                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h2 id="my-reads-heading" className="text-xl md:text-2xl font-bold">My Reads.</h2>
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h2 id="my-reads-heading" className="text-xl md:text-2xl font-bold">My Reads.</h2>
-                </div>
-              </div>
-            </section>
+              </section>
+            </ScrollRevealSection>
 
             {/* Contenuto My Reads — gap come in My Playlist, spacing visibile tra voci */}
             <section className="block" style={{ paddingBottom: 'clamp(2.75rem, 5.5vw, 4.25rem)' }}>
@@ -267,7 +271,7 @@ export default function About() {
                 </div>
                 <div className="flex-1 min-w-0 flex flex-col gap-16 md:gap-20">
                   {reads.map((read, index) => (
-                    <AnimatedSection key={index} delay={0.1 + index * 0.1}>
+                    <ScrollRevealSection key={index} delay={0.05 + index * 0.06}>
                       <div className="relative flex items-start gap-6">
                         <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
                         <div className="flex-1 min-w-0 pl-0 md:pl-0">
@@ -283,27 +287,29 @@ export default function About() {
                           </div>
                         </div>
                       </div>
-                    </AnimatedSection>
+                    </ScrollRevealSection>
                   ))}
                 </div>
               </div>
             </section>
 
             {/* Titolo My Playlist — poco più spazio sopra (dopo My Reads) */}
-            <section
-              className="block"
-              style={{ paddingTop: 'clamp(2.75rem, 5.5vw, 4.25rem)', paddingBottom: 'clamp(3rem, 6vw, 4rem)' }}
-              aria-labelledby="my-playlist-heading"
-            >
-              <div className="flex flex-col md:flex-row md:gap-0 gap-6">
-                <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
-                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+            <ScrollRevealSection delay={0}>
+              <section
+                className="block"
+                style={{ paddingTop: 'clamp(2.75rem, 5.5vw, 4.25rem)', paddingBottom: 'clamp(3rem, 6vw, 4rem)' }}
+                aria-labelledby="my-playlist-heading"
+              >
+                <div className="flex flex-col md:flex-row md:gap-0 gap-6">
+                  <div className="hidden md:flex md:w-14 md:flex-shrink-0 md:justify-center md:relative">
+                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h2 id="my-playlist-heading" className="text-xl md:text-2xl font-bold">My Playlist.</h2>
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h2 id="my-playlist-heading" className="text-xl md:text-2xl font-bold">My Playlist.</h2>
-                </div>
-              </div>
-            </section>
+              </section>
+            </ScrollRevealSection>
 
             {/* Contenuto My Playlist — gap come in riferimento: spazio chiaro tra una voce e la successiva */}
             <section className="block" style={{ paddingBottom: 'clamp(2.25rem, 4.5vw, 3.25rem)' }}>
@@ -313,7 +319,7 @@ export default function About() {
                 </div>
                 <div className="flex-1 min-w-0 flex flex-col gap-16 md:gap-20">
                   {playlists.map((playlist, index) => (
-                    <AnimatedSection key={index} delay={0.1 + index * 0.1}>
+                    <ScrollRevealSection key={index} delay={0.05 + index * 0.06}>
                       <div className="relative flex items-start gap-6">
                         <div className="hidden md:block absolute -left-7 top-1.5 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background -translate-x-1/2 flex-shrink-0" />
                         <div className="flex flex-1 items-start justify-between gap-6 min-w-0 pl-0 md:pl-0">
@@ -338,14 +344,14 @@ export default function About() {
                           </motion.div>
                         </div>
                       </div>
-                    </AnimatedSection>
+                    </ScrollRevealSection>
                   ))}
                 </div>
               </div>
             </section>
 
             {/* CTA to Projects — poco più spazio sopra (dopo My Playlist) */}
-            <AnimatedSection delay={0.4}>
+            <ScrollRevealSection delay={0.1}>
               <div className="text-center pt-10">
                 <Link
                   href="/progetti"
@@ -355,7 +361,7 @@ export default function About() {
                   <span className="text-accent">→</span>
                 </Link>
               </div>
-            </AnimatedSection>
+            </ScrollRevealSection>
           </div>
         </div>
       </section>
