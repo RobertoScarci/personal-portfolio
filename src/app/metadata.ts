@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 
 export const siteConfig = {
   name: 'Roberto Scarci · Portfolio',
-  description: 'Portfolio personale di Roberto Scarci, sviluppatore full-stack freelance.',
-  url: 'https://tuosito.com',
+  description: 'Portfolio di Roberto Scarci — Web Developer, Building Faster Products with AI. Full Stack Developer da Taranto.',
+  url: 'https://robertoscarci.dev',
   ogImage: '/og-image.jpg',
   links: {
     github: 'https://github.com/RobertoScarci',
-    linkedin: 'https://linkedin.com/in/tuoprofilo',
-    instagram: 'https://instagram.com/tuoprofilo',
+    linkedin: 'https://www.linkedin.com/in/roberto-scarci-0625ab2a6/',
+    instagram: 'https://www.instagram.com/robertoscarci_/',
   },
 };
 
