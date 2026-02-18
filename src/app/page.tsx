@@ -11,7 +11,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Home',
-  description: 'Sviluppatore full-stack freelance, architetto UX e ingegnere JavaScript. Trasformo idee in esperienze digitali immersive.',
+  description: 'Roberto Scarci — Web Developer, Building Faster Products with AI. Full Stack da Taranto, Puglia.',
 };
 
 export default function Home() {

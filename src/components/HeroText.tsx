@@ -29,26 +29,26 @@ export default function HeroText({ delay = 0.7 }: HeroTextProps) {
     >
       <div className="text-sm md:text-base text-foreground/80 text-left font-extralight max-w-5xl mb-2 md:mb-3 leading-[1.75]">
         <p className="mb-3 md:mb-4">
-          Il tuo sviluppatore full-stack di fiducia, architetto UX e ingegnere JavaScript.
-          Passo le mie giornate (e spesso le notti) dipingendo la tela di Internet con{' '}
+          Web Developer con base a Taranto, costruisco prodotti più veloci con l’aiuto dell’AI.
+          Dopo il diploma in Grafica e Comunicazione e il percorso Boolean, lavoro ogni giorno con React, Vue, Laravel e JavaScript per dare forma a{' '}
           <Link
             href="/progetti"
             className="font-semibold text-foreground hover:text-accent transition-colors duration-300 underline-offset-4 hover:underline"
           >
             PROGETTI
           </Link>{' '}
-          e righe di codice, trasformando zeri e uno in esperienze immersive e interattive.
+          concreti, da repliche di app famose a layout responsive e API.
         </p>
         <p>
-          Appassionato di fotografia e design minimale, trovo bellezza nella semplicità e nell'ordine.
-          Quando non sto creando esperienze web curate, puoi trovarmi a leggere{' '}
+          Appassionato di design e di codice pulito, credo nella semplicità e nella crescita continua.
+          Studio Informatica all’UniPegaso e quando non programmo mi trovi a leggere{' '}
           <Link
-            href="#"
+            href="/about"
             className="font-semibold text-foreground hover:text-accent transition-colors duration-300 underline-offset-4 hover:underline"
           >
             ARTICOLI
           </Link>{' '}
-          o ad ascoltare musica, perdendomi nel flusso delle melodie. In ogni caso puoi sempre{' '}
+          o in ascolto di musica. Per idee o collaborazioni puoi sempre{' '}
           <Link
             href="/contatti"
             className="font-semibold text-foreground hover:text-accent transition-colors duration-300 underline-offset-4 hover:underline"
