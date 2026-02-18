@@ -195,16 +195,16 @@ export default function Contatti() {
                 Scegli uno slot nel calendario per una chiamata veloce (Calendly, ecc.).
               </p>
 
-              {/* Calendario staccato dal testo sopra */}
+              {/* Calendario — sfondo più chiaro, ombra leggera, testo più visibile */}
               <div
-                className="w-full max-w-3xl rounded-2xl border border-border/40 bg-surface/40 px-7 py-7 md:px-9 md:py-9 shadow-[0_26px_80px_rgba(0,0,0,0.8)]"
+                className="w-full max-w-3xl rounded-2xl border border-border/60 bg-background/95 backdrop-blur-sm px-7 py-7 md:px-9 md:py-9 shadow-[0_4px_24px_rgba(0,0,0,0.12)]"
                 style={{ marginTop: '1.5rem' }}
               >
                 <div className="flex items-center justify-between mb-6 md:mb-7">
-                  <span className="text-xs font-medium text-foreground/80">Calendario</span>
-                  <span className="text-[10px] text-foreground/50">Coming soon</span>
+                  <span className="text-xs font-medium text-foreground">Calendario</span>
+                  <span className="text-[10px] text-foreground/60">Coming soon</span>
                 </div>
-                <div className="grid grid-cols-7 gap-2 text-[11px] md:text-xs text-center text-foreground/50 mb-5">
+                <div className="grid grid-cols-7 gap-2 text-[11px] md:text-xs text-center text-foreground/75 mb-5 font-medium">
                   <span>L</span>
                   <span>M</span>
                   <span>M</span>
@@ -218,7 +218,7 @@ export default function Contatti() {
                     <button
                       key={i}
                       type="button"
-                      className="h-9 md:h-11 rounded-lg bg-surface-elevated/50 hover:bg-accent/20 text-foreground/80 hover:text-foreground text-[11px] md:text-xs flex items-center justify-center transition-colors"
+                      className="h-9 md:h-11 rounded-lg bg-foreground/[0.06] hover:bg-accent/25 text-foreground/90 hover:text-foreground text-[11px] md:text-xs flex items-center justify-center transition-colors border border-transparent hover:border-border/50"
                     >
                       {i + 1}
                     </button>
