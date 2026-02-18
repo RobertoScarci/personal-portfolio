@@ -17,6 +17,9 @@ import {
   SiNestjs,
   SiGraphql,
   SiGit,
+  SiLaravel,
+  SiVuedotjs,
+  SiDotnet,
 } from 'react-icons/si';
 import type { IconType } from 'react-icons';
 
@@ -28,10 +31,10 @@ const categories: Category[] = [
     title: 'Frontend',
     items: [
       { label: 'React', Icon: SiReact },
+      { label: 'Vue.js', Icon: SiVuedotjs },
       { label: 'Next.js', Icon: SiNextdotjs },
       { label: 'TypeScript', Icon: SiTypescript },
       { label: 'Tailwind', Icon: SiTailwindcss },
-      { label: 'Redux', Icon: SiRedux },
       { label: 'Jest', Icon: SiJest },
     ],
   },
@@ -39,11 +42,11 @@ const categories: Category[] = [
     title: 'Backend',
     items: [
       { label: 'Node.js', Icon: SiNodedotjs },
+      { label: 'Laravel', Icon: SiLaravel },
       { label: 'Express', Icon: SiExpress },
-      { label: 'NestJS', Icon: SiNestjs },
       { label: 'PostgreSQL', Icon: SiPostgresql },
       { label: 'MongoDB', Icon: SiMongodb },
-      { label: 'GraphQL', Icon: SiGraphql },
+      { label: '.NET', Icon: SiDotnet },
     ],
   },
   {
