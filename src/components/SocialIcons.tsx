@@ -10,20 +10,21 @@ import {
   FaTiktok,
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { siteConfig } from '@/app/metadata';
 
-const socialLinks = [
-  { name: 'Twitter', href: '#', icon: FaTwitter },
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/roberto-scarci-0625ab2a6/', icon: FaLinkedin },
-  { name: 'GitHub', href: 'https://github.com/RobertoScarci', icon: FaGithub },
-  { name: 'Instagram', href: 'https://www.instagram.com/robertoscarci_/', icon: FaInstagram },
-  { name: 'Facebook', href: 'https://www.facebook.com/roberto.scarci', icon: FaFacebook },
-  { name: 'TikTok', href: 'https://www.tiktok.com/@robertoscarci?lang=en', icon: FaTiktok },
+const socialItems = [
+  { name: 'Twitter', key: 'twitter' as const, icon: FaTwitter },
+  { name: 'LinkedIn', key: 'linkedin' as const, icon: FaLinkedin },
+  { name: 'GitHub', key: 'github' as const, icon: FaGithub },
+  { name: 'Instagram', key: 'instagram' as const, icon: FaInstagram },
+  { name: 'Facebook', key: 'facebook' as const, icon: FaFacebook },
+  { name: 'TikTok', key: 'tiktok' as const, icon: FaTiktok },
 ];
 
 export default function SocialIcons() {
   return (
     <div className="flex items-center gap-8 md:gap-10">
-      {socialLinks.map((social, index) => {
+      {socialItems.map((social, index) => {
         const Icon = social.icon;
         return (
           <motion.div
@@ -37,7 +38,7 @@ export default function SocialIcons() {
             }}
           >
             <Link
-              href={social.href}
+              href={siteConfig.links[social.key]}
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/55 hover:text-foreground transition-all duration-300 group"

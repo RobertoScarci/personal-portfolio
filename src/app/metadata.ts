@@ -9,6 +9,10 @@ export const siteConfig = {
     github: 'https://github.com/RobertoScarci',
     linkedin: 'https://www.linkedin.com/in/roberto-scarci-0625ab2a6/',
     instagram: 'https://www.instagram.com/robertoscarci_/',
+    facebook: 'https://www.facebook.com/roberto.scarci',
+    tiktok: 'https://www.tiktok.com/@robertoscarci?lang=en',
+    twitter: '#',
+    dribbble: '#',
   },
 };
 

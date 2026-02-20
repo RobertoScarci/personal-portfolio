@@ -16,11 +16,6 @@ export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Filtra i link per escludere quello della pagina corrente (ma mostra tutti se siamo in home)
-  const visibleNavigation = pathname === '/' 
-    ? navigation 
-    : navigation.filter((item) => pathname !== item.href);
-
   return (
     <header className="relative z-50 w-full flex-shrink-0 h-16 flex items-center">
       <nav className="w-full flex items-center justify-between py-0">
@@ -53,7 +48,8 @@ export default function Header() {
         </Link>
 
         <div className="hidden md:flex items-center gap-10">
-          {visibleNavigation.map((item, index) => {
+          {navigation.map((item, index) => {
+            const isActive = pathname === item.href;
             return (
               <motion.div
                 key={item.name}
@@ -63,33 +59,25 @@ export default function Header() {
               >
                 <motion.div
                   className="relative"
-                  whileHover="hover"
+                  whileHover={isActive ? undefined : 'hover'}
                   initial="initial"
                 >
                   <Link
                     href={item.href}
-                    className="text-sm font-medium transition-all duration-300 relative text-foreground/70 hover:text-foreground"
+                    className={`text-sm font-medium transition-all duration-300 relative ${isActive ? 'text-foreground' : 'text-foreground/70 hover:text-foreground'}`}
+                    aria-current={isActive ? 'page' : undefined}
                   >
                     {item.name}
                   </Link>
                   <motion.span
                     layoutId={`activeTab-${item.name}`}
                     className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-[1.5px] bg-accent origin-center"
-                    style={{
-                      width: '100%',
-                    }}
+                    style={{ width: '100%' }}
                     variants={{
-                      initial: {
-                        scaleX: 0,
-                      },
-                      hover: {
-                        scaleX: 1,
-                      },
+                      initial: { scaleX: isActive ? 1 : 0 },
+                      hover: { scaleX: 1 },
                     }}
-                    transition={{
-                      duration: 0.6,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   />
                 </motion.div>
               </motion.div>
@@ -129,13 +117,15 @@ export default function Header() {
             className="md:hidden border-t border-border"
           >
             <nav className="py-4 flex flex-col gap-4">
-              {(pathname === '/' ? navigation : visibleNavigation).map((item) => {
+              {navigation.map((item) => {
+                const isActive = pathname === item.href;
                 return (
                   <Link
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-base font-medium transition-colors py-2 text-foreground/70 hover:text-foreground"
+                    className={`text-base font-medium transition-colors py-2 ${isActive ? 'text-foreground' : 'text-foreground/70 hover:text-foreground'}`}
+                    aria-current={isActive ? 'page' : undefined}
                   >
                     {item.name}
                   </Link>
