@@ -25,12 +25,17 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     'full-stack developer',
-    'freelance developer',
     'web developer',
     'React',
     'Next.js',
     'TypeScript',
     'JavaScript',
+    'Laravel',
+    'Vue.js',
+    'Boolean',
+    'Taranto',
+    'AI',
+    'consulenza',
     'portfolio',
   ],
   authors: [
@@ -51,7 +56,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
-    creator: '@tuousername',
+    creator: '@robertoscarci',
   },
   robots: {
     index: true,
