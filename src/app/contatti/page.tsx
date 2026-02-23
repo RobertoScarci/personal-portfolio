@@ -8,15 +8,29 @@ import SocialIcons from '@/components/SocialIcons';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export default function Contatti() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
+  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
+
+  const validate = (): boolean => {
+    const next: typeof errors = {};
+    if (!formData.name.trim()) next.name = 'Inserisci il tuo nome.';
+    if (!formData.email.trim()) next.email = 'Inserisci la tua email.';
+    else if (!EMAIL_REGEX.test(formData.email)) next.email = 'Inserisci un indirizzo email valido.';
+    if (!formData.message.trim()) next.message = 'Inserisci un messaggio.';
+    setErrors(next);
+    return Object.keys(next).length === 0;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) return;
     console.log('Form submitted:', formData);
     alert('Messaggio inviato! (Funzionalità in sviluppo)');
   };
@@ -24,10 +38,9 @@ export default function Contatti() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name as keyof typeof errors]) setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
   return (
@@ -108,9 +121,16 @@ export default function Contatti() {
                     onChange={handleChange}
                     required
                     style={{ padding: '1.4rem 2rem' }}
-                    className="w-full rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40"
+                    className={`w-full rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 ${errors.name ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'}`}
                     placeholder="Name"
+                    aria-invalid={errors.name ? 'true' : undefined}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
                   />
+                  {errors.name && (
+                    <p id="name-error" className="mt-1.5 text-xs text-accent" role="alert">
+                      {errors.name}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="email" className="sr-only">
@@ -124,9 +144,16 @@ export default function Contatti() {
                     onChange={handleChange}
                     required
                     style={{ padding: '1.4rem 2rem' }}
-                    className="w-full rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40"
+                    className={`w-full rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 ${errors.email ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'}`}
                     placeholder="Email"
+                    aria-invalid={errors.email ? 'true' : undefined}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
                   />
+                  {errors.email && (
+                    <p id="email-error" className="mt-1.5 text-xs text-accent" role="alert">
+                      {errors.email}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="message" className="sr-only">
@@ -140,9 +167,16 @@ export default function Contatti() {
                     required
                     rows={9}
                     style={{ padding: '1.4rem 2rem' }}
-                    className="w-full min-h-[260px] md:min-h-[300px] rounded-none bg-surface/10 border border-border/50 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40"
+                    className={`w-full min-h-[260px] md:min-h-[300px] rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40 ${errors.message ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'}`}
                     placeholder="Message"
+                    aria-invalid={errors.message ? 'true' : undefined}
+                    aria-describedby={errors.message ? 'message-error' : undefined}
                   />
+                  {errors.message && (
+                    <p id="message-error" className="mt-1.5 text-xs text-accent" role="alert">
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
                 <motion.button
                   type="submit"
@@ -195,34 +229,35 @@ export default function Contatti() {
                 Scegli uno slot nel calendario per una chiamata veloce (Calendly, ecc.).
               </p>
 
-              {/* Calendario — sfondo più chiaro, ombra leggera, testo più visibile */}
-              <div
-                className="w-full max-w-3xl rounded-2xl border border-border/60 bg-background/95 backdrop-blur-sm px-7 py-7 md:px-9 md:py-9 shadow-[0_4px_24px_rgba(0,0,0,0.12)]"
-                style={{ marginTop: '1.5rem' }}
-              >
-                <div className="flex items-center justify-between mb-6 md:mb-7">
-                  <span className="text-xs font-medium text-foreground">Calendario</span>
-                  <span className="text-[10px] text-foreground/60">Coming soon</span>
-                </div>
-                <div className="grid grid-cols-7 gap-2 text-[11px] md:text-xs text-center text-foreground/75 mb-5 font-medium">
-                  <span>L</span>
-                  <span>M</span>
-                  <span>M</span>
-                  <span>G</span>
-                  <span>V</span>
-                  <span>S</span>
-                  <span>D</span>
-                </div>
-                <div className="grid grid-cols-7 gap-2 text-xs md:text-sm">
-                  {Array.from({ length: 28 }).map((_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      className="h-9 md:h-11 rounded-lg bg-foreground/[0.06] hover:bg-accent/25 text-foreground/90 hover:text-foreground text-[11px] md:text-xs flex items-center justify-center transition-colors border border-transparent hover:border-border/50"
-                    >
-                      {i + 1}
-                    </button>
-                  ))}
+              {/* Calendario — background animato, colori accent, glass */}
+              <div className="calendar-wrapper w-full max-w-3xl overflow-hidden" style={{ marginTop: '1.5rem' }}>
+                <div className="calendar-inner px-7 py-7 md:px-9 md:py-9 mx-1.5 my-1.5">
+                  <div className="flex items-center justify-between mb-6 md:mb-7">
+                    <span className="text-sm font-semibold text-foreground tracking-wide">Calendario</span>
+                    <span className="text-[10px] font-medium uppercase tracking-wider text-accent/90 bg-accent/10 px-2.5 py-1 rounded-full">
+                      Coming soon
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-7 gap-2 text-[11px] md:text-xs text-center text-foreground/70 mb-5 font-semibold">
+                    <span>L</span>
+                    <span>M</span>
+                    <span>M</span>
+                    <span>G</span>
+                    <span>V</span>
+                    <span>S</span>
+                    <span>D</span>
+                  </div>
+                  <div className="grid grid-cols-7 gap-2 text-xs md:text-sm">
+                    {Array.from({ length: 28 }).map((_, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        className="calendar-day h-9 md:h-11 rounded-xl bg-white/[0.06] text-foreground/90 text-[11px] md:text-xs flex items-center justify-center border border-white/[0.08]"
+                      >
+                        {i + 1}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
             </section>

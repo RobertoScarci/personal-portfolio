@@ -401,3 +401,48 @@ a:hover, button:hover {
   animation: marquee-scroll 40s linear infinite;
   width: max-content;
 }
+
+/* Calendario contatti — background animato */
+@keyframes calendar-bg-shift {
+  0%, 100% {
+    opacity: 1;
+    background-position: 0% 50%;
+  }
+  50% {
+    opacity: 0.9;
+    background-position: 100% 50%;
+  }
+}
+.calendar-wrapper {
+  position: relative;
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(236, 72, 153, 0.12) 0%,
+    rgba(99, 102, 241, 0.08) 40%,
+    rgba(236, 72, 153, 0.06) 70%,
+    rgba(99, 102, 241, 0.1) 100%
+  );
+  background-size: 200% 200%;
+  animation: calendar-bg-shift 12s ease-in-out infinite;
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  box-shadow: 0 0 40px rgba(236, 72, 153, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.calendar-inner {
+  position: relative;
+  z-index: 1;
+  border-radius: 1.25rem;
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.calendar-day {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.calendar-day:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(236, 72, 153, 0.35);
+  background: rgba(236, 72, 153, 0.2);
+  border-color: rgba(236, 72, 153, 0.4);
+  color: #fff;
+}
