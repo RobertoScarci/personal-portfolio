@@ -246,27 +246,24 @@ html.custom-cursor-active * {
   cursor: none !important;
 }
 
-/* Cursor: sharp edges, pixel-art feel */
+/* Cursor: pixelated edges (no anti-alias) */
 .cursor-pixel {
+  image-rendering: pixelated;
   image-rendering: crisp-edges;
+  shape-rendering: crispEdges;
 }
 
-/* Neon Cursor: layered glow (drop-shadow follows shape) */
+/* Neon glow in site color (foreground) */
 .cursor-neon {
   filter:
-    drop-shadow(0 0 4px var(--accent))
-    drop-shadow(0 0 12px var(--accent))
-    drop-shadow(0 0 20px rgba(236, 72, 153, 0.5));
+    drop-shadow(0 0 3px var(--foreground))
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.25))
+    drop-shadow(0 0 14px rgba(255, 255, 255, 0.12));
   animation: cursor-neon-pulse 3s ease-in-out infinite;
 }
 @keyframes cursor-neon-pulse {
-  0%, 100% { filter: drop-shadow(0 0 4px var(--accent)) drop-shadow(0 0 12px var(--accent)) drop-shadow(0 0 20px rgba(236, 72, 153, 0.5)); opacity: 1; }
-  50% { filter: drop-shadow(0 0 6px var(--accent)) drop-shadow(0 0 16px var(--accent)) drop-shadow(0 0 26px rgba(236, 72, 153, 0.65)); opacity: 0.95; }
-}
-
-/* Ring on hover: neon outline */
-.cursor-ring-neon {
-  box-shadow: 0 0 12px var(--accent), 0 0 24px rgba(236, 72, 153, 0.4);
+  0%, 100% { filter: drop-shadow(0 0 3px var(--foreground)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.25)) drop-shadow(0 0 14px rgba(255, 255, 255, 0.12)); opacity: 1; }
+  50% { filter: drop-shadow(0 0 5px var(--foreground)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 18px rgba(255, 255, 255, 0.15)); opacity: 0.97; }
 }
 
 /* Reduce motion for users who prefer it */
