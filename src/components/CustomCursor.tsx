@@ -27,6 +27,10 @@ function findClickableElement(x: number, y: number): HTMLElement | null {
   return null;
 }
 
+/* Classic pointer shape: tip at (0,0), readable arrow + stem */
+const CURSOR_PATH =
+  'M 0 0 L 0 16 L 6 15 L 10 20 L 13 19 L 10 13 L 17 11 Z';
+
 export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
   const [enabled, setEnabled] = useState(false);
@@ -79,36 +83,74 @@ export default function CustomCursor() {
     <div
       ref={containerRef}
       className="fixed pointer-events-none z-[9999] w-0 h-0"
-      style={{
-        left: 0,
-        top: 0,
-        transform: 'translate(-50%, -50%)',
-      }}
+      style={{ left: 0, top: 0 }}
       aria-hidden
     >
-      {/* Dot: visible only when NOT hovering; animated pulse + glow */}
+      {/* Cursor: classic arrow — dark body + pink/purple layered outline (pixel-art style) */}
       <AnimatePresence mode="wait">
         {!isHovering && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.12 }}
-            className="absolute top-0 left-0"
+            transition={{ duration: 0.1 }}
+            className="cursor-pixel cursor-neon absolute top-0 left-0"
           >
-            <div
-              className="cursor-dot absolute top-0 left-0 w-2.5 h-2.5 rounded-full bg-foreground"
-              style={{ boxShadow: '0 0 14px var(--accent), 0 0 6px var(--accent)' }}
-            />
+            <svg
+              width={24}
+              height={24}
+              viewBox="0 0 24 24"
+              fill="none"
+              className="cursor-pixel"
+            >
+              {/* Outer glow — accent */}
+              <path
+                d={CURSOR_PATH}
+                fill="none"
+                stroke="var(--accent)"
+                strokeWidth="2.5"
+                strokeLinejoin="miter"
+                strokeLinecap="butt"
+                opacity={0.7}
+              />
+              {/* Inner outline — accent, tighter */}
+              <path
+                d={CURSOR_PATH}
+                fill="none"
+                stroke="var(--accent)"
+                strokeWidth="1.2"
+                strokeLinejoin="miter"
+                strokeLinecap="butt"
+              />
+              {/* Dark body */}
+              <path
+                d={CURSOR_PATH}
+                fill="var(--background)"
+                stroke="var(--foreground)"
+                strokeWidth="1"
+                strokeLinejoin="miter"
+                strokeLinecap="butt"
+              />
+              {/* Gloss */}
+              <path
+                d="M 1 1 L 1 12 L 4 11.5 L 6 16 L 8 15 L 6 10 L 11 8.5 Z"
+                fill="rgba(255,255,255,0.07)"
+              />
+            </svg>
           </motion.div>
         )}
       </AnimatePresence>
-      {/* Ring: only on hover, empty center (no dot inside) */}
+
+      {/* Ring on hover over clickable */}
       <AnimatePresence>
         {isHovering && (
           <motion.div
-            className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-accent bg-transparent"
-            style={{ width: 40, height: 40 }}
+              className="cursor-ring-neon absolute top-0 left-0 rounded-full border-2 border-accent bg-transparent"
+              style={{
+              width: 40,
+              height: 40,
+              transform: 'translate(-50%, -50%)',
+            }}
             initial={{ scale: 0.4, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.4, opacity: 0 }}

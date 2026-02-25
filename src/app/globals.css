@@ -246,13 +246,27 @@ html.custom-cursor-active * {
   cursor: none !important;
 }
 
-/* Cursor dot: subtle pulse + glow */
-.cursor-dot {
-  animation: cursor-dot-pulse 2.2s ease-in-out infinite;
+/* Cursor: sharp edges, pixel-art feel */
+.cursor-pixel {
+  image-rendering: crisp-edges;
 }
-@keyframes cursor-dot-pulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-  50% { transform: translate(-50%, -50%) scale(1.18); opacity: 0.85; }
+
+/* Neon Cursor: layered glow (drop-shadow follows shape) */
+.cursor-neon {
+  filter:
+    drop-shadow(0 0 4px var(--accent))
+    drop-shadow(0 0 12px var(--accent))
+    drop-shadow(0 0 20px rgba(236, 72, 153, 0.5));
+  animation: cursor-neon-pulse 3s ease-in-out infinite;
+}
+@keyframes cursor-neon-pulse {
+  0%, 100% { filter: drop-shadow(0 0 4px var(--accent)) drop-shadow(0 0 12px var(--accent)) drop-shadow(0 0 20px rgba(236, 72, 153, 0.5)); opacity: 1; }
+  50% { filter: drop-shadow(0 0 6px var(--accent)) drop-shadow(0 0 16px var(--accent)) drop-shadow(0 0 26px rgba(236, 72, 153, 0.65)); opacity: 0.95; }
+}
+
+/* Ring on hover: neon outline */
+.cursor-ring-neon {
+  box-shadow: 0 0 12px var(--accent), 0 0 24px rgba(236, 72, 153, 0.4);
 }
 
 /* Reduce motion for users who prefer it */
