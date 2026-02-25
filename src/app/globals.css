@@ -237,6 +237,24 @@ a:hover, button:hover {
   top: 1rem;
 }
 
+/* ============================================
+   CUSTOM CURSOR
+   ============================================ */
+
+html.custom-cursor-active,
+html.custom-cursor-active * {
+  cursor: none !important;
+}
+
+/* Cursor dot: subtle pulse + glow */
+.cursor-dot {
+  animation: cursor-dot-pulse 2.2s ease-in-out infinite;
+}
+@keyframes cursor-dot-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  50% { transform: translate(-50%, -50%) scale(1.18); opacity: 0.85; }
+}
+
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *,
