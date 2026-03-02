@@ -14,9 +14,10 @@ export const metadata: Metadata = {
 const timeline: TimelineItem[] = [
   {
     year: 'Mar 2025 - oggi',
-    title: 'Sviluppatore & AI',
+    title: 'Sviluppatore frontend & AI',
     organization: 'Morfeus',
-    description: 'Azienda di consulenza AI. Sviluppo di feature, creazione di assistenti AI e progettazione di prompt efficaci. In collaborazione con il team per soluzioni basate su intelligenza artificiale.',
+    description:
+      'Azienda di consulenza AI. Sviluppo di interfacce e feature per prodotti interni, creazione di assistenti AI e progettazione di prompt efficaci per automatizzare parti del lavoro di team e clienti.',
     type: 'experience',
   },
   {
@@ -30,7 +31,8 @@ const timeline: TimelineItem[] = [
     year: 'Set 2023 - Ott 2024',
     title: 'Jr. Full Stack Web Developer Trainee',
     organization: 'Boolean',
-    description: 'Sviluppo di progetti in gruppo (replica Airbnb) e in singolo: Netflix con Vue.js e API, WhatsApp con ricerca chat e autorisposta, layout Spotify responsive. Stack: HTML, CSS, JavaScript, Laravel, Vue.js.',
+    description:
+      'Sviluppo di progetti in gruppo (replica Airbnb) e in singolo: Netflix con Vue.js e API, WhatsApp con ricerca chat e autorisposta, layout Spotify responsive. Focus su lavoro in team, Git workflow e consegna di progetti completi lato frontend e backend.',
     type: 'experience',
   },
   {
