@@ -26,18 +26,23 @@ type Category = { title: string; items: TechItem[] };
 
 const categories: Category[] = [
   {
-    title: 'Frontend',
+    title: 'Core stack',
     items: [
       { label: 'React', Icon: SiReact, href: 'https://react.dev' },
-      { label: 'Vue.js', Icon: SiVuedotjs, href: 'https://vuejs.org' },
       { label: 'Next.js', Icon: SiNextdotjs, href: 'https://nextjs.org' },
       { label: 'TypeScript', Icon: SiTypescript, href: 'https://www.typescriptlang.org' },
       { label: 'Tailwind', Icon: SiTailwindcss, href: 'https://tailwindcss.com' },
+    ],
+  },
+  {
+    title: 'Frontend & UI',
+    items: [
+      { label: 'Vue.js', Icon: SiVuedotjs, href: 'https://vuejs.org' },
       { label: 'Jest', Icon: SiJest, href: 'https://jestjs.io' },
     ],
   },
   {
-    title: 'Backend',
+    title: 'Backend & Data',
     items: [
       { label: 'Node.js', Icon: SiNodedotjs, href: 'https://nodejs.org' },
       { label: 'Laravel', Icon: SiLaravel, href: 'https://laravel.com' },
@@ -67,6 +72,10 @@ export default function CompetenzeSection() {
         <h2 id="competenze-heading" className="text-2xl md:text-3xl font-bold">
           Competenze Tecniche
         </h2>
+        <p className="mt-3 text-sm md:text-base text-foreground/70 max-w-3xl">
+          Oggi il mio stack principale è React, Next.js, TypeScript e Tailwind. A supporto uso tecnologie backend,
+          database e strumenti DevOps per seguire il ciclo completo di sviluppo, dal prototipo al deploy.
+        </p>
       </div>
 
       {/* Contenitore marquee — poco padding sopra e sotto */}
