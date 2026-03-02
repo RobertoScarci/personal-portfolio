@@ -49,7 +49,7 @@ export default function CustomCursor() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.1 }}
+        transition={{ duration: 0.08 }}
         className="cursor-pixel cursor-neon absolute top-0 left-0"
       >
         <svg
@@ -59,38 +59,53 @@ export default function CustomCursor() {
           fill="none"
           className="cursor-pixel"
         >
-          {/* Outer glow — site color (foreground) */}
+          <defs>
+            {/* Slight 3D bevel on the body */}
+            <linearGradient
+              id="cursorBodyGradient"
+              x1="0"
+              y1="0"
+              x2="1"
+              y2="1"
+            >
+              <stop offset="0%" stopColor="#05050d" />
+              <stop offset="55%" stopColor="#05050d" />
+              <stop offset="100%" stopColor="#111122" />
+            </linearGradient>
+          </defs>
+
+          {/* Back layer: accent shadow slightly offset, for depth */}
           <path
             d={CURSOR_PATH}
-            fill="none"
-            stroke="var(--foreground)"
-            strokeWidth="2"
-            strokeLinejoin="miter"
-            strokeLinecap="square"
-            opacity={0.85}
+            fill="var(--accent)"
+            opacity={0.7}
+            transform="translate(1 1)"
           />
-          {/* Inner border — site color, pixel edge */}
+
+          {/* Main body with subtle 3D gradient */}
           <path
             d={CURSOR_PATH}
-            fill="none"
-            stroke="var(--foreground)"
-            strokeWidth="1.2"
-            strokeLinejoin="miter"
-            strokeLinecap="square"
-          />
-          {/* Dark body */}
-          <path
-            d={CURSOR_PATH}
-            fill="var(--background)"
+            fill="url(#cursorBodyGradient)"
             stroke="var(--foreground)"
             strokeWidth="1"
             strokeLinejoin="miter"
             strokeLinecap="square"
           />
-          {/* Gloss */}
+
+          {/* Outer border for crisp white edge */}
+          <path
+            d={CURSOR_PATH}
+            fill="none"
+            stroke="var(--foreground)"
+            strokeWidth="1.5"
+            strokeLinejoin="miter"
+            strokeLinecap="square"
+          />
+
+          {/* Inner gloss highlight */}
           <path
             d="M 1 1 L 1 12 L 4 11.5 L 6 16 L 8 15 L 6 10 L 11 8.5 Z"
-            fill="rgba(255,255,255,0.06)"
+            fill="rgba(255,255,255,0.08)"
           />
         </svg>
       </motion.div>

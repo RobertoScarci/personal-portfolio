@@ -253,17 +253,11 @@ html.custom-cursor-active * {
   shape-rendering: crispEdges;
 }
 
-/* Neon glow in site color (foreground) */
+/* Neon glow in site color (foreground) - static for zero-lag feel */
 .cursor-neon {
   filter:
-    drop-shadow(0 0 3px var(--foreground))
-    drop-shadow(0 0 8px rgba(255, 255, 255, 0.25))
-    drop-shadow(0 0 14px rgba(255, 255, 255, 0.12));
-  animation: cursor-neon-pulse 3s ease-in-out infinite;
-}
-@keyframes cursor-neon-pulse {
-  0%, 100% { filter: drop-shadow(0 0 3px var(--foreground)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.25)) drop-shadow(0 0 14px rgba(255, 255, 255, 0.12)); opacity: 1; }
-  50% { filter: drop-shadow(0 0 5px var(--foreground)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 18px rgba(255, 255, 255, 0.15)); opacity: 0.97; }
+    drop-shadow(0 0 2px var(--foreground))
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.22));
 }
 
 /* Reduce motion for users who prefer it */
