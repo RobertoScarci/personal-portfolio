@@ -61,11 +61,7 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
-                <motion.div
-                  className="relative"
-                  whileHover="hover"
-                  initial="initial"
-                >
+                <motion.div className="relative" whileHover="hover" initial="initial">
                   <Link
                     href={item.href}
                     className="text-sm font-medium transition-all duration-300 relative text-foreground/70 hover:text-foreground"
@@ -74,7 +70,7 @@ export default function Header() {
                   </Link>
                   <motion.span
                     layoutId={`activeTab-${item.name}`}
-                    className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-[1.5px] bg-accent origin-center"
+                    className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-[1.5px] bg-accent origin-center shadow-[0_0_12px_rgba(236,72,153,0.6)]"
                     style={{ width: '100%' }}
                     variants={{
                       initial: { scaleX: 0 },
