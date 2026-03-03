@@ -62,11 +62,17 @@ export default async function ProgettoDetailPage({ params }: Props) {
               </Link>
             </nav>
 
-            {/* Hero: titolo + immagine principale */}
+            {/* Hero: titolo + caption sintetica */}
             <header className="mb-10 md:mb-14">
-              <h1 className="text-3xl md:text-5xl font-bold tracking-[0.04em] mb-4">
+              <h1 className="text-3xl md:text-5xl font-bold tracking-[0.04em] mb-3">
                 {project.title}
               </h1>
+              <p className="text-sm uppercase tracking-[0.18em] text-foreground/55 mb-3">
+                {project.category === 'Projects' && 'Progetto web'}
+                {project.category === 'Dev Tools' && 'Dev tool'}
+                {project.category === 'Open Source' && 'Open source'}
+                {project.category === 'Designs' && 'Design & UI'}
+              </p>
               <p className="text-lg text-[#a6acb7] mb-6">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
@@ -88,17 +94,17 @@ export default async function ProgettoDetailPage({ params }: Props) {
               />
             </div>
 
-            {/* Descrizione */}
+            {/* Contesto & obiettivo (descrizione principale) */}
             <section className="mb-10 md:mb-14" aria-labelledby="desc-heading">
               <h2 id="desc-heading" className="text-xl md:text-2xl font-bold mb-4">
-                Il progetto
+                Contesto e obiettivo
               </h2>
               <p className="text-[#a6acb7] leading-relaxed whitespace-pre-line">
                 {description}
               </p>
             </section>
 
-            {/* Come è stato creato */}
+            {/* Processo & soluzione tecnica */}
             {howCreated && (
               <section className="mb-10 md:mb-14" aria-labelledby="how-heading">
                 <h2 id="how-heading" className="text-xl md:text-2xl font-bold mb-4">
