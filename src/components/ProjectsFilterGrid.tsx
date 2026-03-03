@@ -7,6 +7,14 @@ import type { Project, ProjectCategory } from '@/lib/projects';
 
 const TABS: Array<'All' | ProjectCategory> = ['All', 'Projects', 'Dev Tools', 'Open Source', 'Designs'];
 
+const TAB_LABELS: Record<'All' | ProjectCategory, string> = {
+  All: 'Tutti',
+  Projects: 'Progetti client & personali',
+  'Dev Tools': 'Dev tools',
+  'Open Source': 'Open source',
+  Designs: 'Design & UI',
+};
+
 export default function ProjectsFilterGrid({ projects }: { projects: Project[] }) {
   const [selectedTab, setSelectedTab] = useState<'All' | ProjectCategory>('All');
 
@@ -15,19 +23,23 @@ export default function ProjectsFilterGrid({ projects }: { projects: Project[] }
 
   return (
     <div className="flex flex-col items-center w-full">
-      <nav className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-5" aria-label="Filtri progetti">
+      <p className="text-xs uppercase tracking-[0.18em] text-foreground/55 mb-2">
+        Filtra per tipo di progetto
+      </p>
+      <nav className="flex flex-wrap items-center justify-center gap-3 md:gap-4" aria-label="Filtri progetti">
         {TABS.map((tab) => (
           <button
             key={tab}
             type="button"
             onClick={() => setSelectedTab(tab)}
+            aria-pressed={tab === selectedTab}
             className={`relative inline-flex items-center rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
               tab === selectedTab
                 ? 'bg-accent text-accent-foreground shadow-[0_0_24px_rgba(236,72,153,0.45)]'
                 : 'border border-border/60 text-foreground/70 hover:text-foreground hover:border-accent/80 hover:shadow-[0_0_18px_rgba(236,72,153,0.35)] bg-surface/40'
             }`}
           >
-            {tab}
+            {TAB_LABELS[tab]}
           </button>
         ))}
       </nav>
