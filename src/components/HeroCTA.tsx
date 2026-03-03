@@ -8,7 +8,7 @@ export default function HeroCTA() {
     <div>
       <Link
         href="/carriera"
-        className="group inline-flex items-center gap-3 py-3 pr-1 text-foreground/70 hover:text-foreground transition-all duration-300 font-medium text-base md:text-lg"
+        className="group inline-flex items-center gap-3 py-3 pr-1 text-foreground/75 hover:text-foreground transition-all duration-300 font-medium text-base md:text-lg"
       >
         <motion.span 
           className="relative pb-1"
@@ -37,9 +37,9 @@ export default function HeroCTA() {
         </motion.span>
         <motion.span
           className="inline-block text-accent opacity-85 group-hover:opacity-100"
-          animate={{ x: [0, 5, 0] }}
-          transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
-          whileHover={{ x: 8, transition: { type: 'spring', stiffness: 400, damping: 28 } }}
+          animate={{ x: [0, 4, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
+          whileHover={{ x: 6, transition: { type: 'spring', stiffness: 420, damping: 28 } }}
         >
           →
         </motion.span>
