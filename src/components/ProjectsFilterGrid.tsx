@@ -15,20 +15,17 @@ export default function ProjectsFilterGrid({ projects }: { projects: Project[] }
 
   return (
     <div className="flex flex-col items-center w-full">
-      <nav
-        className="mt-6 flex flex-wrap items-center justify-center gap-5 md:gap-6"
-        aria-label="Filtri progetti"
-      >
+      <nav className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-5" aria-label="Filtri progetti">
         {TABS.map((tab) => (
           <button
             key={tab}
             type="button"
             onClick={() => setSelectedTab(tab)}
-            className={
+            className={`relative inline-flex items-center rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
               tab === selectedTab
-                ? 'rounded-lg bg-[#3e424b] px-6 py-3 text-sm font-semibold text-white'
-                : 'text-sm text-[#a6acb7] hover:text-foreground/90 transition-colors'
-            }
+                ? 'bg-accent text-accent-foreground shadow-[0_0_24px_rgba(236,72,153,0.45)]'
+                : 'border border-border/60 text-foreground/70 hover:text-foreground hover:border-accent/80 hover:shadow-[0_0_18px_rgba(236,72,153,0.35)] bg-surface/40'
+            }`}
           >
             {tab}
           </button>
@@ -43,7 +40,7 @@ export default function ProjectsFilterGrid({ projects }: { projects: Project[] }
         <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
           {filtered.map((project, index) => (
             <ScrollRevealSection key={project.id} delay={index * 0.06}>
-              <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-surface/40 shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+              <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-surface/40 shadow-[0_16px_40px_rgba(0,0,0,0.55)] backdrop-blur-sm transition-all duration-300 hover:border-accent/80 hover:shadow-[0_0_32px_rgba(236,72,153,0.55)]">
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -66,13 +63,13 @@ export default function ProjectsFilterGrid({ projects }: { projects: Project[] }
                           {project.technologies.slice(0, 4).map((tech) => (
                             <span
                               key={tech}
-                              className="rounded-md bg-white/20 px-3 py-1.5 text-xs font-medium text-white"
+                              className="rounded-md bg-white/20 px-3 py-1.5 text-xs font-medium text-white/95"
                             >
                               {tech}
                             </span>
                           ))}
                         </div>
-                        <span className="inline-flex items-center rounded-full bg-white px-3 py-1.5 text-xs font-medium text-black">
+                        <span className="inline-flex items-center rounded-full bg-white px-3 py-1.5 text-xs font-medium text-black shadow-[0_0_14px_rgba(255,255,255,0.65)]">
                           Apri progetto
                         </span>
                       </div>
