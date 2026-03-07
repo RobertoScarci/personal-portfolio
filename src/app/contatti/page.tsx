@@ -5,6 +5,8 @@ import PageWatermark from '@/components/PageWatermark';
 import Header from '@/components/Header';
 import ScrollRevealSection from '@/components/ScrollRevealSection';
 import SocialIcons from '@/components/SocialIcons';
+import { siteConfig } from '@/app/metadata';
+import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -61,20 +63,40 @@ export default function Contatti() {
         {/* Content — max-width come About (max-w-5xl), stesso pt */}
         <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
           <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
-            {/* Sezione 1: Titolo */}
+            {/* Sezione 1: Titolo + CTA principale */}
             <ScrollRevealSection delay={0.05}>
               <section
                 className="block"
                 style={{ paddingBottom: 'clamp(2rem, 4vw, 2.75rem)' }}
                 aria-labelledby="contact-title"
               >
-                <h1 id="contact-title" className="text-3xl md:text-5xl font-bold">
+                <h1 id="contact-title" className="text-3xl md:text-5xl font-bold mb-4">
                   Contact.
                 </h1>
+                <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mb-6">
+                  Scrivimi per il tuo prossimo progetto: idee, collaborazioni o semplici curiosità.
+                  Risposta entro 24 ore.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="mailto:hello@robertoscarci.dev"
+                    className="inline-flex items-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-[0_0_24px_rgba(236,72,153,0.4)] hover:shadow-[0_0_32px_rgba(236,72,153,0.55)] transition-all duration-300"
+                  >
+                    Scrivimi via email
+                  </Link>
+                  <Link
+                    href={siteConfig.links.calendly}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center rounded-full border border-accent/80 px-6 py-3 text-sm font-semibold text-foreground hover:bg-accent/10 hover:border-accent transition-all duration-300"
+                  >
+                    Prenota una call
+                  </Link>
+                </div>
               </section>
             </ScrollRevealSection>
 
-            {/* Sezione 2: Intro e email */}
+            {/* Sezione 2: Intro e form */}
             <ScrollRevealSection delay={0.1}>
             <section
               className="block"
@@ -83,15 +105,8 @@ export default function Contatti() {
                 paddingBottom: 'clamp(2rem, 4vw, 2.75rem)',
               }}
             >
-              <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
-                Hai un&apos;idea, un progetto o una curiosità? Scrivimi o invia una mail direttamente a{' '}
-                <a
-                  href="mailto:hello@robertoscarci.dev"
-                  className="font-semibold text-accent hover:text-foreground underline-offset-4 hover:underline"
-                >
-                  hello@robertoscarci.dev
-                </a>
-                .
+              <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-2">
+                Oppure compila il form e ti risponderò al più presto.
               </p>
             </section>
             </ScrollRevealSection>
@@ -207,59 +222,21 @@ export default function Contatti() {
             </section>
             </ScrollRevealSection>
 
-            {/* Sezione 5: Calendario */}
+            {/* Sezione 5: Trust */}
             <ScrollRevealSection delay={0.25}>
             <section
-              className="block"
+              className="block rounded-2xl border border-border/50 bg-surface/20 px-6 py-6 md:px-8 md:py-8"
               style={{
-                paddingTop: 'clamp(3rem, 6vw, 4.25rem)',
-                paddingBottom: 'clamp(5rem, 9vw, 6.25rem)',
+                paddingTop: 'clamp(2rem, 4vw, 2.75rem)',
+                paddingBottom: 'clamp(2rem, 4vw, 2.75rem)',
               }}
+              aria-label="Disponibilità"
             >
-              <h2
-                className="text-lg md:text-xl font-semibold"
-                style={{ marginBottom: '1rem' }}
-              >
-                Prenota una call
-              </h2>
-              <p
-                className="text-sm text-foreground/60"
-                style={{ marginTop: 0, marginBottom: '1.5rem' }}
-              >
-                Scegli uno slot nel calendario per una chiamata veloce (Calendly, ecc.).
+              <h2 className="text-base md:text-lg font-semibold mb-2">Disponibile per</h2>
+              <p className="text-sm text-foreground/70 max-w-2xl">
+                Progetti frontend, consulenza tecnica e collaborazioni. Puoi prenotare una call
+                diretta o scrivermi via email per progetti più complessi.
               </p>
-
-              {/* Calendario — background animato, colori accent, glass */}
-              <div className="calendar-wrapper w-full max-w-3xl overflow-hidden" style={{ marginTop: '1.5rem' }}>
-                <div className="calendar-inner px-7 py-7 md:px-9 md:py-9 mx-1.5 my-1.5">
-                  <div className="flex items-center justify-between mb-6 md:mb-7">
-                    <span className="text-sm font-semibold text-foreground tracking-wide">Calendario</span>
-                    <span className="text-[10px] font-medium uppercase tracking-wider text-accent/90 bg-accent/10 px-2.5 py-1 rounded-full">
-                      Coming soon
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-7 gap-2 text-[11px] md:text-xs text-center text-foreground/70 mb-5 font-semibold">
-                    <span>L</span>
-                    <span>M</span>
-                    <span>M</span>
-                    <span>G</span>
-                    <span>V</span>
-                    <span>S</span>
-                    <span>D</span>
-                  </div>
-                  <div className="grid grid-cols-7 gap-2 text-xs md:text-sm">
-                    {Array.from({ length: 28 }).map((_, i) => (
-                      <button
-                        key={i}
-                        type="button"
-                        className="calendar-day h-9 md:h-11 rounded-xl bg-white/[0.06] text-foreground/90 text-[11px] md:text-xs flex items-center justify-center border border-white/[0.08]"
-                      >
-                        {i + 1}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
             </section>
             </ScrollRevealSection>
           </div>
