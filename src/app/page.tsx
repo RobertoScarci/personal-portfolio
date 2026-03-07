@@ -11,7 +11,11 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Home',
-  description: 'Roberto Scarci — Web Developer, Building Faster Products with AI. Full Stack da Taranto, Puglia.',
+  description: 'Roberto Scarci — Sviluppatore frontend Next.js e React. Portfolio developer da Taranto, Puglia. Progetti, carriera e contatti.',
+  openGraph: {
+    title: 'Roberto Scarci · Portfolio',
+    description: 'Sviluppatore frontend Next.js e React. Portfolio developer da Taranto. Progetti, carriera e contatti.',
+  },
 };
 
 export default function Home() {

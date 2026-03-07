@@ -6,6 +6,7 @@ export const siteConfig = {
   url: 'https://robertoscarci.dev',
   ogImage: '/og-image.jpg',
   links: {
+    calendly: 'https://calendly.com',
     github: 'https://github.com/RobertoScarci',
     linkedin: 'https://www.linkedin.com/in/roberto-scarci-0625ab2a6/',
     instagram: 'https://www.instagram.com/robertoscarci_/',
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
+    'sviluppatore frontend Next.js',
     'full-stack developer',
     'web developer',
     'React',
@@ -51,12 +53,14 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
     creator: '@robertoscarci',
+    images: [siteConfig.ogImage],
   },
   robots: {
     index: true,

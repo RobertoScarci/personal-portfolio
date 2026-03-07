@@ -2,7 +2,11 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Contatti',
-  description: 'Hai un progetto in mente? Vuoi collaborare? Contattami per discutere del tuo progetto.',
+  description: 'Scrivimi per il tuo prossimo progetto. Email, form o prenota una call. Risposta entro 24 ore.',
+  openGraph: {
+    title: 'Contatti | Roberto Scarci',
+    description: 'Scrivimi per collaborazioni. Email, form o prenota una call. Risposta entro 24 ore.',
+  },
 };
 
 export default function ContattiLayout({
