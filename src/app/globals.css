@@ -216,6 +216,13 @@ a:hover, button:hover {
   border-radius: 2px;
 }
 
+/* High contrast focus for better visibility */
+@media (prefers-contrast: high) {
+  *:focus-visible {
+    outline-width: 3px;
+  }
+}
+
 /* ============================================
    ACCESSIBILITY IMPROVEMENTS
    ============================================ */
