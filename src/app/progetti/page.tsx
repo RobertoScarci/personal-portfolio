@@ -1,14 +1,20 @@
+import dynamic from 'next/dynamic';
 import Layout from '@/components/Layout';
 import ScrollRevealSection from '@/components/ScrollRevealSection';
-import ProjectsFilterGrid from '@/components/ProjectsFilterGrid';
 import PageWatermark from '@/components/PageWatermark';
 import Header from '@/components/Header';
 import { projects } from '@/lib/projects';
 import type { Metadata } from 'next';
 
+const ProjectsFilterGrid = dynamic(() => import('@/components/ProjectsFilterGrid'), { ssr: true });
+
 export const metadata: Metadata = {
   title: 'Progetti',
-  description: 'Una selezione dei progetti che ho sviluppato, mostrando problemi risolti, soluzioni implementate e risultati ottenuti.',
+  description: 'Selezione dei miei progetti: repliche di app famose, interfacce responsive, integrazioni API. React, Next.js, Vue, Laravel.',
+  openGraph: {
+    title: 'Progetti | Roberto Scarci',
+    description: 'Progetti sviluppati: frontend, layout responsive, API. React, Next.js, Vue, Laravel.',
+  },
 };
 
 export default function Progetti() {

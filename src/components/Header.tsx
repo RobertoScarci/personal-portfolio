@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
@@ -36,10 +37,14 @@ export default function Header() {
             }}
             transition={{ type: 'spring', stiffness: 400, damping: 25, duration: 0.3 }}
           >
-            <img
+            <Image
               src="/images/profile.jpg"
               alt="Roberto Scarci"
+              width={56}
+              height={56}
               className="w-full h-full object-cover"
+              priority
+              sizes="56px"
             />
             <motion.div
               className="absolute inset-0 rounded-full border-2 border-accent/0"

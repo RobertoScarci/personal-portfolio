@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import PageWatermark from '@/components/PageWatermark';
 import Header from '@/components/Header';
 import { getProjectById, projects } from '@/lib/projects';
@@ -87,10 +88,14 @@ export default async function ProgettoDetailPage({ params }: Props) {
             </header>
 
             {/* Immagine principale / copertina */}
-            <div className="rounded-2xl overflow-hidden border border-border/70 bg-surface/40 shadow-xl mb-10 md:mb-14">
-              <div
-                className="aspect-video w-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${project.image})` }}
+            <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-border/70 bg-surface/40 shadow-xl mb-10 md:mb-14">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 896px"
+                priority
               />
             </div>
 
@@ -143,12 +148,14 @@ export default async function ProgettoDetailPage({ params }: Props) {
                   {screenshots.map((src, i) => (
                     <div
                       key={i}
-                      className="rounded-xl overflow-hidden border border-border/70 bg-surface/40"
+                      className="relative aspect-video rounded-xl overflow-hidden border border-border/70 bg-surface/40"
                     >
-                      <img
+                      <Image
                         src={src}
                         alt={`Screenshot ${i + 1} di ${project.title}`}
-                        className="w-full h-auto object-cover"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, 50vw"
                       />
                     </div>
                   ))}

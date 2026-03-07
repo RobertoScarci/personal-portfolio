@@ -1,14 +1,20 @@
+import dynamic from 'next/dynamic';
 import Layout from '@/components/Layout';
 import ScrollRevealSection from '@/components/ScrollRevealSection';
 import PageWatermark from '@/components/PageWatermark';
 import Header from '@/components/Header';
 import CareerTimeline, { type TimelineItem } from '@/components/CareerTimeline';
-import CompetenzeSection from '@/components/CompetenzeSection';
 import type { Metadata } from 'next';
+
+const CompetenzeSection = dynamic(() => import('@/components/CompetenzeSection'), { ssr: true });
 
 export const metadata: Metadata = {
   title: 'Carriera',
-  description: 'Il mio percorso di studi ed esperienze professionali, un viaggio continuo di crescita tecnica e personale.',
+  description: 'Il mio percorso di studi ed esperienze professionali: Morfeus, Boolean, laurea in Informatica. Competenze frontend, backend e AI.',
+  openGraph: {
+    title: 'Carriera | Roberto Scarci',
+    description: 'Percorso di studi ed esperienze professionali. Competenze frontend, backend e AI.',
+  },
 };
 
 const timeline: TimelineItem[] = [

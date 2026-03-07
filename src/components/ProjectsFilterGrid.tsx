@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import ScrollRevealSection from '@/components/ScrollRevealSection';
 import type { Project, ProjectCategory } from '@/lib/projects';
 
@@ -54,9 +55,12 @@ export default function ProjectsFilterGrid({ projects }: { projects: Project[] }
             <ScrollRevealSection key={project.id} delay={index * 0.06}>
               <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-surface/40 shadow-[0_16px_40px_rgba(0,0,0,0.55)] backdrop-blur-sm transition-all duration-300 hover:border-accent/80 hover:shadow-[0_0_32px_rgba(236,72,153,0.55)]">
                 <div className="relative aspect-[3/4] overflow-hidden">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                    style={{ backgroundImage: `url(${project.image})` }}
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 flex flex-col justify-end opacity-0 transition-opacity duration-300 group-hover:opacity-100 cursor-pointer">
                     <Link
