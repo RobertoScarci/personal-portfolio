@@ -1,5 +1,13 @@
 export type ProjectCategory = 'Projects' | 'Dev Tools' | 'Open Source' | 'Designs';
 
+export interface ProjectCaseStudy {
+  problem: string;
+  constraints?: string;
+  solution: string;
+  result?: string;
+  technicalChallenge?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -16,6 +24,8 @@ export interface Project {
   github?: string;
   /** URL immagini del sito per la pagina dettaglio (da inserire successivamente) */
   screenshots?: string[];
+  /** Dati extra per casi studio hero */
+  caseStudy?: ProjectCaseStudy;
 }
 
 export const projects: Project[] = [
@@ -28,6 +38,18 @@ export const projects: Project[] = [
       'Progetto realizzato in team durante il corso Boolean. L’obiettivo era ricreare le funzionalità principali di Airbnb: ricerca alloggi, filtri, scheda dettaglio proprietà e gestione preferiti. Il design è stato scelto dal team nel rispetto delle linee guida del product manager.',
     howItWasCreated:
       'Sviluppo in squadra con divisione dei task (frontend, backend, database). Utilizzo di Git per il versioning e di Laravel per API e autenticazione. Il frontend è stato costruito con HTML, CSS e JavaScript vanilla per massima compatibilità con il brief.',
+    caseStudy: {
+      problem:
+        'Durante il corso Boolean dovevamo dimostrare di saper lavorare in team su un progetto complesso, ricreando le funzionalità principali di una piattaforma reale come Airbnb.',
+      constraints:
+        'Tempo limitato, stack deciso a priori e necessità di coordinare più persone su Git senza rompere la codebase.',
+      solution:
+        'Abbiamo progettato l’architettura suddividendo responsabilità tra frontend, backend e database. Io mi sono concentrato soprattutto sulle pagine di listing e dettaglio dell’alloggio, sui filtri di ricerca e sull’allineamento tra design e requisiti funzionali.',
+      result:
+        'Il progetto ha superato la valutazione del corso: l’app permetteva di cercare, filtrare e visualizzare correttamente le proprietà. La gestione del lavoro in team e del versionamento è stata una delle lezioni più preziose.',
+      technicalChallenge:
+        'Gestire filtri multipli e paginazione mantenendo il codice leggibile. Ho imparato a spezzare la logica in funzioni riutilizzabili e a comunicare in modo chiaro con chi seguiva il backend Laravel.',
+    },
     category: 'Projects',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Laravel'],
     image:
@@ -45,6 +67,18 @@ export const projects: Project[] = [
       'Clone dell’interfaccia di Netflix con focus su film e serie TV. Integrazione con API esterne per recuperare titoli, locandine e descrizioni. La barra di ricerca permette di filtrare i contenuti in tempo reale.',
     howItWasCreated:
       'Progetto singolo con Vue.js per gestione reattiva dello stato e dei componenti. Le API sono state integrate tramite fetch/axios. Layout responsive e carousel per le categorie, ispirato all’originale.',
+    caseStudy: {
+      problem:
+        'Volevo allenarmi a consumare API esterne e a gestire stati complessi sul frontend, partendo da un’interfaccia che tutti conoscono: Netflix.',
+      constraints:
+        'Solo frontend, nessun backend custom, ma necessità di dare una sensazione “vera” di catalogo film/serie con ricerca e liste dinamiche.',
+      solution:
+        'Ho strutturato l’app in componenti Vue riutilizzabili (hero, righe di contenuti, card) e centralizzato le chiamate API. La barra di ricerca filtra i risultati in tempo reale, mentre i carousel per categoria simulano l’esperienza originale.',
+      result:
+        'Il clone permette di esplorare film e serie, cercare per titolo e visualizzare schede dettagliate. È stato uno dei progetti che mi ha fatto sentire pronto a lavorare su interfacce reali con dati dinamici.',
+      technicalChallenge:
+        'Gestire loading, errori e debounce della ricerca senza rendere l’interfaccia scattosa. Ho imparato a separare la logica di fetch dal rendering e a pensare allo stato dell’app prima del layout.',
+    },
     category: 'Projects',
     technologies: ['Vue.js', 'JavaScript', 'HTML', 'CSS', 'API'],
     image:
@@ -96,6 +130,18 @@ export const projects: Project[] = [
       'Landing page pensata per conversioni: hero con CTA, sezioni servizi, portfolio e form di contatto. Animazioni fluide con Framer Motion per un’esperienza moderna.',
     howItWasCreated:
       'Realizzata con Next.js e Tailwind CSS. Le animazioni sono gestite con Framer Motion (scroll, hover, entrance). Il form è predisposto per l’integrazione con un backend o servizio di email.',
+    caseStudy: {
+      problem:
+        'Creare una landing page che raccontasse un’agenzia creativa in modo chiaro e, soprattutto, portasse l’utente a compilare il form di contatto.',
+      constraints:
+        'Struttura semplice ma credibile, caricamento rapido e attenzione particolare alle animazioni per dare un feeling moderno senza appesantire la UX.',
+      solution:
+        'Ho organizzato la pagina in blocchi essenziali (hero con CTA, servizi, lavori, testimonianze, form) e usato Framer Motion per dare vita alle sezioni in ingresso e sugli hover. Il form è pensato per collegarsi facilmente a un backend o servizio di email.',
+      result:
+        'Una landing scorrevole, con una gerarchia chiara che accompagna l’utente verso il form finale. È diventata il mio riferimento quando devo spiegare come penso a conversioni, struttura e micro‑animazioni.',
+      technicalChallenge:
+        'Bilanciare animazioni e performance. Ho imparato a usare motion soltanto dove aggiunge davvero valore, evitando effetti inutili che rallentano la pagina.',
+    },
     category: 'Projects',
     technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
     image:
