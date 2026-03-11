@@ -183,6 +183,63 @@ export default function About() {
               </ProgressiveTimelineSection>
             </section>
 
+            {/* Sezione 3: Come lavoro / servizi */}
+            <ScrollRevealSection delay={0.05}>
+              <section
+                className="block border-t border-border/60"
+                style={{ paddingTop: 'clamp(2.5rem, 5vw, 3.5rem)', paddingBottom: 'clamp(3rem, 6vw, 4.25rem)' }}
+                aria-labelledby="how-i-work-heading"
+              >
+                <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+                  <div className="flex-1 min-w-0 space-y-4">
+                    <h2
+                      id="how-i-work-heading"
+                      className="text-lg md:text-xl font-semibold tracking-[0.08em] uppercase"
+                    >
+                      Come lavoro
+                    </h2>
+                    <p className="text-sm md:text-base text-foreground/70 leading-relaxed">
+                      Ogni progetto parte da un confronto sincero su obiettivi, vincoli e pubblico. Da lì definisco una
+                      roadmap leggera: prima un prototipo o layout condiviso, poi lo sviluppo vero e proprio, test e
+                      ottimizzazioni. Preferisco rilasciare in piccoli step, così possiamo correggere la rotta in base
+                      ai feedback reali.
+                    </p>
+                    <ol className="mt-3 space-y-2 text-sm text-foreground/70 list-decimal list-inside">
+                      <li><span className="font-medium">Brief &amp; allineamento</span> — obiettivi, target, contenuti disponibili.</li>
+                      <li><span className="font-medium">Design &amp; prototipo</span> — wireframe o layout ad alta fedeltà.</li>
+                      <li><span className="font-medium">Sviluppo</span> — implementazione frontend (e backend se serve) con attenzione a performance e accessibilità.</li>
+                      <li><span className="font-medium">Refine &amp; deploy</span> — correzioni finali, deploy e handoff.</li>
+                    </ol>
+                  </div>
+                  <div className="w-full md:w-80 lg:w-96 space-y-3">
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">
+                      Cosa posso fare per te
+                    </h3>
+                    <ul className="space-y-2 text-sm text-foreground/80">
+                      <li className="rounded-xl border border-border/60 bg-surface/20 px-4 py-3">
+                        <span className="font-medium">Landing page focalizzata sulle conversioni</span>
+                        <span className="block text-foreground/60 text-xs mt-1">
+                          Ideale per lanciare un nuovo servizio o prodotto.
+                        </span>
+                      </li>
+                      <li className="rounded-xl border border-border/60 bg-surface/20 px-4 py-3">
+                        <span className="font-medium">Sito portfolio o vetrina</span>
+                        <span className="block text-foreground/60 text-xs mt-1">
+                          Struttura chiara, responsive e facile da mantenere.
+                        </span>
+                      </li>
+                      <li className="rounded-xl border border-border/60 bg-surface/20 px-4 py-3">
+                        <span className="font-medium">Consulenza frontend / Next.js</span>
+                        <span className="block text-foreground/60 text-xs mt-1">
+                          Supporto su performance, refactor o nuove feature.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </ScrollRevealSection>
+
             {/* Titolo My Reads — poco più spazio sopra (dopo Engineering) */}
             <ScrollRevealSection delay={0}>
               <section

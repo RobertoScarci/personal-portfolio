@@ -244,29 +244,6 @@ a:hover, button:hover {
   top: 1rem;
 }
 
-/* ============================================
-   CUSTOM CURSOR
-   ============================================ */
-
-html.custom-cursor-active,
-html.custom-cursor-active * {
-  cursor: none !important;
-}
-
-/* Cursor: pixelated edges (no anti-alias) */
-.cursor-pixel {
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-  shape-rendering: crispEdges;
-}
-
-/* Neon glow in site color (foreground) - static for zero-lag feel */
-.cursor-neon {
-  filter:
-    drop-shadow(0 0 2px var(--foreground))
-    drop-shadow(0 0 6px rgba(255, 255, 255, 0.22));
-}
-
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *,

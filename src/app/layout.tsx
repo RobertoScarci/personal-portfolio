@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import CustomCursor from "@/components/CustomCursor";
 import { metadata } from "./metadata";
 import "./globals.css";
 
@@ -80,7 +79,6 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider>
-          <CustomCursor />
           {children}
         </ThemeProvider>
       </body>
