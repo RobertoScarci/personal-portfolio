@@ -99,26 +99,83 @@ export default async function ProgettoDetailPage({ params }: Props) {
               />
             </div>
 
-            {/* Contesto & obiettivo (descrizione principale) */}
-            <section className="mb-10 md:mb-14" aria-labelledby="desc-heading">
-              <h2 id="desc-heading" className="text-xl md:text-2xl font-bold mb-4">
-                Contesto e obiettivo
-              </h2>
-              <p className="text-[#a6acb7] leading-relaxed whitespace-pre-line">
-                {description}
-              </p>
-            </section>
+            {/* Case study layout (se disponibile) oppure struttura standard */}
+            {project.caseStudy ? (
+              <>
+                <section className="mb-8 md:mb-10" aria-labelledby="cs-problem-heading">
+                  <h2 id="cs-problem-heading" className="text-xl md:text-2xl font-bold mb-3">
+                    Problema e contesto
+                  </h2>
+                  <p className="text-[#a6acb7] leading-relaxed whitespace-pre-line">
+                    {project.caseStudy.problem}
+                  </p>
+                </section>
+                {project.caseStudy.constraints && (
+                  <section className="mb-8 md:mb-10" aria-labelledby="cs-constraints-heading">
+                    <h2 id="cs-constraints-heading" className="text-xl md:text-2xl font-bold mb-3">
+                      Vincoli e scelte
+                    </h2>
+                    <p className="text-[#a6acb7] leading-relaxed whitespace-pre-line">
+                      {project.caseStudy.constraints}
+                    </p>
+                  </section>
+                )}
+                <section className="mb-8 md:mb-10" aria-labelledby="cs-solution-heading">
+                  <h2 id="cs-solution-heading" className="text-xl md:text-2xl font-bold mb-3">
+                    Soluzione
+                  </h2>
+                  <p className="text-[#a6acb7] leading-relaxed whitespace-pre-line">
+                    {project.caseStudy.solution}
+                  </p>
+                </section>
+                {project.caseStudy.result && (
+                  <section className="mb-8 md:mb-10" aria-labelledby="cs-result-heading">
+                    <h2 id="cs-result-heading" className="text-xl md:text-2xl font-bold mb-3">
+                      Risultato
+                    </h2>
+                    <p className="text-[#a6acb7] leading-relaxed whitespace-pre-line">
+                      {project.caseStudy.result}
+                    </p>
+                  </section>
+                )}
+                {project.caseStudy.technicalChallenge && (
+                  <section
+                    className="mb-10 md:mb-14 rounded-2xl border border-border/70 bg-surface/30 px-5 py-4"
+                    aria-labelledby="cs-challenge-heading"
+                  >
+                    <h2 id="cs-challenge-heading" className="text-sm md:text-base font-semibold mb-2">
+                      Sfida tecnica
+                    </h2>
+                    <p className="text-[#a6acb7] text-sm leading-relaxed whitespace-pre-line">
+                      {project.caseStudy.technicalChallenge}
+                    </p>
+                  </section>
+                )}
+              </>
+            ) : (
+              <>
+                {/* Contesto & obiettivo (descrizione principale) */}
+                <section className="mb-10 md:mb-14" aria-labelledby="desc-heading">
+                  <h2 id="desc-heading" className="text-xl md:text-2xl font-bold mb-4">
+                    Contesto e obiettivo
+                  </h2>
+                  <p className="text-[#a6acb7] leading-relaxed whitespace-pre-line">
+                    {description}
+                  </p>
+                </section>
 
-            {/* Processo & soluzione tecnica */}
-            {howCreated && (
-              <section className="mb-10 md:mb-14" aria-labelledby="how-heading">
-                <h2 id="how-heading" className="text-xl md:text-2xl font-bold mb-4">
-                  Come è stato creato
-                </h2>
-                <p className="text-[#a6acb7] leading-relaxed whitespace-pre-line">
-                  {howCreated}
-                </p>
-              </section>
+                {/* Processo & soluzione tecnica */}
+                {howCreated && (
+                  <section className="mb-10 md:mb-14" aria-labelledby="how-heading">
+                    <h2 id="how-heading" className="text-xl md:text-2xl font-bold mb-4">
+                      Come è stato creato
+                    </h2>
+                    <p className="text-[#a6acb7] leading-relaxed whitespace-pre-line">
+                      {howCreated}
+                    </p>
+                  </section>
+                )}
+              </>
             )}
 
             {/* Linguaggi e tecnologie (riepilogo) */}
