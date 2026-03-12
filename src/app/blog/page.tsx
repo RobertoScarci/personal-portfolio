@@ -1,3 +1,5 @@
+'use client';
+
 import Layout from '@/components/Layout';
 import Header from '@/components/Header';
 import PageWatermark from '@/components/PageWatermark';
@@ -5,6 +7,7 @@ import ScrollRevealSection from '@/components/ScrollRevealSection';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { posts } from '@/lib/posts';
+import { trackEvent } from '@/lib/analytics';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -55,6 +58,12 @@ export default function BlogPage() {
                         href={`/blog/${post.slug}`}
                         className="block group"
                         aria-labelledby={`post-${post.slug}`}
+                        onClick={() =>
+                          trackEvent('blog_post_open', {
+                            slug: post.slug,
+                            title: post.title,
+                          })
+                        }
                       >
                         <div className="flex items-baseline justify-between gap-4 mb-2">
                           <h2
