@@ -9,6 +9,7 @@ import { siteConfig } from '@/app/metadata';
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { trackEvent } from '@/lib/analytics';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -80,6 +81,7 @@ export default function Contatti() {
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="mailto:hello@robertoscarci.dev"
+                    onClick={() => trackEvent('contact_email_click')}
                     className="inline-flex items-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-[0_0_24px_rgba(236,72,153,0.4)] hover:shadow-[0_0_32px_rgba(236,72,153,0.55)] transition-all duration-300"
                   >
                     Scrivimi via email
@@ -88,6 +90,7 @@ export default function Contatti() {
                     href={siteConfig.links.calendly}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent('contact_calendly_click')}
                     className="inline-flex items-center rounded-full border border-accent/80 px-6 py-3 text-sm font-semibold text-foreground hover:bg-accent/10 hover:border-accent transition-all duration-300"
                   >
                     Prenota una call
