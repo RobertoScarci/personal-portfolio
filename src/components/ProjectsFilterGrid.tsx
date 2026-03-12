@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ScrollRevealSection from '@/components/ScrollRevealSection';
 import type { Project, ProjectCategory } from '@/lib/projects';
+import { trackEvent } from '@/lib/analytics';
 
 const TABS: Array<'All' | ProjectCategory> = ['All', 'Projects', 'Dev Tools', 'Open Source', 'Designs'];
 
@@ -33,6 +34,7 @@ export default function ProjectsFilterGrid({ projects }: { projects: Project[] }
             key={tab}
             type="button"
             onClick={() => setSelectedTab(tab)}
+            onBlur={() => undefined}
             aria-pressed={tab === selectedTab}
             className={`relative inline-flex items-center rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
               tab === selectedTab
@@ -67,6 +69,13 @@ export default function ProjectsFilterGrid({ projects }: { projects: Project[] }
                       href={`/progetti/${project.id}`}
                       className="absolute inset-0 z-0 flex flex-col justify-end"
                       aria-label={`Apri progetto: ${project.title}`}
+                      onClick={() =>
+                        trackEvent('project_open', {
+                          id: project.id,
+                          title: project.title,
+                          category: project.category,
+                        })
+                      }
                     >
                       <div className="h-1/2 flex flex-col items-center justify-center gap-2 bg-gradient-to-b from-transparent via-black/18 to-black/42 p-5 text-center">
                         <h2 className="text-xl md:text-2xl font-bold text-white">
