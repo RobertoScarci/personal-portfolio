@@ -20,6 +20,7 @@ export default function Contatti() {
     message: '',
   });
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
+  const [submitted, setSubmitted] = useState(false);
 
   const validate = (): boolean => {
     const next: typeof errors = {};
@@ -34,8 +35,10 @@ export default function Contatti() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+    trackEvent('contact_form_submit');
+    setSubmitted(true);
+    // eslint-disable-next-line no-console
     console.log('Form submitted:', formData);
-    alert('Messaggio inviato! (Funzionalità in sviluppo)');
   };
 
   const handleChange = (
@@ -43,6 +46,7 @@ export default function Contatti() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (submitted) setSubmitted(false);
     if (errors[name as keyof typeof errors]) setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
@@ -206,6 +210,11 @@ export default function Contatti() {
                 >
                   Invia
                 </motion.button>
+                {submitted && (
+                  <p className="mt-2 text-xs text-foreground/70">
+                    Messaggio inviato (demo). Ti risponderò al più presto.
+                  </p>
+                )}
               </form>
             </section>
             </ScrollRevealSection>
