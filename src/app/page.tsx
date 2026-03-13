@@ -7,6 +7,7 @@ import HeroCTA from '@/components/HeroCTA';
 import SocialIcons from '@/components/SocialIcons';
 import PageWatermark from '@/components/PageWatermark';
 import HeroText from '@/components/HeroText';
+import ScrollHint from '@/components/ScrollHint';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -66,6 +67,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <ScrollHint />
       </section>
     </Layout>
   );
