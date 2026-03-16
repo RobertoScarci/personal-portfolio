@@ -42,8 +42,8 @@ export default function ProjectsEn() {
                   Projects.
                 </h1>
                 <p className="mt-3 text-sm md:text-base text-foreground/70 max-w-xl">
-                  A small selection of projects I&apos;ve worked on. Detailed write-ups are in Italian, but the
-                  structure of the work and visuals should still be clear.
+                  A small selection of projects I&apos;ve worked on recently. Detailed write-ups are in Italian,
+                  but the structure of the work and visuals should still be clear.
                 </p>
               </section>
             </ScrollRevealSection>
