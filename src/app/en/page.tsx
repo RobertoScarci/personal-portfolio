@@ -52,8 +52,9 @@ export default function HomeEn() {
 
             <AnimatedSection delay={0.7}>
               <p className="text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-                I&apos;m a frontend developer from Italy, working with React, Next.js and a bit of AI to make
-                products faster and easier to use. Below you can find a few selected projects and how I work.
+                I&apos;m a frontend developer from Italy, working with React, Next.js and a bit of AI to help
+                you move faster without sacrificing quality. Below you can find a few selected projects and how
+                I work.
               </p>
             </AnimatedSection>
 
