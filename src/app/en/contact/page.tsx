@@ -205,7 +205,7 @@ export default function ContactEn() {
               <section className="block rounded-2xl border border-border/50 bg-surface/20 px-6 py-6 md:px-8 md:py-8">
                 <h2 className="text-base md:text-lg font-semibold mb-2">Availability</h2>
                 <p className="text-sm text-foreground/70 max-w-2xl">
-                  Open to frontend projects, freelance collaborations and technical consulting. If you prefer,
+                  Open to frontend projects, longer-term collaborations and technical consulting. If you prefer,
                   you can send a longer brief via email and we&apos;ll schedule a call.
                 </p>
               </section>
