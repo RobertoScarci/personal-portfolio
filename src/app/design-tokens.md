@@ -45,7 +45,42 @@ Componenti base definiti in:
 - `src/components/ui/Button.tsx` — varianti `primary`, `outline`, `ghost`
 - `src/components/ui/Badge.tsx` — badge `default` e `outline`
 - `src/components/ui/SectionHeader.tsx` — titolo di sezione con `eyebrow` opzionale
+- `src/components/ui/index.ts` — export “barrel” per import più puliti
 
 L’obiettivo è usare questi componenti quando si introducono nuove sezioni o CTA,
 così da mantenere coerenza di stile senza dover ricordare tutte le classi tailwind.
+
+### Linee guida rapide
+
+- **CTA principali**: usa `Button` variante `primary`.
+- **CTA secondarie**: usa `Button` variante `outline`.
+- **Tag/stack**: usa `Badge` (default) o `Badge` (outline) per contesti più neutri.
+- **Titoli sezione**: usa `SectionHeader` per coerenza di gerarchie e spaziature.
+
+### Esempi d’uso (snippet)
+
+```tsx
+import { Button, Badge, SectionHeader } from '@/components/ui';
+
+export function Example() {
+  return (
+    <section className="space-y-6">
+      <SectionHeader
+        eyebrow="Section"
+        title="Design system"
+        description="Componenti base e token per mantenere coerenza."
+      />
+      <div className="flex flex-wrap gap-3">
+        <Badge>Next.js</Badge>
+        <Badge variant="outline">Accessibility</Badge>
+      </div>
+      <div className="flex flex-wrap gap-3">
+        <Button>Primary</Button>
+        <Button variant="outline">Secondary</Button>
+        <Button variant="ghost">Ghost</Button>
+      </div>
+    </section>
+  );
+}
+```
 
