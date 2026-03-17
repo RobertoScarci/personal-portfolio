@@ -121,6 +121,24 @@ Attualmente i link social usano placeholder. Puoi:
 3. Importa il repository
 4. Vercel rileverà automaticamente Next.js e configurerà tutto
 
+## ✅ Check rapido prima del deploy
+
+Esegui lint + build in un colpo solo:
+
+```bash
+npm run check
+```
+
+## 🌍 English routes (minimal)
+
+È disponibile una versione inglese minimale:
+
+- `/en`
+- `/en/projects`
+- `/en/contact`
+
+I case study completi restano in italiano per ora.
+
 ### Altri Provider
 
 Il progetto può essere deployato su qualsiasi provider che supporta Next.js:
@@ -147,6 +165,8 @@ Il design system è definito in `src/app/globals.css`:
 - **Tipografia**: Geist Sans (body), Geist Mono (code)
 - **Spaziatura**: Sistema Tailwind standard
 - **Breakpoints**: Mobile-first responsive design
+
+Per un riepilogo rapido dei token principali, vedi `src/app/design-tokens.md`.
 
 ## 📄 Licenza
 
