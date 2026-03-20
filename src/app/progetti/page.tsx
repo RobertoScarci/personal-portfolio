@@ -24,7 +24,7 @@ export default function Progetti() {
         watermarkLabel="PROJECTS"
         watermarkClassName="text-[160px] md:text-[180px]"
         watermarkVertical
-        contentContainerClassName="w-full max-w-4xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28"
+        contentWidth="standard"
       >
             {/* Solo il titolo "Projects." — left-aligned, reveal on scroll */}
             <ScrollRevealSection delay={0}>

@@ -47,7 +47,7 @@ export default function ProjectsEn() {
         watermarkLabel="PROJECTS"
         watermarkClassName="text-[160px] md:text-[180px]"
         watermarkVertical
-        contentContainerClassName="w-full max-w-4xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28"
+        contentWidth="standard"
       >
             <ScrollRevealSection delay={0}>
               <section className="block pb-8 md:pb-10" aria-labelledby="projects-title-en">

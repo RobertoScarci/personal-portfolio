@@ -52,7 +52,6 @@ export default function ContactEn() {
       <PageShell
         watermarkLabel="CONTACT"
         watermarkClassName="text-[220px] md:text-[260px]"
-        contentContainerClassName="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28"
       >
         <ScrollRevealSection delay={0.05}>
           <section

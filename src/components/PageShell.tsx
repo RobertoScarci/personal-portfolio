@@ -15,6 +15,11 @@ type PageShellProps = {
   headerSpacerClassName?: string;
   topSpacerClassName?: string;
   contentWrapperClassName?: string;
+  /**
+   * Standardizza la larghezza massima del contenuto.
+   * Se `contentContainerClassName` è fornito, ha priorità.
+   */
+  contentWidth?: 'narrow' | 'standard' | 'wide';
   contentContainerClassName?: string;
   includeScrollHint?: boolean;
   children: ReactNode;
@@ -35,10 +40,22 @@ export default function PageShell({
   headerSpacerClassName = 'h-14 md:h-24 lg:h-32 flex-shrink-0',
   topSpacerClassName = 'h-10 md:h-12 flex-shrink-0',
   contentWrapperClassName = 'flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto',
-  contentContainerClassName = 'w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28',
+  contentWidth = 'wide',
+  contentContainerClassName,
   includeScrollHint = false,
   children,
 }: PageShellProps) {
+  const widthClass =
+    contentWidth === 'narrow'
+      ? 'max-w-3xl'
+      : contentWidth === 'standard'
+        ? 'max-w-4xl'
+        : 'max-w-5xl';
+
+  const resolvedContentContainerClassName =
+    contentContainerClassName ??
+    `w-full ${widthClass} mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28`;
+
   return (
     <>
       <PageWatermark label={watermarkLabel} className={watermarkClassName} vertical={watermarkVertical} />
@@ -64,7 +81,7 @@ export default function PageShell({
         <div className={headerSpacerClassName} aria-hidden="true" />
 
         <div className={contentWrapperClassName}>
-          <div className={contentContainerClassName}>{children}</div>
+          <div className={resolvedContentContainerClassName}>{children}</div>
         </div>
 
         {includeScrollHint ? <ScrollHint /> : null}
