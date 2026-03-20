@@ -1,10 +1,9 @@
 import dynamic from 'next/dynamic';
 import Layout from '@/components/Layout';
 import ScrollRevealSection from '@/components/ScrollRevealSection';
-import PageWatermark from '@/components/PageWatermark';
-import Header from '@/components/Header';
 import CareerTimeline, { type TimelineItem } from '@/components/CareerTimeline';
 import type { Metadata } from 'next';
+import PageShell from '@/components/PageShell';
 
 const CompetenzeSection = dynamic(() => import('@/components/CompetenzeSection'), { ssr: true });
 
@@ -60,24 +59,12 @@ const timeline: TimelineItem[] = [
 export default function Carriera() {
   return (
     <Layout>
-      <PageWatermark label="CAREER" className="text-[240px] md:text-[280px]" />
-      <section className="relative w-full min-h-screen flex flex-col">
-        {/* Spacer sopra header — altezza fissa, come per hero */}
-        <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
-
-        {/* Header — contenitore dedicato, distaccato dal contenuto */}
-        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
-          <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
-            <Header />
-          </div>
-        </div>
-
-        {/* Spacer tra header e contenuto — come About */}
-        <div className="h-14 md:h-24 lg:h-32 flex-shrink-0" aria-hidden="true" />
-
-        {/* Content — stesso schema di About: pt-4 md:pt-6, nessun mt */}
-        <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
-          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
+      <PageShell
+        watermarkLabel="CAREER"
+        watermarkClassName="text-[240px] md:text-[280px]"
+        contentContainerClassName="contents"
+      >
+        <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
             {/* Intro — stessi margini della sezione titolo in About */}
             <ScrollRevealSection delay={0.05}>
               <section
@@ -124,9 +111,8 @@ export default function Carriera() {
                 <CompetenzeSection />
               </section>
             </ScrollRevealSection>
-          </div>
         </div>
-      </section>
+      </PageShell>
     </Layout>
   );
 }

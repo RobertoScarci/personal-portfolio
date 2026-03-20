@@ -1,8 +1,6 @@
 'use client';
 
 import Layout from '@/components/Layout';
-import PageWatermark from '@/components/PageWatermark';
-import Header from '@/components/Header';
 import ScrollRevealSection from '@/components/ScrollRevealSection';
 import SocialIcons from '@/components/SocialIcons';
 import { siteConfig } from '@/app/metadata';
@@ -10,6 +8,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { trackEvent } from '@/lib/analytics';
+import PageShell from '@/components/PageShell';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -52,22 +51,12 @@ export default function Contatti() {
 
   return (
     <Layout>
-      <PageWatermark label="CONTACT" className="text-[220px] md:text-[260px]" />
-      <section className="relative w-full min-h-screen flex flex-col">
-        <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
-
-        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
-          <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
-            <Header />
-          </div>
-        </div>
-
-        {/* Spacer tra header e Contact — stesso di About (contenitori separati) */}
-        <div className="h-14 md:h-24 lg:h-32 flex-shrink-0" aria-hidden="true" />
-
-        {/* Content — max-width come About (max-w-5xl), stesso pt */}
-        <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
-          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
+      <PageShell
+        watermarkLabel="CONTACT"
+        watermarkClassName="text-[220px] md:text-[260px]"
+        contentContainerClassName="contents"
+      >
+        <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
             {/* Sezione 1: Titolo + CTA principale */}
             <ScrollRevealSection delay={0.05}>
               <section
@@ -252,8 +241,7 @@ export default function Contatti() {
             </section>
             </ScrollRevealSection>
           </div>
-        </div>
-      </section>
+      </PageShell>
     </Layout>
   );
 }
