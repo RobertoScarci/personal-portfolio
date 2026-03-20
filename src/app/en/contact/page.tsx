@@ -55,8 +55,7 @@ export default function ContactEn() {
       >
         <ScrollRevealSection delay={0.05}>
           <section
-            className="block"
-            style={{ paddingBottom: 'clamp(2rem, 4vw, 2.75rem)' }}
+            className="block pb-8 md:pb-11"
             aria-labelledby="contact-title-en"
           >
             <h1 id="contact-title-en" className="text-3xl md:text-5xl font-bold mb-4">
@@ -108,8 +107,7 @@ export default function ContactEn() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  style={{ padding: '1.4rem 2rem' }}
-                  className={`w-full rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 ${
+                  className={`w-full rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 px-8 py-5 ${
                     errors.name ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'
                   }`}
                   placeholder="Name"
@@ -133,8 +131,7 @@ export default function ContactEn() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  style={{ padding: '1.4rem 2rem' }}
-                  className={`w-full rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 ${
+                  className={`w-full rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 px-8 py-5 ${
                     errors.email ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'
                   }`}
                   placeholder="Email"
@@ -158,8 +155,7 @@ export default function ContactEn() {
                   onChange={handleChange}
                   required
                   rows={9}
-                  style={{ padding: '1.4rem 2rem' }}
-                  className={`w-full min-h-[260px] md:min-h-[300px] rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40 ${
+                  className={`w-full min-h-[260px] md:min-h-[300px] rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40 px-8 py-5 ${
                     errors.message ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'
                   }`}
                   placeholder="Message"
@@ -174,8 +170,7 @@ export default function ContactEn() {
               </div>
               <motion.button
                 type="submit"
-                style={{ padding: '0.6rem 1.5rem' }}
-                className="mt-3 inline-flex items-center justify-center self-start w-auto rounded-md bg-foreground text-background text-sm font-medium tracking-wide hover:bg-accent hover:text-foreground transition-colors"
+                className="mt-3 inline-flex items-center justify-center self-start w-auto rounded-md bg-foreground text-background text-sm font-medium tracking-wide hover:bg-accent hover:text-foreground transition-colors px-6 py-2"
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.96, y: 0 }}
                 transition={{ type: 'spring', stiffness: 380, damping: 26 }}
