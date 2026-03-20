@@ -36,7 +36,7 @@ export default function ProjectsEn() {
                   title="Projects."
                   className="gap-3"
                   titleClassName="text-3xl md:text-5xl font-bold tracking-[0.04em]"
-                  description="A small selection of projects I&apos;ve worked on recently. Detailed write-ups are in Italian, but the structure of the work and visuals should still be clear."
+                  description="A small selection of projects I&apos;ve worked on recently. Detailed write-ups are in Italian, but the structure of the work and visuals should still be clear. Project cards open the Italian case study pages."
                   descriptionClassName="text-sm md:text-base text-foreground/70 max-w-xl"
                 />
               </section>
