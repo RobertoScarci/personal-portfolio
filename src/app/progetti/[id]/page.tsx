@@ -1,11 +1,10 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
-import PageWatermark from '@/components/PageWatermark';
-import Header from '@/components/Header';
 import { getProjectById, projects } from '@/lib/projects';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import PageShell from '@/components/PageShell';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -39,20 +38,13 @@ export default async function ProgettoDetailPage({ params }: Props) {
 
   return (
     <Layout>
-      <PageWatermark label="PROJECT" className="text-[120px] md:text-[140px]" vertical />
-      <section className="relative w-full min-h-screen flex flex-col">
-        <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
-
-        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
-          <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
-            <Header />
-          </div>
-        </div>
-
-        <div className="h-14 md:h-24 lg:h-32 flex-shrink-0" aria-hidden="true" />
-
-        <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
-          <div className="w-full max-w-4xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
+      <PageShell
+        watermarkLabel="PROJECT"
+        watermarkClassName="text-[120px] md:text-[140px]"
+        watermarkVertical
+        contentContainerClassName="contents"
+      >
+        <div className="w-full max-w-4xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
             {/* Breadcrumb / back */}
             <nav className="mb-6 md:mb-8" aria-label="Navigazione">
               <Link
@@ -250,8 +242,7 @@ export default async function ProgettoDetailPage({ params }: Props) {
               )}
             </div>
           </div>
-        </div>
-      </section>
+      </PageShell>
     </Layout>
   );
 }

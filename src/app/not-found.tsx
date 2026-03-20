@@ -1,23 +1,18 @@
 import Link from 'next/link';
 import Layout from '@/components/Layout';
-import Header from '@/components/Header';
-import PageWatermark from '@/components/PageWatermark';
+import PageShell from '@/components/PageShell';
 
 export default function NotFound() {
   return (
     <Layout>
-      <PageWatermark label="404" className="text-[240px] md:text-[280px]" />
-      <section className="relative w-full min-h-screen flex flex-col">
-        <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
-
-        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
-          <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
-            <Header />
-          </div>
-        </div>
-
-        <div className="flex-1 w-full flex flex-col items-center justify-center relative z-10 px-6 md:px-8">
-          <div className="w-full max-w-2xl mx-auto text-center">
+      <PageShell
+        watermarkLabel="404"
+        watermarkClassName="text-[240px] md:text-[280px]"
+        headerSpacerClassName="h-0 flex-shrink-0"
+        contentWrapperClassName="flex-1 w-full flex flex-col items-center justify-center relative z-10 px-6 md:px-8 min-h-0"
+        contentContainerClassName="contents"
+      >
+        <div className="w-full max-w-2xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
               Pagina non trovata
             </h1>
@@ -30,9 +25,8 @@ export default function NotFound() {
             >
               Torna alla home
             </Link>
-          </div>
         </div>
-      </section>
+      </PageShell>
     </Layout>
   );
 }

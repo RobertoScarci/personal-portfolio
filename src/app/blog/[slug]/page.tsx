@@ -1,11 +1,10 @@
 import Layout from '@/components/Layout';
-import Header from '@/components/Header';
-import PageWatermark from '@/components/PageWatermark';
 import ScrollRevealSection from '@/components/ScrollRevealSection';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getPostBySlug, posts } from '@/lib/posts';
+import PageShell from '@/components/PageShell';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -38,20 +37,12 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <Layout>
-      <PageWatermark label="NOTE" className="text-[180px] md:text-[220px]" />
-      <section className="relative w-full min-h-screen flex flex-col">
-        <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
-
-        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
-          <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
-            <Header />
-          </div>
-        </div>
-
-        <div className="h-14 md:h-24 lg:h-32 flex-shrink-0" aria-hidden="true" />
-
-        <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
-          <div className="w-full max-w-3xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
+      <PageShell
+        watermarkLabel="NOTE"
+        watermarkClassName="text-[180px] md:text-[220px]"
+        contentContainerClassName="contents"
+      >
+        <div className="w-full max-w-3xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
             <ScrollRevealSection delay={0}>
               <nav className="mb-6 md:mb-8" aria-label="Navigazione">
                 <Link
@@ -100,8 +91,7 @@ export default async function BlogPostPage({ params }: Props) {
               </article>
             </ScrollRevealSection>
           </div>
-        </div>
-      </section>
+      </PageShell>
     </Layout>
   );
 }
