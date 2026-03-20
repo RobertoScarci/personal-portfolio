@@ -138,7 +138,7 @@ export default function ContactEn() {
                     errors.email ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'
                   }`}
                   placeholder="Email"
-                  aria-invalid={errors.email ? 'true' : 'false'}
+                  aria-invalid={Boolean(errors.email)}
                   aria-describedby={errors.email ? 'email-error-en' : undefined}
                 />
                 {errors.email && (
