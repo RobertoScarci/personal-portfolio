@@ -2,12 +2,16 @@ import type { ReactNode } from 'react';
 import Header from './Header';
 import PageWatermark from './PageWatermark';
 import ScrollHint from './ScrollHint';
+import AnimatedSection from './AnimatedSection';
 
 type PageShellProps = {
   watermarkLabel: string;
   watermarkClassName?: string;
   watermarkVertical?: boolean;
   header?: ReactNode;
+  background?: ReactNode;
+  headerReveal?: boolean;
+  headerRevealDelay?: number;
   headerSpacerClassName?: string;
   topSpacerClassName?: string;
   contentWrapperClassName?: string;
@@ -25,6 +29,9 @@ export default function PageShell({
   watermarkClassName,
   watermarkVertical = false,
   header,
+  background,
+  headerReveal = false,
+  headerRevealDelay = 0,
   headerSpacerClassName = 'h-14 md:h-24 lg:h-32 flex-shrink-0',
   topSpacerClassName = 'h-10 md:h-12 flex-shrink-0',
   contentWrapperClassName = 'flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto',
@@ -36,11 +43,23 @@ export default function PageShell({
     <>
       <PageWatermark label={watermarkLabel} className={watermarkClassName} vertical={watermarkVertical} />
       <section className="relative w-full min-h-screen flex flex-col">
+        {background ? (
+          <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">{background}</div>
+        ) : null}
         <div className={topSpacerClassName} aria-hidden="true" />
 
-        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
-          <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">{header ?? <Header />}</div>
-        </div>
+        {headerReveal ? (
+          <AnimatedSection
+            delay={headerRevealDelay}
+            className="w-full flex-shrink-0 flex flex-col items-center relative z-10"
+          >
+            <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">{header ?? <Header />}</div>
+          </AnimatedSection>
+        ) : (
+          <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
+            <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">{header ?? <Header />}</div>
+          </div>
+        )}
 
         <div className={headerSpacerClassName} aria-hidden="true" />
 

@@ -3,8 +3,7 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
 import ScrollRevealSection from '@/components/ScrollRevealSection';
-import PageWatermark from '@/components/PageWatermark';
-import Header from '@/components/Header';
+import PageShell from '@/components/PageShell';
 import ProgressiveTimelineSection from '@/components/ProgressiveTimelineSection';
 import { FaGithub, FaBox, FaPalette } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -95,24 +94,12 @@ const playlists: Playlist[] = [
 export default function About() {
   return (
     <Layout>
-      <PageWatermark label="ABOUT" className="text-[240px] md:text-[280px]" />
-      <section className="relative w-full min-h-screen flex flex-col">
-        {/* Spacer sopra header — altezza fissa, come per hero */}
-        <div className="h-10 md:h-12 flex-shrink-0" aria-hidden="true" />
-
-        {/* Header — contenitore dedicato */}
-        <div className="w-full flex-shrink-0 flex flex-col items-center relative z-10">
-          <div className="w-full max-w-6xl mx-auto px-6 md:px-8 flex flex-col">
-            <Header />
-          </div>
-        </div>
-
-        {/* Spacer tra header e About Me — un po' meno per portare il titolo poco più sopra */}
-        <div className="h-14 md:h-24 lg:h-32 flex-shrink-0" aria-hidden="true" />
-
-        {/* Content — contenitori separati per sezione: spacing con padding (niente margin collapse) */}
-        <div className="flex-1 w-full flex flex-col items-center justify-start relative z-10 min-h-0 overflow-y-auto">
-          <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
+      <PageShell
+        watermarkLabel="ABOUT"
+        watermarkClassName="text-[240px] md:text-[280px]"
+        contentContainerClassName="contents"
+      >
+        <div className="w-full max-w-5xl mx-auto px-6 md:px-8 flex flex-col flex-shrink-0 pt-4 md:pt-6 pb-20 md:pb-28">
             {/* Titolo About Me — spaziatura sotto ridotta */}
             <ScrollRevealSection delay={0}>
               <section
@@ -330,8 +317,7 @@ export default function About() {
               </div>
             </ScrollRevealSection>
           </div>
-        </div>
-      </section>
+      </PageShell>
     </Layout>
   );
 }
