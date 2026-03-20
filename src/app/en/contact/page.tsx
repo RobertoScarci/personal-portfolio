@@ -114,7 +114,7 @@ export default function ContactEn() {
                     errors.name ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'
                   }`}
                   placeholder="Name"
-                  aria-invalid={errors.name ? 'true' : 'false'}
+                  aria-invalid={Boolean(errors.name)}
                   aria-describedby={errors.name ? 'name-error-en' : undefined}
                 />
                 {errors.name && (
