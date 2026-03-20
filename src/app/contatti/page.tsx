@@ -160,7 +160,7 @@ export default function Contatti() {
                     style={{ padding: '1.4rem 2rem' }}
                     className={`w-full rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 ${errors.email ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'}`}
                     placeholder="Email"
-                    aria-invalid={errors.email ? 'true' : 'false'}
+                    aria-invalid={Boolean(errors.email)}
                     aria-describedby={errors.email ? 'email-error' : undefined}
                   />
                   {errors.email && (
