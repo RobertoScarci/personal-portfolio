@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { trackEvent } from '@/lib/analytics';
 import PageShell from '@/components/PageShell';
+import { SectionHeader } from '@/components/ui';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -58,12 +59,15 @@ export default function ContactEn() {
             className="block pb-8 md:pb-11"
             aria-labelledby="contact-title-en"
           >
-            <h1 id="contact-title-en" className="text-3xl md:text-5xl font-bold mb-4">
-              Contact.
-            </h1>
-            <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mb-6">
-              Tell me a bit about your project, collaboration or idea. I usually reply within 24 hours.
-            </p>
+            <SectionHeader
+              headingTag="h1"
+              titleId="contact-title-en"
+              title="Contact."
+              description="Tell me a bit about your project, collaboration or idea. I usually reply within 24 hours."
+              className="gap-4"
+              titleClassName="text-3xl md:text-5xl font-bold tracking-[0.04em]"
+              descriptionClassName="text-lg md:text-xl text-foreground/80 max-w-2xl mb-6"
+            />
             <div className="flex flex-wrap gap-4">
               <Link
                 href="mailto:hello@robertoscarci.dev"
@@ -111,7 +115,7 @@ export default function ContactEn() {
                     errors.name ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'
                   }`}
                   placeholder="Name"
-                  aria-invalid={errors.name ? 'true' : undefined}
+                  aria-invalid={errors.name ? 'true' : 'false'}
                   aria-describedby={errors.name ? 'name-error-en' : undefined}
                 />
                 {errors.name && (
@@ -135,7 +139,7 @@ export default function ContactEn() {
                     errors.email ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'
                   }`}
                   placeholder="Email"
-                  aria-invalid={errors.email ? 'true' : undefined}
+                  aria-invalid={errors.email ? 'true' : 'false'}
                   aria-describedby={errors.email ? 'email-error-en' : undefined}
                 />
                 {errors.email && (
@@ -159,7 +163,7 @@ export default function ContactEn() {
                     errors.message ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'
                   }`}
                   placeholder="Message"
-                  aria-invalid={errors.message ? 'true' : undefined}
+                  aria-invalid={errors.message ? 'true' : 'false'}
                   aria-describedby={errors.message ? 'message-error-en' : undefined}
                 />
                 {errors.message && (

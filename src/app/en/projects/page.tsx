@@ -4,6 +4,7 @@ import ScrollRevealSection from '@/components/ScrollRevealSection';
 import { projects } from '@/lib/projects';
 import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
+import { SectionHeader } from '@/components/ui';
 
 const ProjectsFilterGrid = dynamic(() => import('@/components/ProjectsFilterGrid'), { ssr: true });
 
@@ -29,13 +30,15 @@ export default function ProjectsEn() {
       >
             <ScrollRevealSection delay={0}>
               <section className="block pb-8 md:pb-10" aria-labelledby="projects-title-en">
-                <h1 id="projects-title-en" className="text-3xl md:text-5xl font-bold tracking-[0.04em]">
-                  Projects.
-                </h1>
-                <p className="mt-3 text-sm md:text-base text-foreground/70 max-w-xl">
-                  A small selection of projects I&apos;ve worked on recently. Detailed write-ups are in Italian,
-                  but the structure of the work and visuals should still be clear.
-                </p>
+                <SectionHeader
+                  headingTag="h1"
+                  titleId="projects-title-en"
+                  title="Projects."
+                  className="gap-3"
+                  titleClassName="text-3xl md:text-5xl font-bold tracking-[0.04em]"
+                  description="A small selection of projects I&apos;ve worked on recently. Detailed write-ups are in Italian, but the structure of the work and visuals should still be clear."
+                  descriptionClassName="text-sm md:text-base text-foreground/70 max-w-xl"
+                />
               </section>
             </ScrollRevealSection>
 

@@ -6,6 +6,10 @@ export interface SectionHeaderProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
   description?: ReactNode;
   align?: 'left' | 'center';
+  headingTag?: 'h1' | 'h2' | 'h3';
+  titleId?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
 }
 
 export function SectionHeader({
@@ -13,11 +17,26 @@ export function SectionHeader({
   title,
   description,
   align = 'left',
+  headingTag = 'h2',
+  titleId,
+  titleClassName,
+  descriptionClassName,
   className,
   ...props
 }: SectionHeaderProps) {
   const alignment =
     align === 'center' ? 'text-center items-center' : 'text-left items-start';
+
+  const TitleTag = headingTag;
+
+  const resolvedTitleClassName = clsx(
+    'text-xl md:text-2xl font-bold tracking-[0.04em]',
+    titleClassName
+  );
+
+  const resolvedDescriptionClassName =
+    descriptionClassName ??
+    'text-sm md:text-base text-foreground/70 max-w-xl';
 
   return (
     <div
@@ -29,11 +48,11 @@ export function SectionHeader({
           {eyebrow}
         </p>
       )}
-      <h2 className="text-xl md:text-2xl font-bold tracking-[0.04em]">
+      <TitleTag id={titleId} className={resolvedTitleClassName}>
         {title}
-      </h2>
+      </TitleTag>
       {description && (
-        <p className="text-sm md:text-base text-foreground/70 max-w-xl">
+        <p className={resolvedDescriptionClassName}>
           {description}
         </p>
       )}

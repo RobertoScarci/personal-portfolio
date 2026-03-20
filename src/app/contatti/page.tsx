@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { trackEvent } from '@/lib/analytics';
 import PageShell from '@/components/PageShell';
+import { SectionHeader } from '@/components/ui';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -64,13 +65,15 @@ export default function Contatti() {
                 style={{ paddingBottom: 'clamp(2rem, 4vw, 2.75rem)' }}
                 aria-labelledby="contact-title"
               >
-                <h1 id="contact-title" className="text-3xl md:text-5xl font-bold mb-4">
-                  Contact.
-                </h1>
-                <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mb-6">
-                  Scrivimi per il tuo prossimo progetto: idee, collaborazioni o semplici curiosità.
-                  Risposta entro 24 ore.
-                </p>
+                <SectionHeader
+                  headingTag="h1"
+                  titleId="contact-title"
+                  title="Contact."
+                  description="Scrivimi per il tuo prossimo progetto: idee, collaborazioni o semplici curiosità. Risposta entro 24 ore."
+                  className="gap-4"
+                  titleClassName="text-3xl md:text-5xl font-bold tracking-[0.04em]"
+                  descriptionClassName="text-lg md:text-xl text-foreground/80 max-w-2xl mb-6"
+                />
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href="mailto:hello@robertoscarci.dev"
@@ -134,7 +137,7 @@ export default function Contatti() {
                     style={{ padding: '1.4rem 2rem' }}
                     className={`w-full rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 ${errors.name ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'}`}
                     placeholder="Name"
-                    aria-invalid={errors.name ? 'true' : undefined}
+                    aria-invalid={errors.name ? 'true' : 'false'}
                     aria-describedby={errors.name ? 'name-error' : undefined}
                   />
                   {errors.name && (
@@ -157,7 +160,7 @@ export default function Contatti() {
                     style={{ padding: '1.4rem 2rem' }}
                     className={`w-full rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm placeholder:text-foreground/40 ${errors.email ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'}`}
                     placeholder="Email"
-                    aria-invalid={errors.email ? 'true' : undefined}
+                    aria-invalid={errors.email ? 'true' : 'false'}
                     aria-describedby={errors.email ? 'email-error' : undefined}
                   />
                   {errors.email && (
@@ -180,7 +183,7 @@ export default function Contatti() {
                     style={{ padding: '1.4rem 2rem' }}
                     className={`w-full min-h-[260px] md:min-h-[300px] rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40 ${errors.message ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'}`}
                     placeholder="Message"
-                    aria-invalid={errors.message ? 'true' : undefined}
+                    aria-invalid={errors.message ? 'true' : 'false'}
                     aria-describedby={errors.message ? 'message-error' : undefined}
                   />
                   {errors.message && (

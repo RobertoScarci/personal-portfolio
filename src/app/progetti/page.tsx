@@ -4,6 +4,7 @@ import ScrollRevealSection from '@/components/ScrollRevealSection';
 import { projects } from '@/lib/projects';
 import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
+import { SectionHeader } from '@/components/ui';
 
 const ProjectsFilterGrid = dynamic(() => import('@/components/ProjectsFilterGrid'), { ssr: true });
 
@@ -32,9 +33,13 @@ export default function Progetti() {
                 style={{ paddingBottom: 'clamp(2rem, 4vw, 2.75rem)' }}
                 aria-labelledby="projects-title"
               >
-                <h1 id="projects-title" className="text-3xl md:text-5xl font-bold tracking-[0.04em]">
-                  Projects.
-                </h1>
+                <SectionHeader
+                  headingTag="h1"
+                  titleId="projects-title"
+                  title="Projects."
+                  titleClassName="text-3xl md:text-5xl font-bold tracking-[0.04em]"
+                  className="gap-0"
+                />
               </section>
             </ScrollRevealSection>
 
