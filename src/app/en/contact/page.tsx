@@ -138,8 +138,8 @@ export default function ContactEn() {
                     errors.email ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'
                   }`}
                   placeholder="Email"
-                  aria-invalid={Boolean(errors.email)}
                   aria-describedby={errors.email ? 'email-error-en' : undefined}
+                  {...(errors.email ? { 'aria-invalid': true } : {})}
                 />
                 {errors.email && (
                   <p id="email-error-en" className="mt-1.5 text-xs text-accent" role="alert">
