@@ -5,14 +5,35 @@ import { projects } from '@/lib/projects';
 import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 import { SectionHeader } from '@/components/ui';
+import { metadata as baseMetadata, siteConfig } from '@/app/metadata';
 
 const ProjectsFilterGrid = dynamic(() => import('@/components/ProjectsFilterGrid'), { ssr: true });
 
 export const metadata: Metadata = {
+  ...baseMetadata,
   title: 'Projects (EN)',
   description:
     'Selected projects: app replicas, responsive interfaces, API integrations. React, Next.js, Vue, Laravel.',
+  keywords: [
+    ...(baseMetadata.keywords ?? []),
+    'frontend developer',
+    'web applications',
+    'case studies',
+    'Next.js',
+    'React',
+    'AI',
+    'portfolio',
+  ],
   openGraph: {
+    ...baseMetadata.openGraph,
+    title: 'Projects | Roberto Scarci (EN)',
+    description:
+      'A few selected projects: frontend, responsive layouts, API work. Case studies are currently written in Italian.',
+    url: `${siteConfig.url}/en/projects`,
+    locale: 'en_US',
+  },
+  twitter: {
+    ...baseMetadata.twitter,
     title: 'Projects | Roberto Scarci (EN)',
     description:
       'A few selected projects: frontend, responsive layouts, API work. Case studies are currently written in Italian.',

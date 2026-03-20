@@ -4,12 +4,32 @@ import HeroCTA from '@/components/HeroCTA';
 import PageShell from '@/components/PageShell';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { metadata as baseMetadata, siteConfig } from '@/app/metadata';
 
 export const metadata: Metadata = {
+  ...baseMetadata,
   title: 'Home (EN)',
   description:
     'Roberto Scarci — Frontend developer focused on fast products built with Next.js, React and AI.',
+  keywords: [
+    ...(baseMetadata.keywords ?? []),
+    'frontend developer',
+    'web developer',
+    'portfolio',
+    'Next.js',
+    'React',
+    'AI',
+  ],
   openGraph: {
+    ...baseMetadata.openGraph,
+    title: 'Roberto Scarci · Portfolio (EN)',
+    description:
+      'Frontend developer building fast web products with Next.js, React and AI. Selected projects and contact.',
+    url: `${siteConfig.url}/en`,
+    locale: 'en_US',
+  },
+  twitter: {
+    ...baseMetadata.twitter,
     title: 'Roberto Scarci · Portfolio (EN)',
     description:
       'Frontend developer building fast web products with Next.js, React and AI. Selected projects and contact.',
