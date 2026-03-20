@@ -183,8 +183,8 @@ export default function Contatti() {
                     style={{ padding: '1.4rem 2rem' }}
                     className={`w-full min-h-[260px] md:min-h-[300px] rounded-none bg-surface/10 border focus:outline-none focus:ring-2 focus:ring-accent/50 focus:bg-surface/20 transition-colors duration-200 text-sm leading-relaxed resize-none placeholder:text-foreground/40 ${errors.message ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'}`}
                     placeholder="Message"
-                    aria-invalid={Boolean(errors.message)}
                     aria-describedby={errors.message ? 'message-error' : undefined}
+                    {...(errors.message ? { 'aria-invalid': true } : {})}
                   />
                   {errors.message && (
                     <p id="message-error" className="mt-1.5 text-xs text-accent" role="alert">
