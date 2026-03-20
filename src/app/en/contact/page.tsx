@@ -162,7 +162,7 @@ export default function ContactEn() {
                     errors.message ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'
                   }`}
                   placeholder="Message"
-                  aria-invalid={errors.message ? 'true' : 'false'}
+                  aria-invalid={Boolean(errors.message)}
                   aria-describedby={errors.message ? 'message-error-en' : undefined}
                 />
                 {errors.message && (
