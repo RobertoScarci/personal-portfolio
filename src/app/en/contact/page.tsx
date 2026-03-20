@@ -182,7 +182,7 @@ export default function ContactEn() {
                 Send
               </motion.button>
               {submitted && (
-                <p className="mt-2 text-xs text-foreground/70">
+                <p className="mt-2 text-xs text-foreground/70" role="status" aria-live="polite">
                   Message sent (demo). I&apos;ll get back to you soon.
                 </p>
               )}

@@ -203,7 +203,7 @@ export default function Contatti() {
                   Invia
                 </motion.button>
                 {submitted && (
-                  <p className="mt-2 text-xs text-foreground/70">
+                  <p className="mt-2 text-xs text-foreground/70" role="status" aria-live="polite">
                     Messaggio inviato (demo). Ti risponderò al più presto.
                   </p>
                 )}
