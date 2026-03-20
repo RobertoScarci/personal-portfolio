@@ -162,8 +162,8 @@ export default function ContactEn() {
                     errors.message ? 'border-accent/80' : 'border-border/50 focus:border-accent/50'
                   }`}
                   placeholder="Message"
-                  aria-invalid={Boolean(errors.message)}
                   aria-describedby={errors.message ? 'message-error-en' : undefined}
+                  {...(errors.message ? { 'aria-invalid': true } : {})}
                 />
                 {errors.message && (
                   <p id="message-error-en" className="mt-1.5 text-xs text-accent" role="alert">
